@@ -4,44 +4,60 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FocusBackend.Models;
-
+using FocusBackend.Repositories;
 
 namespace FocusBackend.Controllers
 {
-    [Route("api/[users]")]
+    [Route("api/users")]
     [ApiController]
     public class UserController : ControllerBase
     {
-        // GET api/values
+
+        private IRepository<User> UserRepo;
+
+        public UserController(IRepository<User> UserRepo)
+        {
+            this.UserRepo = UserRepo;
+        }
+
+        // GET api/Users
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public IEnumerable<User> Get()
         {
-            return new string[] { "value1", "value2" };
+            return UserRepo.GetAll();
+            //return new List<User>();
         }
 
-        // GET api/values/5
+        // GET api/Users/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public User Get(int id)
         {
-            return "value";
+            return UserRepo.GetById(id);
         }
 
-        // POST api/values
+        // POST api/Users
         [HttpPost]
-        public void Post([FromBody] string value)
+        public IEnumerable<User> Post([FromBody] User User)
         {
+            UserRepo.Create(User);
+            return UserRepo.GetAll();
         }
 
-        // PUT api/values/5
+        // PUT api/Users/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IEnumerable<User> Put([FromBody] User User)
         {
+            UserRepo.Update(User);
+            return UserRepo.GetAll();
         }
 
-        // DELETE api/values/5
+        // DELETE api/Users/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IEnumerable<User> Delete(int id)
         {
+            var User = UserRepo.GetById(id);
+            UserRepo.Delete(User);
+            return UserRepo.GetAll();
         }
     }
 }
