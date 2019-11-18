@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using FocusBackend.Models;
 
-namespace Focus_Backend.Controllers
+
+namespace FocusBackend.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[users]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class UserController : ControllerBase
     {
         // GET api/values
         [HttpGet]

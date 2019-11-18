@@ -1,9 +1,9 @@
 using System;
 using Xunit;
 
-namespace Focus_Backend.Tests
+namespace FocusBackend.Tests
 {
-    public class UnitTest1
+    public class UserControllerTests
     {
         [Fact]
         public void Test1()
