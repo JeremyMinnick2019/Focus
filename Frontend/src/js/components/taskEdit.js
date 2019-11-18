@@ -9,8 +9,8 @@ export default function taskEdit(editTask) {
             
         <section class="update-task">
             <input class="update-task_name" type"text" value="${editTask.name}">
-            <input class="update-task_importance" type"text" value="${editTask.importance}">
-            <input class="update-task_urgency" type"text" value="${editTask.urgency}">
+            <input class="update-task_importance" type"text" value="${editTask.importance} 1-5">
+            <input class="update-task_urgency" type"text" value="${editTask.urgency} 1-5">
             <textarea rows="10" cols="30" class="update-task_description" value="${editTask.decription}"></textarea>
             <button class='add-task'>Update</button>
             <input class="update-task_id" type="hidden" value="${editTask.id}">
