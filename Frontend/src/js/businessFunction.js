@@ -40,7 +40,7 @@ app.addEventListener("click", function(){
         },
 
         businesses => {
-            document.querySelector("#app").innerHTML = Businesses(businesses)
+            document.querySelector("#app").innerHTML = Business(businesses)
         }
     )}
 })
