@@ -4,8 +4,8 @@ export default function Category(categories) {
         .map(category => {
             return`
             <section class="category">
-                <h3>${category.name}</h3>
-                <p>${category.decription}</p>
+                <h3 class ="categotyName">${category.name}</h3>
+                <p>${category.description}</p>
                 <input class="category_id" type="hidden" value="${category.id}">
                 <button class="edit-category">Edit</button>
                 <button class="delete-category">Delete</button>

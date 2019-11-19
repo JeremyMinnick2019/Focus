@@ -16,7 +16,7 @@ function displayBusiness(){
 
     const app = document.querySelector("#app");
     app.addEventListener("click", function(){
-        if(event.target.classList.contains("businessTitle")){
+        if(event.target.classList.contains("businessName")){
         const businessId = event.target.parentElement.querySelector(".business_id").value;
         apiActions.getRequest(`https://localhost:44306/api/businesses/${businessId}`, businesses => {
             document.querySelector("#app").innerHTML = Business(businesses);
@@ -26,13 +26,13 @@ function displayBusiness(){
     }
 })
 app.addEventListener("click", function(){
-    const addTitle = event.target.parentElement.querySelector(".add-business_title").value
+    const addName = event.target.parentElement.querySelector(".add-business_name").value
     const addIndustry = event.target.parentElement.querySelector(".add-business_industry").value
-    console.log(addTitle)
+    console.log(addName)
     apiActions.postRequest
     ( 
         "https://localhost:44306/api/businesses",{  
-        title: addTitle,
+        name: addName,
         industry: addIndustry
         },
 
@@ -65,13 +65,15 @@ app.addEventListener("click", function(){
 })
 
 app.addEventListener("click", function() {
-    if(event,target.classList.contains(update-business)) {
-        const updateTitle = event.target.parentElement.querySelector(".update-business_title").value
+    if(event,target.classList.contains("update-business")) {
+        const businessId = event.target.parentElement.querySelector("business_id").value;
+        const updateName = event.target.parentElement.querySelector(".update-business_name").value
         const updateindustry = event.target.parentElement.querySelector(".update-business_industry").value
 
         const businessData = {
-            title: updateTitle,
-            industry: updateindustry
+            name: updateName,
+            industry: updateindustry,
+            id: businessId
         }
         apiActions.putRequest(
             `https://localhost:44306/api/businesses/${businessId}`,
@@ -81,5 +83,5 @@ app.addEventListener("click", function() {
             }
         )
     }
-} )
+})
 }

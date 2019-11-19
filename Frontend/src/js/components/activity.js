@@ -7,7 +7,7 @@ export default function Activity(activities) {
                 <h3>${activity.name}</h3>
                 <h3>${activity.importance}</h3>
                 <h3>${activity.urgency}</h3>
-                <p>${activity.decription}</p>
+                <p>${activity.description}</p>
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <button class="edit-activity">Edit</button>
                 <button class="delete-activity">Delete</button>
