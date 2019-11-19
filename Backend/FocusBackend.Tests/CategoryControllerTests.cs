@@ -1,89 +1,95 @@
-﻿using System;
+﻿using FocusBackend.Controllers;
+using FocusBackend.Models;
+using FocusBackend.Repositories;
+using NSubstitute;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using Xunit;
 
 namespace FocusBackend.Tests
 {
-    public class UserControllerTests
+    public class CategoryControllerTests
     {
-        private UserController underTest;
-        IRepository<User> userRepo;
+        private CategoryController underTest;
+        IRepository<Category> categoryRepo;
 
-        public UserControllerTests()
+        public CategoryControllerTests()
         {
-            userRepo = Substitute.For<IRepository<User>>();
-            underTest = new UserController(userRepo);
+            categoryRepo = Substitute.For<IRepository<Category>>();
+            underTest = new CategoryController(categoryRepo);
         }
 
         [Fact]
-        public void Get_Returns_List_of_Users()
+        public void Get_Returns_List_of_Categorys()
         {
-            var expectedUsers = new List<User>()
+            var expectedCategorys = new List<Category>()
             {
-                new User(1, "Name", "Email", "Phone", "Image"),
-                new User(1, "Name", "Email", "Phone", "Image")
+                new Category(1, "Name", "Description", 1),
+                new Category(2, "Name", "Description", 1)
         };
-            userRepo.GetAll().Returns(expectedUsers);
+            categoryRepo.GetAll().Returns(expectedCategorys);
 
             var result = underTest.Get();
 
-            Assert.Equal(expectedUsers, result.ToList());
+            Assert.Equal(expectedCategorys, result.ToList());
         }
 
         [Fact]
-        public void Post_Creates_New_User()
+        public void Post_Creates_New_Category()
         {
-            var newUser = new User(1, "Name", "Email", "Phone", "Image");
-            var UserList = new List<User>();
+            var newCategory = new Category(1, "Name", "Description", 1);
+            var CategoryList = new List<Category>();
 
-            userRepo.When(t => t.Create(newUser))
-                .Do(t => UserList.Add(newUser));
+            categoryRepo.When(t => t.Create(newCategory))
+                .Do(t => CategoryList.Add(newCategory));
 
-            userRepo.GetAll().Returns(UserList);
+            categoryRepo.GetAll().Returns(CategoryList);
 
-            var result = underTest.Post(newUser);
+            var result = underTest.Post(newCategory);
 
-            Assert.Contains(newUser, result);
+            Assert.Contains(newCategory, result);
         }
 
         [Fact]
-        public void Delete_Removes_User()
+        public void Delete_Removes_Category()
         {
-            var UserId = 1;
-            var deletedUser = new User(1, "Name", "Email", "Phone", "Image");
-            var UserList = new List<User>()
+            var CategoryId = 1;
+            var deletedCategory = new Category(1, "Name", "Description", 1);
+            var CategoryList = new List<Category>()
             {
-                deletedUser,
-                new User(1, "Name", "Email", "Phone", "Image")
+                deletedCategory,
+                new Category(1, "Name", "Description", 1)
         };
 
-            userRepo.GetById(UserId).Returns(deletedUser);
-            userRepo.When(d => d.Delete(deletedUser))
-                .Do(d => UserList.Remove(deletedUser));
-            userRepo.GetAll().Returns(UserList);
+            categoryRepo.GetById(CategoryId).Returns(deletedCategory);
+            categoryRepo.When(d => d.Delete(deletedCategory))
+                .Do(d => CategoryList.Remove(deletedCategory));
+            categoryRepo.GetAll().Returns(CategoryList);
 
-            var result = underTest.Delete(UserId);
+            var result = underTest.Delete(CategoryId);
 
-            Assert.DoesNotContain(deletedUser, result); /*Does not work in all cases*/
+            Assert.DoesNotContain(deletedCategory, result); /*Does not work in all cases*/
             //Assert.All(result, item => Assert.Contains("Second item", item.Name));
         }
 
         [Fact]
-        public void Put_Updates_User()
+        public void Put_Updates_Category()
         {
-            var originalUser = new User(1, "Name", "Email", "Phone", "Image"); ;
-            var expectedUser = new List<User>()
+            var originalCategory = new Category(1, "Name", "Description", 1); ;
+            var expectedCategory = new List<Category>()
             {
-                originalUser
+                originalCategory
             };
-            var updatedUser = new User(1, "Name", "Email", "Phone", "Image");
+            var updatedCategory = new Category(1, "Name", "Description", 1);
 
-            userRepo.When(t => userRepo.Update(updatedUser))
-                .Do(Callback.First(t => expectedUser.Remove(originalUser))
-                .Then(t => expectedUser.Add(updatedUser)));
-            userRepo.GetAll().Returns(expectedUser);
+            categoryRepo.When(t => categoryRepo.Update(updatedCategory))
+                .Do(Callback.First(t => expectedCategory.Remove(originalCategory))
+                .Then(t => expectedCategory.Add(updatedCategory)));
+            categoryRepo.GetAll().Returns(expectedCategory);
 
-            var result = underTest.Put(updatedUser);
+            var result = underTest.Put(updatedCategory);
 
             // Assert.Equal(expectedTodos, result.ToList());
             Assert.All(result, item => Assert.Contains("Updated item", item.Name));

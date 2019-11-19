@@ -24,7 +24,7 @@ namespace FocusBackend.Tests
         [Fact]
         public void Get_Returns_List_of_Activities()
         {
-            var expectedActivitys = new List<Activity>()
+            var expectedActivities = new List<Activity>()
             {
                 new Activity(1, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, 1),
                 new Activity(2, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, 1)
@@ -42,10 +42,10 @@ namespace FocusBackend.Tests
             var newActivity = new Activity(1, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, 1);
             var ActivityList = new List<Activity>();
 
-            ActivityRepo.When(t => t.Create(newActivity))
+            activityRepo.When(t => t.Create(newActivity))
                 .Do(t => ActivityList.Add(newActivity));
 
-            ActivityRepo.GetAll().Returns(ActivityList);
+            activityRepo.GetAll().Returns(ActivityList);
 
             var result = underTest.Post(newActivity);
 
@@ -63,10 +63,10 @@ namespace FocusBackend.Tests
                 new Activity(1, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, 1)
         };
 
-            ActivityRepo.GetById(ActivityId).Returns(deletedActivity);
-            ActivityRepo.When(d => d.Delete(deletedActivity))
+            activityRepo.GetById(ActivityId).Returns(deletedActivity);
+            activityRepo.When(d => d.Delete(deletedActivity))
                 .Do(d => ActivityList.Remove(deletedActivity));
-            ActivityRepo.GetAll().Returns(ActivityList);
+            activityRepo.GetAll().Returns(ActivityList);
 
             var result = underTest.Delete(ActivityId);
 
@@ -84,16 +84,15 @@ namespace FocusBackend.Tests
             };
             var updatedActivity = new Activity(1, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, 1);
 
-            ActivityRepo.When(t => ActivityRepo.Update(updatedActivity))
+            activityRepo.When(t => activityRepo.Update(updatedActivity))
                 .Do(Callback.First(t => expectedActivity.Remove(originalActivity))
                 .Then(t => expectedActivity.Add(updatedActivity)));
-            ActivityRepo.GetAll().Returns(expectedActivity);
+            activityRepo.GetAll().Returns(expectedActivity);
 
             var result = underTest.Put(updatedActivity);
 
             // Assert.Equal(expectedTodos, result.ToList());
             Assert.All(result, item => Assert.Contains("Updated item", item.Name));
         }
-
     }
 }

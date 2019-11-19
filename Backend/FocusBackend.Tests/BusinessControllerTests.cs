@@ -1,89 +1,95 @@
-﻿using System;
+﻿using FocusBackend.Controllers;
+using FocusBackend.Models;
+using FocusBackend.Repositories;
+using NSubstitute;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using Xunit;
 
 namespace FocusBackend.Tests
 {
-    class BusinessControllerTests
+    public class BusinessControllerTests
     {
-        private UserController underTest;
-        IRepository<User> userRepo;
+        private BusinessController underTest;
+        IRepository<Business> businessRepo;
 
-        public UserControllerTests()
+        public BusinessControllerTests()
         {
-            userRepo = Substitute.For<IRepository<User>>();
-            underTest = new UserController(userRepo);
+            businessRepo = Substitute.For<IRepository<Business>>();
+            underTest = new BusinessController(businessRepo);
         }
 
         [Fact]
-        public void Get_Returns_List_of_Users()
+        public void Get_Returns_List_of_Businesss()
         {
-            var expectedUsers = new List<User>()
+            var expectedBusinesss = new List<Business>()
             {
-                new User(1, "Name", "Email", "Phone", "Image"),
-                new User(1, "Name", "Email", "Phone", "Image")
+                new Business(1, "Name", "Industry", "Image", 1),
+                new Business(2, "Name", "Industry", "Image", 1)
         };
-            userRepo.GetAll().Returns(expectedUsers);
+            businessRepo.GetAll().Returns(expectedBusinesss);
 
             var result = underTest.Get();
 
-            Assert.Equal(expectedUsers, result.ToList());
+            Assert.Equal(expectedBusinesss, result.ToList());
         }
 
         [Fact]
-        public void Post_Creates_New_User()
+        public void Post_Creates_New_Business()
         {
-            var newUser = new User(1, "Name", "Email", "Phone", "Image");
-            var UserList = new List<User>();
+            var newBusiness = new Business(1, "Name", "Industry", "Image", 1);
+            var BusinessList = new List<Business>();
 
-            userRepo.When(t => t.Create(newUser))
-                .Do(t => UserList.Add(newUser));
+            businessRepo.When(t => t.Create(newBusiness))
+                .Do(t => BusinessList.Add(newBusiness));
 
-            userRepo.GetAll().Returns(UserList);
+            businessRepo.GetAll().Returns(BusinessList);
 
-            var result = underTest.Post(newUser);
+            var result = underTest.Post(newBusiness);
 
-            Assert.Contains(newUser, result);
+            Assert.Contains(newBusiness, result);
         }
 
         [Fact]
-        public void Delete_Removes_User()
+        public void Delete_Removes_Business()
         {
-            var UserId = 1;
-            var deletedUser = new User(1, "Name", "Email", "Phone", "Image");
-            var UserList = new List<User>()
+            var BusinessId = 1;
+            var deletedBusiness = new Business(1, "Name", "Industry", "Image", 1);
+            var BusinessList = new List<Business>()
             {
-                deletedUser,
-                new User(1, "Name", "Email", "Phone", "Image")
+                deletedBusiness,
+                new Business(1, "Name", "Industry", "Image", 1)
         };
 
-            userRepo.GetById(UserId).Returns(deletedUser);
-            userRepo.When(d => d.Delete(deletedUser))
-                .Do(d => UserList.Remove(deletedUser));
-            userRepo.GetAll().Returns(UserList);
+            businessRepo.GetById(BusinessId).Returns(deletedBusiness);
+            businessRepo.When(d => d.Delete(deletedBusiness))
+                .Do(d => BusinessList.Remove(deletedBusiness));
+            businessRepo.GetAll().Returns(BusinessList);
 
-            var result = underTest.Delete(UserId);
+            var result = underTest.Delete(BusinessId);
 
-            Assert.DoesNotContain(deletedUser, result); /*Does not work in all cases*/
+            Assert.DoesNotContain(deletedBusiness, result); /*Does not work in all cases*/
             //Assert.All(result, item => Assert.Contains("Second item", item.Name));
         }
 
         [Fact]
-        public void Put_Updates_User()
+        public void Put_Updates_Business()
         {
-            var originalUser = new User(1, "Name", "Email", "Phone", "Image"); ;
-            var expectedUser = new List<User>()
+            var originalBusiness = new Business(1, "Name", "Industry", "Image", 1); ;
+            var expectedBusiness = new List<Business>()
             {
-                originalUser
+                originalBusiness
             };
-            var updatedUser = new User(1, "Name", "Email", "Phone", "Image");
+            var updatedBusiness = new Business(1, "Name", "Industry", "Image", 1);
 
-            userRepo.When(t => userRepo.Update(updatedUser))
-                .Do(Callback.First(t => expectedUser.Remove(originalUser))
-                .Then(t => expectedUser.Add(updatedUser)));
-            userRepo.GetAll().Returns(expectedUser);
+            businessRepo.When(t => businessRepo.Update(updatedBusiness))
+                .Do(Callback.First(t => expectedBusiness.Remove(originalBusiness))
+                .Then(t => expectedBusiness.Add(updatedBusiness)));
+            businessRepo.GetAll().Returns(expectedBusiness);
 
-            var result = underTest.Put(updatedUser);
+            var result = underTest.Put(updatedBusiness);
 
             // Assert.Equal(expectedTodos, result.ToList());
             Assert.All(result, item => Assert.Contains("Updated item", item.Name));
