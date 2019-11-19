@@ -4,6 +4,7 @@ import displayCategory from "./categoryFunction"
 import displayActivity from "./activityFunction"
 import Header from "./components/header"
 import Footer from "./components/footer"
+import Home from "./components/home"
 
 
 export default () => {
@@ -32,7 +33,11 @@ function footer(){
 
 function home(){
     const landing = document.querySelector("#app");
-    landing.innerHTML = displayUser()
+    landing.innerHTML = Home()
+    const homeBTN = document.querySelector("#homeButton");
+    homeBTN.addEventListener("click", function(){
+    document.querySelector("#app").innerHTML = Home();    
+    })
 }
 
 function userAction(){
