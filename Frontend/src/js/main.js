@@ -11,12 +11,13 @@ export default () => {
 }
 
 function pageBuild(){
+    header();
+    footer();
+    home();
     userAction();
     businessAction();
     categoryAction();
     activityAction();
-    header();
-    footer();
 }
 
 function header(){
@@ -27,6 +28,11 @@ function header(){
 function footer(){
     const footer = document.getElementById("footer")
     footer.innerHTML = Footer()
+}
+
+function home(){
+    const landing = document.querySelector("#app");
+    landing.innerHTML = displayUser()
 }
 
 function userAction(){
