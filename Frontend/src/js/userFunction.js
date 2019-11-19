@@ -13,4 +13,14 @@ function displayUser(){
             document.querySelector("#app").innerHTML = User(users);
         })
     })
+
+    const app = document.querySelector("#app");
+    app.addEventListener("click", function(){
+        if(event.target.classList.contains("userName")){
+            const userid = event.target.paerntElement.querySelector(".user_id").value;
+            apiActions.getRequest(`https://localhost:44306/api/users/${userid}`, users =>{
+                document.querySelector("#app").innerHTML = User(users);
+            })
+        }
+    })
 }

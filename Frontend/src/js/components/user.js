@@ -4,7 +4,7 @@ export default function User(users) {
         .map(user => {
             return`
             <section class="user">
-                <h3>${user.name}</h3>
+                <h3 class="userName">${user.name}</h3>
                 <h3>${user.email}</h3>
                 <h3>${user.phone}</h3>
                 <input class="user_id" type="hidden" value="${user.id}">
