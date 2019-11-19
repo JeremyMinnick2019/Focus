@@ -17,6 +17,10 @@ export default function Business(businesses) {
     <section class="businessAdd">
         <input class="add-business_name" type="text" placeholder="Add your business">
         <input class="add-business_industry" type="text" placeholder="Add your business industry">
+        <select class= 'add-business_user' name="User">
+        <option value="1">John Smith</option>
+        <option value="2">Brad Jones</option>
+        </select>
         <button class="add-business">Submit</button>
     </section>    
     `

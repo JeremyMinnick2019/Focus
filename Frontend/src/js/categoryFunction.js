@@ -28,12 +28,15 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("add-category")){
     const addName = event.target.parentElement.querySelector(".add-category_name").value
     const addDescription = event.target.parentElement.querySelector(".add-category_description").value
+    const addBusiness = event.target.parentElement.querySelector(".add-category_business").value;
+
     console.log(addName)
     apiActions.postRequest
     ( 
         "https://localhost:44306/api/categories",{  
         name: addName,
-        description: addDescription
+        description: addDescription,
+        businessId: addBusiness
         },
 
         categories => {
@@ -64,14 +67,16 @@ app.addEventListener("click", function(){
 })
 app.addEventListener("click", function() {
     if(event.target.classList.contains("update-category")) {
-        const categotyId = event.target.parentElement.querySelector(".category_id").value;
+        const categoryId = event.target.parentElement.querySelector(".category_id").value;
         const updateName = event.target.parentElement.querySelector(".update-category_name").value
         const updateDescription = event.target.parentElement.querySelector(".update-category_description").value
+        const updateBusiness = event.target.parentElement.querySelector(".update-category_business").value;
 
         const categoryData = {
             name: updateName,
             description: updateDescription,
-            id: categotyId
+            id: categoryId,
+            businessId: updateBusiness
         }
         apiActions.putRequest(
             `https://localhost:44306/api/businesses/${categotyId}`,

@@ -27,14 +27,16 @@ function displayBusiness(){
 })
 app.addEventListener("click", function(){
     if(event.target.classList.contains("add-business")){
-    const addName = event.target.parentElement.querySelector(".add-business_name").value
-    const addIndustry = event.target.parentElement.querySelector(".add-business_industry").value
+    const addName = event.target.parentElement.querySelector(".add-business_name").value;
+    const addIndustry = event.target.parentElement.querySelector(".add-business_industry").value;
+    const addOwner = event.target.parentElement.querySelector(".add-business_user").value;
     console.log(addName)
     apiActions.postRequest
     ( 
         "https://localhost:44306/api/businesses",{  
         name: addName,
-        industry: addIndustry
+        industry: addIndustry,
+        userId: addOwner
         },
 
         businesses => {
@@ -69,11 +71,13 @@ app.addEventListener("click", function() {
         const businessId = event.target.parentElement.querySelector(".business_id").value;
         const updateName = event.target.parentElement.querySelector(".update-business_name").value
         const updateindustry = event.target.parentElement.querySelector(".update-business_industry").value
+        const updateOwner = event.target.parentElement.querySelector(".add-business_user").value;
 
         const businessData = {
             name: updateName,
             industry: updateindustry,
-            id: businessId
+            id: businessId,
+            userId: updateOwner
         }
         apiActions.putRequest(
             `https://localhost:44306/api/businesses/${businessId}`,
