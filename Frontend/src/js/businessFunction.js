@@ -26,6 +26,7 @@ function displayBusiness(){
     }
 })
 app.addEventListener("click", function(){
+    if(event.target.classList.contains("add-business")){
     const addName = event.target.parentElement.querySelector(".add-business_name").value
     const addIndustry = event.target.parentElement.querySelector(".add-business_industry").value
     console.log(addName)
@@ -39,13 +40,12 @@ app.addEventListener("click", function(){
         businesses => {
             document.querySelector("#app").innerHTML = Businesses(businesses)
         }
-       
-    )
+    )}
 })
 
 app.addEventListener("click", function(){
     if(event.target.classList.contains("delete-business")) {
-        const businessId = event.target.parentElement.querySelector("business_id").value;
+        const businessId = event.target.parentElement.querySelector(".business_id").value;
         console.log("delete" + businessId);
         apiActions.deleteRequest(`https://localhost:44306/api/businesses/${businessId}`,
         businesses => {
@@ -56,7 +56,7 @@ app.addEventListener("click", function(){
 
 app.addEventListener("click", function(){
     if(event.target.classList.contains("edit-business")) {
-        const businessId = event.target.parentElement.querySelector("business_id").value;
+        const businessId = event.target.parentElement.querySelector(".business_id").value;
         console.log("edit"  + businessId);
         apiActions.getRequest(`https://localhost:44306/api/businesses/${businessId}` , editBusiness => {
             app.innerHTML = businessEdit(editBusiness)
@@ -65,8 +65,8 @@ app.addEventListener("click", function(){
 })
 
 app.addEventListener("click", function() {
-    if(event,target.classList.contains("update-business")) {
-        const businessId = event.target.parentElement.querySelector("business_id").value;
+    if(event.target.classList.contains("update-business")) {
+        const businessId = event.target.parentElement.querySelector(".business_id").value;
         const updateName = event.target.parentElement.querySelector(".update-business_name").value
         const updateindustry = event.target.parentElement.querySelector(".update-business_industry").value
 

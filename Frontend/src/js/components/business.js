@@ -15,8 +15,8 @@ export default function Business(businesses) {
     .join("")}
 
     <section class="businessAdd">
-        <input class="add-business_name" type"text" placeholder="Add your business">
-        <input class="add-business_industry" type"text" placeholder="Add your business industry">
+        <input class="add-business_name" type="text" placeholder="Add your business">
+        <input class="add-business_industry" type="text" placeholder="Add your business industry">
         <button class="add-business">Submit</button>
     </section>    
     `

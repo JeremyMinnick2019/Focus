@@ -1,5 +1,5 @@
 import User from "./components/user"
-import userEdit from "./components/userEdit"
+import UserEdit from "./components/userEdit"
 import apiActions from "./api/apiActions"
 
 export default () =>{
@@ -25,10 +25,11 @@ function displayUser(){
     })
 
     app.addEventListener("click", function(){
-        const addUser = event.target.parentElement.querySelector("add-user_name").value;
-        const addEmail = event.target.parentElement.querySelector("add-user_email").value;
-        const addPhone = event.target.parentElement.querySelector("add-user_phone").value;
-
+        if(event.target.classList.contains("add-user")){
+        const addUser = event.target.parentElement.querySelector(".add-user_name").value;
+        const addEmail = event.target.parentElement.querySelector(".add-user_email").value;
+        const addPhone = event.target.parentElement.querySelector(".add-user_phone").value;
+            console.log(addUser);
         apiActions.postRequest("https://localhost:44306/api/users",
         {
             name: addUser,
@@ -38,6 +39,7 @@ function displayUser(){
         users => {
             document.querySelector("#app").innerHTML = User(users)
         })
+        }
     });
 
     app.addEventListener("click", function(){
@@ -55,7 +57,7 @@ function displayUser(){
             const userid = event.target.parentElement.querySelector("user_id").value;
             apiActions.getRequest(`https://localhost:44306/api/users/${userid}`,
             userEdit => {
-                app.innerHTML = userEdit(editUser);
+                app.innerHTML = UserEdit(editUser);
             })
         }
     })

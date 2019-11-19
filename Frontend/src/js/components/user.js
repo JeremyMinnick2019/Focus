@@ -16,10 +16,10 @@ export default function User(users) {
     .join("")}
 
         <section class="userAdd">
-            <input class="add-user_name" type"text" placeholder="Add your name">
-            <input class="add-user_email" type"text" placeholder="Add your email">
-            <input class="add-user_phone" type"text" placeholder="Add your phone number">
+            <input class="add-user_name" type="text" placeholder="Add your name">
+            <input class="add-user_email" type="text" placeholder="Add your email">
+            <input class="add-user_phone" type="text" placeholder="Add your phone number">
             <button class='add-user'>Submit</button>
-        </section>    
+        </section>
     `
 }

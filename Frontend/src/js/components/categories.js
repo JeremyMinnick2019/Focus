@@ -15,7 +15,7 @@ export default function Category(categories) {
     .join("")}
 
         <section class="categoryAdd">
-            <input class="add-category_name" type"text" placeholder="Add a Category Name">
+            <input class="add-category_name" type="text" placeholder="Add a Category Name">
             <textarea rows="10" cols="30" class="add-category_description">Add a Category Description</textarea>
             <button class='add-category'>Submit</button>
         </section>    

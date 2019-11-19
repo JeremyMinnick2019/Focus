@@ -1,4 +1,4 @@
-export default function userEdit(editUser) {
+export default function UserEdit(editUser) {
     return `
         <section class="user">
             <h3>${editUser.name}</h3>
