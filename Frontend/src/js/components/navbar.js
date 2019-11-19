@@ -4,10 +4,11 @@ export default function Navbar() {
     
     <nav class='navbar'>
         <ul>
-            <li><a id="nav__home">Home</a></li>
-            <li><a id="nav__profile">Profile</a></li>
-            <li><a id="nav__todo">To-Do</a></li>
-            <li><a id="nav__planner">Planner</a></li>
+            <li><a id="homeButton">Home</a></li>
+            <li><a id="userButton">User</a></li>
+            <li><a id="businessButton">Business</a></li>
+            <li><a id="categoryButton">Categories</a></li>
+            <li><a id="activityButton">Activities</a></li>
         </ul>
         <div class="burger" onclick="myFunction(this)">
             <div class="line1"></div>
