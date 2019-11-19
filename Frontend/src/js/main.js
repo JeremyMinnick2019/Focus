@@ -4,7 +4,9 @@ import displayCategory from "./categoryFunction"
 import displayActivity from "./activityFunction"
 import Header from "./components/header"
 import Footer from "./components/footer"
+import Navbar from "./components/navbar"
 import Home from "./components/home"
+
 
 
 export default () => {
@@ -13,6 +15,7 @@ export default () => {
 
 function pageBuild(){
     header();
+    navbar();
     footer();
     home();
     userAction();
@@ -24,6 +27,11 @@ function pageBuild(){
 function header(){
     const header = document.getElementById("header")
     header.innerHTML = Header()
+}
+
+function navbar(){
+    const navbar = document.getElementById("navbar")
+    navbar.innerHTML = Navbar()
 }
 
 function footer(){
