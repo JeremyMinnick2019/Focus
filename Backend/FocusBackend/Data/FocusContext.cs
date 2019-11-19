@@ -25,19 +25,28 @@ namespace FocusBackend.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasData(
-                new User(1, "test", "test", "test", "test")
+                new User(1, "John Smith", "JSmith@MyEmail.com", "14404541980", "Image"),
+                new User(2, "Brad Jones", "BJones@MyEmail.com", "15554541812", "Image")
                 );
             modelBuilder.Entity<Business>().HasData(
-                   //gucci mane, East Atlanta santa song list
-                   new Business(1, "test", "test", "test", 1)
+                   new Business(1, "Small Business", "Retail", "Image", 1),
+                   new Business(2, "Fish Shop", "Retail", "Image", 2)
                    );
             modelBuilder.Entity<Category>().HasData(
-                   //gucci mane, East Atlanta santa song list
-                   new Category(1, "test", "test",  1)
+                   new Category(1, "Marketing", "Marketing And Promotion Activities",  1),
+                   new Category(2, "Payroll", "Payroll Activities", 1),
+                   new Category(3, "Accounting/Auditing", "Accounting and Auditing Activities", 1),
+                   new Category(4, "Customer Service", "How You Help Your Customers", 1),
+                   new Category(5, "Budgeting", "Managing Your Budget And Looking To The Future", 1),
+                   new Category(6, "Sales", "Give Your Sales A Boost", 1),
+                   new Category(7, "Operations", "Operational Activities", 1),
+                   new Category(8, "Small Tasks", "Small Activities That Must Be Done", 1)
+
                    );
             modelBuilder.Entity<Activity>().HasData(
-                   //gucci mane, East Atlanta santa song list
-                   new Activity(1, "test", "test", DateTime.Now, DateTime.Now, 1, 1, 1)
+                   new Activity(1, "Pay Workers", "Outsourced From Temp Agency", DateTime.Now, DateTime.Now, 9, 9, 2),
+                   new Activity(2, "Sales Planning", "Follow Up With Prospects", DateTime.Now, DateTime.Now, 10, 3, 6),
+                   new Activity(3, "Buy Stamps", "Get More Stamps For Pay Checks", DateTime.Now, DateTime.Now, 4, 6, 8)
                    );
         }
     }
