@@ -4,8 +4,8 @@ export default function Category(categories) {
         .map(category => {
             return`
             <section class="category">
-                <h3>${category.name}</h3>
-                <p>${category.decription}</p>
+                <h3 class ="categotyName">${category.name}</h3>
+                <p>${category.description}</p>
                 <input class="category_id" type="hidden" value="${category.id}">
                 <button class="edit-category">Edit</button>
                 <button class="delete-category">Delete</button>
@@ -15,7 +15,7 @@ export default function Category(categories) {
     .join("")}
 
         <section class="categoryAdd">
-            <input class="add-category_name" type"text" placeholder="Add a Category Name">
+            <input class="add-category_name" type="text" placeholder="Add a Category Name">
             <textarea rows="10" cols="30" class="add-category_description">Add a Category Description</textarea>
             <button class='add-category'>Submit</button>
         </section>    

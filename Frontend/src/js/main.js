@@ -5,6 +5,8 @@ import displayActivity from "./activityFunction"
 import Header from "./components/header"
 import Footer from "./components/footer"
 import Navbar from "./components/navbar"
+import Home from "./components/home"
+
 
 
 export default () => {
@@ -12,13 +14,14 @@ export default () => {
 }
 
 function pageBuild(){
+    header();
+    navbar();
+    footer();
+    home();
     userAction();
     businessAction();
     categoryAction();
     activityAction();
-    header();
-    navbar();
-    footer();
 }
 
 function header(){
@@ -34,6 +37,15 @@ function navbar(){
 function footer(){
     const footer = document.getElementById("footer")
     footer.innerHTML = Footer()
+}
+
+function home(){
+    const landing = document.querySelector("#app");
+    landing.innerHTML = Home()
+    const homeBTN = document.querySelector("#homeButton");
+    homeBTN.addEventListener("click", function(){
+    document.querySelector("#app").innerHTML = Home();    
+    })
 }
 
 function userAction(){
