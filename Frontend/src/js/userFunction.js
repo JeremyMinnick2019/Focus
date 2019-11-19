@@ -59,9 +59,10 @@ function displayUser(){
             })
         }
     })
-
+    
     app.addEventListener("click", function(){
         if(event.target.classList.contains("update-user_submit")){
+            const userid = event.target.parentElement.querySelector("user_id").value;
             const updateUser = event.target.parentElement.querySelector("update-user_name").value;
             const updateEmail = event.target.parentElement.querySelector("update-user_email").value;
             const updatePhone = event.target.parentElement.querySelector("update-user_phone").value;
@@ -70,7 +71,8 @@ function displayUser(){
             {
                 name: updateUser,
                 email: updateEmail,
-                phone: updatePhone    
+                phone: updatePhone,
+                id: userid    
             }
             apiActions.putRequest(`https://localhost:44306/api/users/${userid}`,
             userdata,
