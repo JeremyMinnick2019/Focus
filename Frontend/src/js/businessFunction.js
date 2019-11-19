@@ -58,8 +58,8 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("edit-business")) {
         const businessId = event.target.parentElement.querySelector("business_id").value;
         console.log("edit"  + businessId);
-        apiActions.getRequest(`https://localhost:44306/api/businesses/${businessId}` , businesses => {
-            app.innerHTML = Business(businesses)
+        apiActions.getRequest(`https://localhost:44306/api/businesses/${businessId}` , editBusiness => {
+            app.innerHTML = businessEdit(editBusiness)
         })
     }
 })
