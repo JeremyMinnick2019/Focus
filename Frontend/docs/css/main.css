@@ -1,4 +1,6 @@
-*
+* {
+padding: none;
+}
 {
     font-family: 'Ibarra Real Nova', serif;
 }
@@ -7,31 +9,62 @@
 
 }
 
-.navwrap {
+#navbar {
+justify-content: space-around;
+align-items: center;
+min-height: 8vh;
+background-color: rgb(7, 224, 7);
+font-family: 'Poppins', sans-serif;
+color: rgb(252, 253, 253);
+}
+
+
+
+.burger {
+margin: 1em;
+width: 40px;
+display: inline-block;
+cursor: pointer;
+}
+
+.line1, .line2, .line3 {
+width: 35px;
+height: 5px;
+background-color: rgb(252, 253, 253);
+margin: 6px 0;
+transition: 0.4s;
+}
+
+.change .line1 {
+transform: rotate(-45deg) translate(-9px, 6px);
+transform: rotate(-45deg) translate(-9px, 6px);
+}
+      
+.change .line2 {opacity: 0;}
+      
+.change .line3 {
+transform: rotate(45deg) translate(-8px, -8px);
+transform: rotate(45deg) translate(-8px, -8px);
+}
+
+ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-height: 8vh;
-    background-color: rgb(7, 224, 7);
-    font-family: 'Poppins', sans-serif;
-    color: rgb(252, 253, 253);
+    width: 45%;
+    list-style-type: none;
+    text-transform: uppercase;
+    float: right;
+    padding: 0;
   }
-
-.burger {
-    width: 30px;
-    height: 85px;
-    margin: 5px;
-    display: inline-block;
-    cursor: pointer;
-    }
-
-.line1, .line2, .line3 {
-    width: 35px;
-    height: 5px;
-    background-color: rgb(252, 253, 253);
-    margin: 6px 0;
-    transition: 0.4s;
-    }
+  
+  ul a {
+    letter-spacing: 3px;
+    font-size: 14px;
+    justify-content: center;
+  
+  }
+      
 
 body{
 
