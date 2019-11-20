@@ -2,12 +2,14 @@ export default function Activity(activities) {
     return `
     ${activities
         .map(activity => {
-            return`
+            return `
             <section class="activity">
                 <h3 class="activityName">${activity.name}</h3>
                 <h3>${activity.importance}</h3>
                 <h3>${activity.urgency}</h3>
                 <p>${activity.description}</p>
+                <h3>${activity.creation}</h3>
+                <h3>${activity.completion}</h3>
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <button class="edit-activity">Edit</button>
                 <button class="delete-activity">Delete</button>
@@ -18,7 +20,6 @@ export default function Activity(activities) {
             
             <section class="activityAdd">
                 <input class="add-activity_name" type="text" placeholder="Add an Activity Name">
-                <input class="add-activity_description" type="text" placeholder="Add a Description">
                 <input class="add-activity_importance" type="text" placeholder="Add an Activity Importance 1-10">
                 <input class="add-activity_urgency" type="text" placeholder="Add an Activity Urgency 1-10">
                 <select class="add-activity_categoryId" name="Category">
@@ -31,7 +32,7 @@ export default function Activity(activities) {
                     <option value="7">Operations</option>
                     <option value="8">Small Tasks</option>
                 </select>
-                <textarea rows="10" cols="30" class="add-activity_description">Add an Activity Description</textarea>
+                <textarea rows="10" cols="30" class="add-activity_description" placeholder="Add an Activity Description"></textarea>
                 <button class='add-activity'>Submit</button>
             </section>
             `

@@ -2,7 +2,7 @@ export default function Business(businesses) {
     return `
     ${businesses
         .map(business => {
-            return`
+            return `
             <section class="business">
                 <h3 class = "businessName">${business.name}</h3>
                 <h3>${business.industry}</h3>

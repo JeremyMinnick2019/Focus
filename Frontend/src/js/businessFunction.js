@@ -67,11 +67,11 @@ app.addEventListener("click", function(){
 })
 
 app.addEventListener("click", function() {
-    if(event.target.classList.contains("update-business")) {
-        const businessId = event.target.parentElement.querySelector(".business_id").value;
+    if(event.target.classList.contains("update-business_submit")) {
+        const businessId = event.target.parentElement.querySelector(".update-business_id").value;
         const updateName = event.target.parentElement.querySelector(".update-business_name").value
         const updateindustry = event.target.parentElement.querySelector(".update-business_industry").value
-        const updateOwner = event.target.parentElement.querySelector(".add-business_user").value;
+        const updateOwner = event.target.parentElement.querySelector(".update-business_user").value;
 
         const businessData = {
             name: updateName,

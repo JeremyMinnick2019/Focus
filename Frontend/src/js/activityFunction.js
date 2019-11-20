@@ -28,6 +28,8 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("add-activity")){
     const addName = event.target.parentElement.querySelector(".add-activity_name").value
     const addDescription = event.target.parentElement.querySelector(".add-activity_description").value
+    const addCreation = Date.now;
+    const addCompletion = Date.now;
     const addImportance = event.target.parentElement.querySelector(".add-activity_importance").value
     const addUrgency = event.target.parentElement.querySelector(".add-activity_urgency").value
     const addCategoryid = event.target.parentElement.querySelector(".add-activity_categoryId").value
@@ -37,11 +39,11 @@ app.addEventListener("click", function(){
         "https://localhost:44306/api/activities",{  
         name: addName,
         description: addDescription,
-        creation: Date.now,
-        completion: Date.now,
+        creation: addCreation,
+        completion: addCompletion,
         importance: addImportance,
         urgency: addUrgency,
-        categoryid: addCategoryid
+        categoryID: addCategoryid
         },
 
         activities => {
@@ -53,7 +55,7 @@ app.addEventListener("click", function(){
 
 app.addEventListener("click", function(){
     if(event.target.classList.contains("delete-activity")) {
-        const activityId = event.target.parentElement.querySelector("activity_id").value;
+        const activityId = event.target.parentElement.querySelector(".activity_id").value;
         console.log("delete" + activityId);
         apiActions.deleteRequest(`https://localhost:44306/api/activities/${activityId}`,
         activities => {
@@ -64,8 +66,8 @@ app.addEventListener("click", function(){
 
 app.addEventListener("click", function(){
     if(event.target.classList.contains("edit-activity")) {
-        const activityid = event.target.parentElement.querySelector("activity_id").value;
-        console.log("edit"  + activityId);
+        const activityid = event.target.parentElement.querySelector(".activity_id").value;
+        console.log("edit"  + activityid);
         apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, 
         editActivity => {
             app.innerHTML = ActivityEdit(editActivity)
@@ -75,27 +77,31 @@ app.addEventListener("click", function(){
 
 app.addEventListener("click", function() {
     if(event.target.classList.contains("update-activity")) {
+        const activityid = event.target.parentElement.querySelector(".update-activity_id").value
         const updateName = event.target.parentElement.querySelector(".update-activity_name").value
         const updateDescription = event.target.parentElement.querySelector(".update-activity_description").value
+        const updateCreation = event.target.parentElement.querySelector(".update-activity_creation").value
+        const updateCompletion = event.target.parentElement.querySelector(".update-activity_completion").value 
         const updateImportance = event.target.parentElement.querySelector(".update-activity_importance").value
         const updateUrgency = event.target.parentElement.querySelector(".update-activity_urgency").value
         const updateCategoryid = event.target.parentElement.querySelector(".update-activity_categoryId").value
-        console.log(updateName, updateDescription, updateImportance, updateUrgency, updateCategoryid)
-
+        console.log(updateName, updateImportance, updateCategoryid)
+        
         const activityData = {
+            id: activityid,
             name: updateName,
             description: updateDescription,
-            creation: Date.now,
-            completion: null,
+            creation: updateCreation,
+            completion: updateCompletion,
             importance: updateImportance,
             urgency: updateUrgency,
-            categoryid: updateCategoryid
+            categoryID: updateCategoryid,
         }
-        apiActions.putRequest(
-            `https://localhost:44306/api/activities/${activityid}`,
+        apiActions.putRequest(`https://localhost:44306/api/activities/${activityid}`,
             activityData,
             activities => {
-                document.querySelector("#app").innerHTML = Activity(activities)
+                // console.log(activities);
+                document.querySelector("#app").innerHTML = Activity(activities);
             }
         )
     }
