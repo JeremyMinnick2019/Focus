@@ -2,7 +2,7 @@ export default function User(users) {
     return `
     ${users
         .map(user => {
-            return`
+            return `
             <section class="user">
                 <h3 class="userName">${user.name}</h3>
                 <h3>${user.email}</h3>

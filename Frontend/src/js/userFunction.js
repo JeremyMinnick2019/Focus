@@ -54,9 +54,9 @@ function displayUser(){
 
     app.addEventListener("click", function(){
         if(event.target.classList.contains("edit-user")){
-            const userid = event.target.parentElement.querySelector("user_id").value;
+            const userid = event.target.parentElement.querySelector(".user_id").value;
             apiActions.getRequest(`https://localhost:44306/api/users/${userid}`,
-            userEdit => {
+            editUser => {
                 app.innerHTML = UserEdit(editUser);
             })
         }
@@ -64,10 +64,10 @@ function displayUser(){
     
     app.addEventListener("click", function(){
         if(event.target.classList.contains("update-user_submit")){
-            const userid = event.target.parentElement.querySelector("user_id").value;
-            const updateUser = event.target.parentElement.querySelector("update-user_name").value;
-            const updateEmail = event.target.parentElement.querySelector("update-user_email").value;
-            const updatePhone = event.target.parentElement.querySelector("update-user_phone").value;
+            const userid = event.target.parentElement.querySelector(".update-user_id").value;
+            const updateUser = event.target.parentElement.querySelector(".update-user_name").value;
+            const updateEmail = event.target.parentElement.querySelector(".update-user_email").value;
+            const updatePhone = event.target.parentElement.querySelector(".update-user_phone").value;
             
             const userdata = 
             {
