@@ -1,5 +1,8 @@
-export default function Header() {
+// import User from "./user"
+export default function Header(user) {
     return `
-            <h1>Welcome To Focu$</h1>
-        `
+            <h1>Welcome ${user.id},<br>
+             It's Time To Focu$</h1>
+             `
+        
 }

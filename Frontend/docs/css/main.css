@@ -1,8 +1,6 @@
 * {
 padding: none;
-}
-{
-    font-family: 'Ibarra Real Nova', serif;
+font-family: 'Ibarra Real Nova', serif;
 }
 
 :root{
@@ -13,7 +11,7 @@ padding: none;
 justify-content: space-around;
 align-items: center;
 min-height: 8vh;
-background-color: rgb(7, 224, 7);
+background-color: rgb(7, 224, 61);
 font-family: 'Poppins', sans-serif;
 color: rgb(252, 253, 253);
 }
@@ -67,6 +65,7 @@ ul {
       
 
 body{
+
 
 }
 
