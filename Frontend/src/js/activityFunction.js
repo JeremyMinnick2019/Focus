@@ -80,13 +80,13 @@ app.addEventListener("click", function() {
         const activityid = event.target.parentElement.querySelector(".update-activity_id").value
         const updateName = event.target.parentElement.querySelector(".update-activity_name").value
         const updateDescription = event.target.parentElement.querySelector(".update-activity_description").value
-        const updateCreation = Date.now;
-        const updateCompletion = null;    
+        const updateCreation = event.target.parentElement.querySelector(".update-activity_creation").value
+        const updateCompletion = event.target.parentElement.querySelector(".update-activity_completion").value 
         const updateImportance = event.target.parentElement.querySelector(".update-activity_importance").value
         const updateUrgency = event.target.parentElement.querySelector(".update-activity_urgency").value
         const updateCategoryid = event.target.parentElement.querySelector(".update-activity_categoryId").value
-        console.log(updateName, updateDescription, updateImportance, updateUrgency, updateCategoryid)
-
+        console.log(updateName, updateImportance, updateCategoryid)
+        
         const activityData = {
             id: activityid,
             name: updateName,
@@ -97,12 +97,11 @@ app.addEventListener("click", function() {
             urgency: updateUrgency,
             categoryID: updateCategoryid,
         }
-        apiActions.putRequest(
-            `https://localhost:44306/api/activities/${activityid}`,
+        apiActions.putRequest(`https://localhost:44306/api/activities/${activityid}`,
             activityData,
             activities => {
-                console.log(activities);
-                document.querySelector("#app").innerHTML = Activity(activities)
+                // console.log(activities);
+                document.querySelector("#app").innerHTML = Activity(activities);
             }
         )
     }

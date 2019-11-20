@@ -11,6 +11,8 @@ export default function ActivityEdit(editActivity) {
             <input class="update-activity_name" type"text" value="${editActivity.name}">
             <input class="update-activity_importance" type"text" value="${editActivity.importance} 1-10">
             <input class="update-activity_urgency" type"text" value="${editActivity.urgency} 1-10">
+            <input class="update-activity_creation" type="hidden" value="${editActivity.creation}">
+            <input class="update-activity_completion" type="hidden" value="${editActivity.completion}">
             <select class="update-activity_categoryId" name="Category">
                 <option value="1">Marketing</option>
                 <option value="2">Payroll</option>
