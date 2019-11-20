@@ -13,18 +13,18 @@ namespace FocusBackend.Controllers
     public class UserController : ControllerBase
     {
 
-        private IRepository<User> UserRepo;
+        private IRepository<User> userRepo;
 
         public UserController(IRepository<User> UserRepo)
         {
-            this.UserRepo = UserRepo;
+            this.userRepo = userRepo;
         }
 
         // GET api/Users
         [HttpGet]
         public IEnumerable<User> Get()
         {
-            return UserRepo.GetAll();
+            return userRepo.GetAll();
             //return new List<User>();
         }
 
@@ -32,32 +32,32 @@ namespace FocusBackend.Controllers
         [HttpGet("{id}")]
         public User Get(int id)
         {
-            return UserRepo.GetById(id);
+            return userRepo.GetById(id);
         }
 
         // POST api/Users
         [HttpPost]
         public IEnumerable<User> Post([FromBody] User User)
         {
-            UserRepo.Create(User);
-            return UserRepo.GetAll();
+            userRepo.Create(User);
+            return userRepo.GetAll();
         }
 
         // PUT api/Users/5
         [HttpPut("{id}")]
         public IEnumerable<User> Put([FromBody] User User)
         {
-            UserRepo.Update(User);
-            return UserRepo.GetAll();
+            userRepo.Update(User);
+            return userRepo.GetAll();
         }
 
         // DELETE api/Users/5
         [HttpDelete("{id}")]
         public IEnumerable<User> Delete(int id)
         {
-            var User = UserRepo.GetById(id);
-            UserRepo.Delete(User);
-            return UserRepo.GetAll();
+            var User = userRepo.GetById(id);
+            userRepo.Delete(User);
+            return userRepo.GetAll();
         }
     }
 }

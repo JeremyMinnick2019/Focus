@@ -21,7 +21,7 @@ namespace FocusBackend.Controllers
             this.businessRepo = businessRepo;
         }
 
-        // GET api/Businesss
+        // GET api/Business
         [HttpGet]
         public IEnumerable<Business> Get()
         {
@@ -29,14 +29,14 @@ namespace FocusBackend.Controllers
             //return new List<Business>();
         }
 
-        // GET api/Businesss/5
+        // GET api/Business/5
         [HttpGet("{id}")]
         public Business Get(int id)
         {
             return businessRepo.GetById(id);
         }
 
-        // POST api/Businesss
+        // POST api/Business
         [HttpPost]
         public IEnumerable<Business> Post([FromBody] Business Business)
         {
@@ -44,7 +44,7 @@ namespace FocusBackend.Controllers
             return businessRepo.GetAll();
         }
 
-        // PUT api/Businesss/5
+        // PUT api/Business/5
         [HttpPut("{id}")]
         public IEnumerable<Business> Put([FromBody] Business Business)
         {
@@ -52,7 +52,7 @@ namespace FocusBackend.Controllers
             return businessRepo.GetAll();
         }
 
-        // DELETE api/Businesss/5
+        // DELETE api/Business/5
         [HttpDelete("{id}")]
         public IEnumerable<Business> Delete(int id)
         {
