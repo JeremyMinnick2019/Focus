@@ -1,21 +1,36 @@
 * {
-padding: none;
+  padding: none;
 }
-{
-    font-family: 'Ibarra Real Nova', serif;
+
+html{
+  font-family: 'Poppins', sans-serif;
+  color: var(--navText);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.698),rgb(0, 0, 0, 0.698)) ,url("/images/dollars.jpg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
 }
 
 :root{
-
+  --navColor: rgb(7, 224, 7);
+  --navAccent1: #036103;
+  --navAccent2: #07ED07;
+  --navAccent3: #06C706;
+  --navAcccent4: #05A105;
+  --navComp: #E00774;
+  --moneyBlue1: #00EEC0;
+  --moneyBlue2: #80F2DF;
+  --navText: rgb(252, 253, 253);
 }
 
 #navbar {
 justify-content: space-around;
 align-items: center;
 min-height: 8vh;
-background-color: rgb(7, 224, 7);
+background-color: var(--navColor);
 font-family: 'Poppins', sans-serif;
-color: rgb(252, 253, 253);
+color: var(--navText);
 }
 
 
@@ -67,13 +82,20 @@ ul {
       
 
 body{
-
 }
 
 header{
-
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 footer{
-    
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center; 
 }

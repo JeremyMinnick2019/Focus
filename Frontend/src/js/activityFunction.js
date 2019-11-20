@@ -100,7 +100,7 @@ app.addEventListener("click", function() {
         apiActions.putRequest(`https://localhost:44306/api/activities/${activityid}`,
             activityData,
             activities => {
-                // console.log(activities);
+                console.log(activities);
                 document.querySelector("#app").innerHTML = Activity(activities);
             }
         )
