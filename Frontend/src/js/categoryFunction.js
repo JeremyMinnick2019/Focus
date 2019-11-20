@@ -16,9 +16,9 @@ function displayCategory(){
 
 const app = document.querySelector("#app");
 app.addEventListener("click", function(){
-    if(event.target.classList.contains("categotyName")){
-        const categotyId = event.target.parentElement.querySelector(".categoty_id").value;
-        apiActions.getRequest(`https://localhost:44306/api/categories/${categotyId}`, categories =>{
+    if(event.target.classList.contains("categoryName")){
+        const categoryId = event.target.parentElement.querySelector(".category_id").value;
+        apiActions.getRequest(`https://localhost:44306/api/categories/${categoryId}`, categories =>{
             document.querySelector("#app").innerHTML = Category(categories);
             console.log(categories);
         })
@@ -36,7 +36,7 @@ app.addEventListener("click", function(){
         "https://localhost:44306/api/categories",{  
         name: addName,
         description: addDescription,
-        businessId: addBusiness
+        businessID: addBusiness
         },
 
         categories => {
@@ -47,9 +47,9 @@ app.addEventListener("click", function(){
 
 app.addEventListener("click", function(){
     if(event.target.classList.contains("delete-category")) {
-        const categotyId = event.target.parentElement.querySelector(".category_id").value;
-        console.log("delete" + categotyId);
-        apiActions.deleteRequest(`https://localhost:44306/api/categories/${categotyId}`,
+        const categoryId = event.target.parentElement.querySelector(".category_id").value;
+        console.log("delete" + categoryId);
+        apiActions.deleteRequest(`https://localhost:44306/api/categories/${categoryId}`,
         categories => {
             app.innerHTML = Category(categories)
         })
@@ -58,16 +58,16 @@ app.addEventListener("click", function(){
 
 app.addEventListener("click", function(){
     if(event.target.classList.contains("edit-category")) {
-        const categotyId = event.target.parentElement.querySelector(".category_id").value;
-        console.log("edit"  + categotyId);
-        apiActions.getRequest(`https://localhost:44306/api/categories/${categotyId}` , editCategories => {
+        const categoryId = event.target.parentElement.querySelector(".category_id").value;
+        console.log("edit"  + categoryId);
+        apiActions.getRequest(`https://localhost:44306/api/categories/${categoryId}` , editCategories => {
             app.innerHTML = categoryEdit(editCategories)
         })
     }
 })
 app.addEventListener("click", function() {
-    if(event.target.classList.contains("update-category")) {
-        const categoryId = event.target.parentElement.querySelector(".category_id").value;
+    if(event.target.classList.contains("update-category_submit")) {
+        const categoryId = event.target.parentElement.querySelector(".update-category_id").value;
         const updateName = event.target.parentElement.querySelector(".update-category_name").value
         const updateDescription = event.target.parentElement.querySelector(".update-category_description").value
         const updateBusiness = event.target.parentElement.querySelector(".update-category_business").value;
@@ -76,10 +76,10 @@ app.addEventListener("click", function() {
             name: updateName,
             description: updateDescription,
             id: categoryId,
-            businessId: updateBusiness
+            businessID: updateBusiness
         }
         apiActions.putRequest(
-            `https://localhost:44306/api/businesses/${categotyId}`,
+            `https://localhost:44306/api/categories/${categoryId}`,
             categoryData,
             categories => {
                 document.querySelector("#app").innerHTML = Category(categories)

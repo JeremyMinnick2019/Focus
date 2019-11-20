@@ -12,10 +12,8 @@ export default function businessEdit(editBusiness) {
             <option value="1">John Smith</option>
             <option value="2">Brad Jones</option>
             </select>
-            <button class="update-business_submit">Edit</button>
+            <button class="update-business_submit">Update</button>
             <input class="update-business_id" type="hidden" value="${editBusiness.id}">
         </section>
             `
 }
-            // <input class="update-business_email" type"text" value="${editBusiness.zipcode}">
-            // <h3>${editBusiness.zipcode}</h3>
