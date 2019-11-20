@@ -32,7 +32,7 @@ export default function Activity(activities) {
                     <option value="7">Operations</option>
                     <option value="8">Small Tasks</option>
                 </select>
-                <textarea rows="10" cols="30" class="add-activity_description">Add an Activity Description</textarea>
+                <textarea rows="10" cols="30" class="add-activity_description" placeholder="Add an Activity Description"></textarea>
                 <button class='add-activity'>Submit</button>
             </section>
             `
