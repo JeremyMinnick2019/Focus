@@ -53,7 +53,7 @@ html{
 justify-content: space-around;
 align-items: center;
 min-height: 8vh;
-background-color: var(--navAccent3);
+background-color: var(--colorDark);
 font-family: 'Poppins', sans-serif;
 font-weight: bold;
 color: var(--navText);
