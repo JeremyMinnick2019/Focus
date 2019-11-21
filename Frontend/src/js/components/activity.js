@@ -4,12 +4,12 @@ export default function Activity(activities) {
         .map(activity => {
             return `
             <section class="activity">
-                <h3><input class="activity_name" value="${activity.name}">${activity.name}</input><h3>
-                <input class="activity_importance" value="${activity.importance}">
-                <input class="activity_urgency" value="${activity.urgency}">
-                <input class="activity_description" value="${activity.description}">
-                <input class="activity_creation" value="${activity.creation}">
-                <input class="activity_completion" value="${activity.completion}">
+                <h3 class="activity_name">${activity.name}</h3>
+                <h3 class="activity_importance">${activity.importance}</h3>
+                <h3 class="activity_urgency">${activity.urgency}</h3>
+                <h2 class="activity_description">${activity.description}</p>
+                <h3 class="activity_creation">${activity.creation}</h3>
+                <h3 class="activity_completion">${activity.completion}</h3>
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
                 <input class="activity_done" type="hidden" value="${activity.done}">
