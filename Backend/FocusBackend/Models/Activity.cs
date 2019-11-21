@@ -14,11 +14,12 @@ namespace FocusBackend.Models
         public DateTime Completion { get; set; }
         public int Importance { get; set; }
         public int Urgency { get; set; }
+        public bool Done { get; set; }
         public int CategoryID { get; set; }
-
+        
         public virtual Category Category { get; set; }
 
-        public Activity(int id, string name, string description, DateTime creation, DateTime completion, int importance, int urgency, int categoryID)
+        public Activity(int id, string name, string description, DateTime creation, DateTime completion, int importance, int urgency, bool done, int categoryID)
         {
             ID = id;
             Name = name;
@@ -27,9 +28,10 @@ namespace FocusBackend.Models
             Completion = completion;
             Importance = importance;
             Urgency = urgency;
+            Done = done;
             CategoryID = categoryID;
-        }
-        public Activity()
+    }
+    public Activity()
         {
 
         }
