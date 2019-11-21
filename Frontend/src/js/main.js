@@ -4,6 +4,7 @@ import displayProfile from "./profile"
 // import businessProfile from "./profile"
 import displayCategory from "./categoryFunction"
 import displayActivity from "./activityFunction"
+import displaySuccess from "./successFunction"
 import Header from "./components/header"
 import Footer from "./components/footer"
 import Navbar from "./components/navbar"
@@ -21,7 +22,7 @@ function pageBuild(){
     footer();
     home();
     profileAction();
-    // businessAction();
+    successAction();
     categoryAction();
     activityAction();
 }
@@ -57,9 +58,9 @@ function profileAction(){
     displayProfile()
 }
 
-// function businessAction(){
-//     businessProfile()
-// }
+function successAction(){
+    displaySuccess()
+}
 
 function categoryAction(){
     displayCategory()
