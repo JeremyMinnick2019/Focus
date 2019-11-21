@@ -37,8 +37,8 @@ app.addEventListener("click", function(){
     const addCategoryid = event.target.parentElement.querySelector(".add-activity_categoryId").value
     console.log(addName, addDescription, addImportance, addUrgency, addCategoryid)
     apiActions.postRequest
-    ( 
-        "https://localhost:44306/api/activities",{  
+    (
+        "https://localhost:44306/api/activities",{
         name: addName,
         description: addDescription,
         creation: addCreation,
