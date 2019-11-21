@@ -10,6 +10,8 @@ export default () =>{
 function displayActivity(){
     const activityBTN = document.querySelector("#activityButton");
     activityBTN.addEventListener("click", function(){
+        const sign = document.querySelector("#sign")
+        sign.innerHTML = ``
         apiActions.getRequest("https://localhost:44306/api/activities", activities =>{
             document.querySelector("#app").innerHTML = Activity(activities);
         });
@@ -69,6 +71,7 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("edit-activity")) {
         const activityid = event.target.parentElement.querySelector(".activity_id").value;
         console.log("edit"  + activityid);
+        sign.innerHTML = ``
         apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, 
         editActivity => {
             app.innerHTML = ActivityEdit(editActivity)
@@ -100,6 +103,7 @@ app.addEventListener("click", function() {
             categoryID: updateCategoryid,
             done: updateDone
         }
+        sign.innerHTML = ``
         apiActions.putRequest(`https://localhost:44306/api/activities/${activityid}`,
             activityData,
             activities => {
