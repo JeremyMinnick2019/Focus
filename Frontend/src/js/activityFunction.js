@@ -106,4 +106,37 @@ app.addEventListener("click", function() {
         )
     }
 })
+app.addEventListener("click", function() {
+    if(event.target.classList.contains("complete-activity")) {
+        const activityid = event.target.parentElement.querySelector(".activity_id").value
+        const name = event.target.parentElement.querySelector(".activity_name").value
+        const description = event.target.parentElement.querySelector(".activity_description").value
+        const creation = event.target.parentElement.querySelector(".activity_creation").value
+        const completion = event.target.parentElement.querySelector(".activity_completion").value 
+        const importance = event.target.parentElement.querySelector(".activity_importance").value
+        const urgency = event.target.parentElement.querySelector(".activity_urgency").value
+        const categoryid = event.target.parentElement.querySelector(".activity_categoryId").value
+        const done = true
+        console.log(name, importance, categoryid, done)
+        
+        const activityData = {
+            id: activityid,
+            name: name,
+            description: description,
+            creation: creation,
+            completion: completion,
+            importance: importance,
+            urgency: urgency,
+            categoryID: categoryid,
+            done: done
+        }
+        apiActions.putRequest(`https://localhost:44306/api/activities/${activityid}`,
+            activityData,
+            activities => {
+                console.log(activities);
+                document.querySelector("#app").innerHTML = Activity(activities);
+            }
+        )
+    }
+})
 }
