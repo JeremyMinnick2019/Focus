@@ -1,11 +1,7 @@
 // import Activity from "./activity"
 
 export default function Success(activity) {
-    if(activity.done = true){
         return `
-        ${activity
-            .map(activity => {
-                return `
             <section class="activity">
                 <h3 class="activity_name">${activity.name}</h3>
                 <h2 class="activity_description">${activity.description}</h2>
@@ -15,8 +11,4 @@ export default function Success(activity) {
                 <h3>${activity.done}</h3>
             </section>
             `;
-        })
-        .join("")}
-        `
-    }
 }

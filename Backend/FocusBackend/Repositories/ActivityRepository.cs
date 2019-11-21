@@ -1,5 +1,6 @@
 ﻿using FocusBackend.Data;
 using FocusBackend.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,13 @@ namespace FocusBackend.Repositories
             var activities = db.Activities.Where(p => p.CategoryID == categoryID);
 
             return activities;
+        }
+
+
+        public override Activity GetByDone(bool done)
+        {
+            done = true;
+            return db.Set<Activity>().Where(d => d.Done == done).Include("Activity").FirstOrDefault();
         }
     }
 }
