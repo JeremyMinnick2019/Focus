@@ -24,6 +24,31 @@ html{
   --navText: rgb(252, 253, 253);
 }
 
+/* NavBar*/ 
+
+.navbar li a:link,
+.navbar li a:visited
+{
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+
+.navbar li a:hover,
+.navbar li a:active
+{
+    border-bottom: 2px solid #00EEC0;
+
+    cursor: pointer;
+}
+
+
+
 #navbar {
   justify-content: space-around;
   align-items: center;
@@ -33,7 +58,7 @@ html{
   color: var(--navText);
 }
 
-
+/* NavBar*/
 
 .burger {
   margin: 1em;
@@ -107,6 +132,7 @@ footer{
   grid-gap: 1rem 1.5rem;
   grid-template-rows: repeat(1, 13rem);
   width: 42rem;
+  justify-content: center;
 }
 
 .gridCat{
@@ -116,12 +142,14 @@ footer{
   grid-gap: 1rem 1.5rem;
   grid-template-rows: repeat(3, 13rem);
   width: 42rem;
+  
 }
 
 #gridItem{
   border: .25rem solid var(--colorDark);
   border-radius: 3rem;
   padding: 1rem;
+  
 }
 
 #button{
