@@ -1,7 +1,10 @@
-import displayUser from "./userFunction"
-import displayBusiness from "./businessFunction"
+// import displayUser from "./userFunction"
+// import displayBusiness from "./businessFunction"
+import displayProfile from "./profile"
+// import businessProfile from "./profile"
 import displayCategory from "./categoryFunction"
 import displayActivity from "./activityFunction"
+import displaySuccess from "./successFunction"
 import Header from "./components/header"
 import Footer from "./components/footer"
 import Navbar from "./components/navbar"
@@ -18,8 +21,8 @@ function pageBuild(){
     navbar();
     footer();
     home();
-    userAction();
-    businessAction();
+    profileAction();
+    successAction();
     categoryAction();
     activityAction();
 }
@@ -40,20 +43,23 @@ function footer(){
 }
 
 function home(){
+    const sign = document.querySelector("#sign")
+    sign.innerHTML = ``
     const landing = document.querySelector("#app");
     landing.innerHTML = Home()
     const homeBTN = document.querySelector("#homeButton");
+    sign.innerHTML = ``
     homeBTN.addEventListener("click", function(){
     document.querySelector("#app").innerHTML = Home();    
     })
 }
 
-function userAction(){
-    displayUser()
+function profileAction(){
+    displayProfile()
 }
 
-function businessAction(){
-    displayBusiness()
+function successAction(){
+    displaySuccess()
 }
 
 function categoryAction(){

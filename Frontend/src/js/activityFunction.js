@@ -1,6 +1,7 @@
 import Activity from "./components/activity"
 import ActivityEdit from "./components/activityEdit"
 import apiActions from "./api/apiActions"
+import ActivityComplete from "./components/activityComplete"
 
 export default () =>{
     displayActivity()
@@ -9,6 +10,8 @@ export default () =>{
 function displayActivity(){
     const activityBTN = document.querySelector("#activityButton");
     activityBTN.addEventListener("click", function(){
+        const sign = document.querySelector("#sign")
+        sign.innerHTML = ``
         apiActions.getRequest("https://localhost:44306/api/activities", activities =>{
             document.querySelector("#app").innerHTML = Activity(activities);
         });
@@ -35,8 +38,8 @@ app.addEventListener("click", function(){
     const addCategoryid = event.target.parentElement.querySelector(".add-activity_categoryId").value
     console.log(addName, addDescription, addImportance, addUrgency, addCategoryid)
     apiActions.postRequest
-    ( 
-        "https://localhost:44306/api/activities",{  
+    (
+        "https://localhost:44306/api/activities",{
         name: addName,
         description: addDescription,
         creation: addCreation,
@@ -68,6 +71,7 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("edit-activity")) {
         const activityid = event.target.parentElement.querySelector(".activity_id").value;
         console.log("edit"  + activityid);
+        sign.innerHTML = ``
         apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, 
         editActivity => {
             app.innerHTML = ActivityEdit(editActivity)
@@ -85,6 +89,7 @@ app.addEventListener("click", function() {
         const updateImportance = event.target.parentElement.querySelector(".update-activity_importance").value
         const updateUrgency = event.target.parentElement.querySelector(".update-activity_urgency").value
         const updateCategoryid = event.target.parentElement.querySelector(".update-activity_categoryId").value
+        const updateDone = event.target.parentElement.querySelector(".update-activity_done").value
         console.log(updateName, updateImportance, updateCategoryid)
         
         const activityData = {
@@ -96,7 +101,9 @@ app.addEventListener("click", function() {
             importance: updateImportance,
             urgency: updateUrgency,
             categoryID: updateCategoryid,
+            done: updateDone
         }
+        sign.innerHTML = ``
         apiActions.putRequest(`https://localhost:44306/api/activities/${activityid}`,
             activityData,
             activities => {
@@ -105,5 +112,47 @@ app.addEventListener("click", function() {
             }
         )
     }
+})
+app.addEventListener("click", function(){
+    if(event.target.classList.contains("mark-complete-activity")) {
+        const activityid = event.target.parentElement.querySelector(".activity_id").value;
+        console.log("edit"  + activityid);
+        apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, 
+        completedActivity => {
+            app.innerHTML = ActivityComplete(completedActivity)
+        })
+    }
+});
+app.addEventListener("click", function(){
+    if(event.target.classList.contains("complete-activity")) {
+        const completeActivityid = event.target.parentElement.querySelector(".complete-activity_id").value
+        const completeName = event.target.parentElement.querySelector(".complete-activity_name").value
+        const completeDescription = event.target.parentElement.querySelector(".complete-activity_description").value
+        const completeCreation = event.target.parentElement.querySelector(".complete-activity_creation").value
+        const completeCompletion = event.target.parentElement.querySelector(".complete-activity_completion").value 
+        const completeImportance = event.target.parentElement.querySelector(".complete-activity_importance").value
+        const completeUrgency = event.target.parentElement.querySelector(".complete-activity_urgency").value
+        const completeCategoryid = event.target.parentElement.querySelector(".complete-activity_categoryId").value
+        const completeDone = true
+        console.log(completeName, completeImportance, completeCategoryid)
+        
+        const activityData = {
+            id: completeActivityid,
+            name: completeName,
+            description: completeDescription,
+            creation: completeCreation,
+            completion: completeCompletion,
+            importance: completeImportance,
+            urgency: completeUrgency,
+            categoryID: completeCategoryid,
+            done: completeDone
+        }
+        apiActions.putRequest(`https://localhost:44306/api/activities/${completeActivityid}`,
+            activityData,
+            activities => {
+                console.log(activities);
+                document.querySelector("#app").innerHTML = Activity(activities);
+            }
+        )}
 })
 }

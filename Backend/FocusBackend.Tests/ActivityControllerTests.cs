@@ -26,8 +26,8 @@ namespace FocusBackend.Tests
         {
             var expectedActivities = new List<Activity>()
             {
-                new Activity(1, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, 1),
-                new Activity(2, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, 1)
+                new Activity(1, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, false, 1),
+                new Activity(2, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, false, 1)
         };
             activityRepo.GetAll().Returns(expectedActivities);
 
@@ -39,7 +39,7 @@ namespace FocusBackend.Tests
         [Fact]
         public void Post_Creates_New_Activity()
         {
-            var newActivity = new Activity(1, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, 1);
+            var newActivity = new Activity(1, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, false, 1);
             var ActivityList = new List<Activity>();
 
             activityRepo.When(t => t.Create(newActivity))
@@ -56,11 +56,11 @@ namespace FocusBackend.Tests
         public void Delete_Removes_Activity()
         {
             var ActivityId = 1;
-            var deletedActivity = new Activity(1, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, 1);
+            var deletedActivity = new Activity(1, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, false, 1);
             var ActivityList = new List<Activity>()
             {
                 deletedActivity,
-                new Activity(1, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, 1)
+                new Activity(1, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, false, 1)
         };
 
             activityRepo.GetById(ActivityId).Returns(deletedActivity);
@@ -77,12 +77,12 @@ namespace FocusBackend.Tests
         [Fact]
         public void Put_Updates_Activity()
         {
-            var originalActivity = new Activity(1, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, 1); ;
+            var originalActivity = new Activity(1, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, false, 1); ;
             var expectedActivity = new List<Activity>()
             {
                 originalActivity
             };
-            var updatedActivity = new Activity(1, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, 1);
+            var updatedActivity = new Activity(1, "Name", "Description", DateTime.Now, DateTime.Now, 1, 1, false, 1);
 
             activityRepo.When(t => activityRepo.Update(updatedActivity))
                 .Do(Callback.First(t => expectedActivity.Remove(originalActivity))

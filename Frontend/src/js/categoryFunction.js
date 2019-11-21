@@ -9,6 +9,8 @@ export default () =>{
 function displayCategory(){
     const categoryBTN = document.querySelector("#categoryButton");
     categoryBTN.addEventListener("click", function(){
+        const sign = document.querySelector("#sign")
+        sign.innerHTML = ``
         apiActions.getRequest("https://localhost:44306/api/categories", categories =>{
             document.querySelector("#app").innerHTML = Category(categories);
         })
@@ -31,6 +33,7 @@ app.addEventListener("click", function(){
     const addBusiness = event.target.parentElement.querySelector(".add-category_business").value;
 
     console.log(addName)
+    sign.innerHTML = ``
     apiActions.postRequest
     ( 
         "https://localhost:44306/api/categories",{  
@@ -49,6 +52,7 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("delete-category")) {
         const categoryId = event.target.parentElement.querySelector(".category_id").value;
         console.log("delete" + categoryId);
+        sign.innerHTML = ``
         apiActions.deleteRequest(`https://localhost:44306/api/categories/${categoryId}`,
         categories => {
             app.innerHTML = Category(categories)
@@ -60,6 +64,7 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("edit-category")) {
         const categoryId = event.target.parentElement.querySelector(".category_id").value;
         console.log("edit"  + categoryId);
+        sign.innerHTML = ``
         apiActions.getRequest(`https://localhost:44306/api/categories/${categoryId}` , editCategories => {
             app.innerHTML = categoryEdit(editCategories)
         })
@@ -78,6 +83,7 @@ app.addEventListener("click", function() {
             id: categoryId,
             businessID: updateBusiness
         }
+        sign.innerHTML = ``
         apiActions.putRequest(
             `https://localhost:44306/api/categories/${categoryId}`,
             categoryData,
