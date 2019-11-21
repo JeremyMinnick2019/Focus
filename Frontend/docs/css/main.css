@@ -102,7 +102,7 @@ footer{
 .gridMain{
   display: grid;
   padding-left: 15rem;
-  padding-bottom: .5rem;
+  padding-bottom: 1rem;
   grid-template-columns: repeat(3, 13rem);
   grid-gap: 1rem 1.5rem;
   grid-template-rows: repeat(1, 13rem);
@@ -118,10 +118,33 @@ footer{
   width: 42rem;
 }
 
+.gridAct{
+  display: grid;
+  padding-left: 9rem;
+  grid-template-columns: repeat(4, 13rem);
+  grid-gap: 1rem 1.5rem;
+  grid-template-rows: repeat(1, 26rem);
+  width: 42rem;
+}
+
+#gridItemA{
+  border: .25rem solid var(--colorDark);
+  border-radius: 3rem;
+  padding: .25rem;
+  padding-left: 1.5rem;
+}
+
 #gridItem{
   border: .25rem solid var(--colorDark);
   border-radius: 3rem;
-  padding: 1rem;
+  padding: .75rem;
+  padding-top: 2rem;
+}
+
+#grid-Item{
+  border: .25rem solid var(--colorDark);
+  border-radius: 3rem;
+  padding: .75rem;
 }
 
 #button{
