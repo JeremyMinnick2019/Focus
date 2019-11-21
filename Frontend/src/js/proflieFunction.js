@@ -58,6 +58,7 @@ function displayUser(){
     app.addEventListener("click", function(){
         if(event.target.classList.contains("edit-user")){
             const userid = event.target.parentElement.querySelector(".user_id").value;
+            sign.innerHTML = ``
             apiActions.getRequest(`https://localhost:44306/api/users/${userid}`,
             editUser => {
                 app.innerHTML = UserEdit(editUser);
@@ -142,6 +143,7 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("edit-business")) {
         const businessId = event.target.parentElement.querySelector(".business_id").value;
         console.log("edit"  + businessId);
+        sign.innerHTML = ``
         apiActions.getRequest(`https://localhost:44306/api/businesses/${businessId}` , editBusiness => {
             app.innerHTML = businessEdit(editBusiness)
         })
