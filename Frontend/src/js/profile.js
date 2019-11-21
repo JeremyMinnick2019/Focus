@@ -1,5 +1,5 @@
-import displayBusiness from "./proflieFunction"
-import displayUser from "./proflieFunction"
+import displayBusiness from "./profileFunction"
+import displayUser from "./profileFunction"
 
 export default () =>{
     displayProfile();

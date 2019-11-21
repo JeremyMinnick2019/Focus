@@ -13,6 +13,7 @@ export default function ActivityEdit(editActivity) {
             <input class="update-activity_urgency" type"text" placeholder="Urgency 1-10">
             <input class="update-activity_creation" type="hidden" value="${editActivity.creation}">
             <input class="update-activity_completion" type="hidden" value="${editActivity.completion}">
+            <input class="update-activity_done" type="hidden" value="${editActivity.done}">
             <select class="update-activity_categoryId" name="Category">
                 <option value="1">Marketing</option>
                 <option value="2">Payroll</option>

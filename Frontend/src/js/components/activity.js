@@ -22,16 +22,23 @@ export default function Activity(activities) {
     ${activities
         .map(activity => {
             return `
-            <section class="activity" id="grid-Item">
-                <h3 class="activityName">${activity.name}</h3>
-                <h5>Importance: ${activity.importance}</h5>
-                <h5>Urgency: ${activity.urgency}</h5>
-                <p>${activity.description}</p>
-                <h5>Created: ${activity.creation}</h5>
-                <h5>Completed: ${activity.completion}</h5>
+
+            <section class="activity">
+
+                <h3 class="activity_name">${activity.name}</h3>
+                <h3 class="activity_importance">${activity.importance}</h3>
+                <h3 class="activity_urgency">${activity.urgency}</h3>
+                <h2 class="activity_description">${activity.description}</p>
+                <h3 class="activity_creation">${activity.creation}</h3>
+                <h3 class="activity_completion">${activity.completion}</h3>
+
                 <input class="activity_id" type="hidden" value="${activity.id}">
-                <button class="edit-activity" id="button">Edit</button>
-                <button class="delete-activity" id="button">Delete</button>
+                <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
+                <input class="activity_done" type="hidden" value="${activity.done}">
+                <button class="edit-activity">Edit</button>
+                <button class="mark-complete-activity">Mark Activity Complete</button>
+                <button class="delete-activity">Delete</button>
+
                 </section>
                 `;
             })
