@@ -1,0 +1,17 @@
+/*big tables to smmaller than 1140px: from 1024 to 1200*/
+@media only screen and (max-width: 1200px)
+{
+
+}
+
+/*small tablets to big tables: from 767 to 1023*/
+@media only screen and (max-width: 1023px)
+{
+
+}
+
+/* small phones from 0 to 480px */
+@media only screen and (max-width: 480px)
+{
+
+}
