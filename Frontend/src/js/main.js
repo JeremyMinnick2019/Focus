@@ -48,8 +48,8 @@ function home(){
     const landing = document.querySelector("#app");
     landing.innerHTML = Home()
     const homeBTN = document.querySelector("#homeButton");
-    sign.innerHTML = ``
     homeBTN.addEventListener("click", function(){
+    sign.innerHTML = ``
     document.querySelector("#app").innerHTML = Home();    
     })
 }
