@@ -1,5 +1,7 @@
-import displayUser from "./userFunction"
-import displayBusiness from "./businessFunction"
+// import displayUser from "./userFunction"
+// import displayBusiness from "./businessFunction"
+import displayProfile from "./profile"
+// import businessProfile from "./profile"
 import displayCategory from "./categoryFunction"
 import displayActivity from "./activityFunction"
 import Header from "./components/header"
@@ -18,8 +20,8 @@ function pageBuild(){
     navbar();
     footer();
     home();
-    userAction();
-    businessAction();
+    profileAction();
+    // businessAction();
     categoryAction();
     activityAction();
 }
@@ -48,13 +50,13 @@ function home(){
     })
 }
 
-function userAction(){
-    displayUser()
+function profileAction(){
+    displayProfile()
 }
 
-function businessAction(){
-    displayBusiness()
-}
+// function businessAction(){
+//     businessProfile()
+// }
 
 function categoryAction(){
     displayCategory()

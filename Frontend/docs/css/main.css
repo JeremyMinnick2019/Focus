@@ -101,7 +101,7 @@ footer{
 
 .gridMain{
   display: grid;
-  padding-left: 5rem;
+  padding-left: 9rem;
   grid-template-columns: repeat(4, 13rem);
   grid-gap: 1rem 1.5rem;
   grid-template-rows: repeat(3, 13rem);
@@ -114,7 +114,7 @@ footer{
   padding: 1rem;
 }
 
-#button, #input{
+#button{
   border-radius: 5rem;
 }
 

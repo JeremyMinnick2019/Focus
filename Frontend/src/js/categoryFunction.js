@@ -7,6 +7,9 @@ export default () =>{
 }
 
 function displayCategory(){
+    const sign = document.querySelector("#sign")
+    sign.innerHTML = ``
+
     const categoryBTN = document.querySelector("#categoryButton");
     categoryBTN.addEventListener("click", function(){
         apiActions.getRequest("https://localhost:44306/api/categories", categories =>{
