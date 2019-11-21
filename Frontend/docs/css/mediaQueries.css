@@ -1,0 +1,51 @@
+/*big tablets to smaller than 1140px: from 1024 to 1200*/
+@media only screen and (max-width:1200px)
+{
+
+}
+
+/*small tablets to big tablets: from 767px to 1023*/
+@media only screen and (max-width: 1023px)
+{
+    
+}
+
+/*small phones to small tablets: from 481 to 767*/
+@media only screen and (max-width: 767px)
+{
+    .navbar li a:link,
+    .navbar li a:visited
+    {
+        padding: 8px 10px;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 90%;
+        border-bottom: 2px solid transparent;
+        -webkit-transition: border-bottom 0.2s;
+        transition: border-bottom 0.2s;
+        
+    }  
+
+    .navbar ul
+    {
+    margin-right: 50px;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 45%;
+        list-style-type: none;
+        text-transform: uppercase;
+        float: right;
+        padding: 1rem,auto;
+      }
+}
+
+/*small phones: from 0 to 480px*/
+@media only screen and (max-width: 480px)
+{
+    
+}
