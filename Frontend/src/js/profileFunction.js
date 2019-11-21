@@ -11,18 +11,18 @@ export default () =>{
 
 function displayUser(){
     const userBTN = document.querySelector("#profileButton");
+    const app = document.querySelector("#app");
     userBTN.addEventListener("click", function(){
         apiActions.getRequest("https://localhost:44306/api/users", users =>{
-            document.querySelector("#app").innerHTML = User(users);
+            app.innerHTML = User(users);
         })
     });
 
-    const app = document.querySelector("#app");
     app.addEventListener("click", function(){
         if(event.target.classList.contains("userName")){
             const userid = event.target.parentElement.querySelector(".user_id").value;
             apiActions.getRequest(`https://localhost:44306/api/users/${userid}`, users =>{
-                document.querySelector("#app").innerHTML = User(users);
+                app.innerHTML = User(users);
             })
         }
     })
@@ -40,7 +40,7 @@ function displayUser(){
             phone: addPhone
         },
         users => {
-            document.querySelector("#app").innerHTML = User(users)
+            app.innerHTML = User(users)
         })
         }
     });
@@ -83,7 +83,7 @@ function displayUser(){
             apiActions.putRequest(`https://localhost:44306/api/users/${userid}`,
             userdata,
             users => {
-                document.querySelector("#app").innerHTML = User(users);
+                app.innerHTML = User(users);
             })
         }
     })
@@ -91,18 +91,18 @@ function displayUser(){
 
 function displayBusiness(){
     const businessBTN = document.querySelector("#profileButton");
+    const app = document.querySelector("#sign");
     businessBTN.addEventListener("click", function(){
         apiActions.getRequest("https://localhost:44306/api/businesses", businesses =>{
-            document.querySelector("#sign").innerHTML = Business(businesses);
+            sign.innerHTML = Business(businesses);
         })
     })
 
-    const app = document.querySelector("#sign");
     app.addEventListener("click", function(){
         if(event.target.classList.contains("businessName")){
         const businessId = event.target.parentElement.querySelector(".business_id").value;
         apiActions.getRequest(`https://localhost:44306/api/businesses/${businessId}`, businesses => {
-            document.querySelector("#sign").innerHTML = Business(businesses);
+            sign.innerHTML = Business(businesses);
             console.log(businesses);
         })
 
@@ -123,7 +123,7 @@ app.addEventListener("click", function(){
         },
 
         businesses => {
-            document.querySelector("#sign").innerHTML = Business(businesses)
+            sign.innerHTML = Business(businesses)
         }
     )}
 })
@@ -167,7 +167,7 @@ app.addEventListener("click", function() {
             `https://localhost:44306/api/businesses/${businessId}`,
             businessData,
             businesses => {
-                document.querySelector("#sign").innerHTML = Business(businesses)
+                sign.innerHTML = Business(businesses)
             }
         )
     }

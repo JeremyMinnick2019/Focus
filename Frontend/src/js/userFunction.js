@@ -8,18 +8,18 @@ export default () =>{
 
 function displayUser(){
     const userBTN = document.querySelector("#profileButton");
+    const app = document.querySelector("#app");
     userBTN.addEventListener("click", function(){
         apiActions.getRequest("https://localhost:44306/api/users", users =>{
-            document.querySelector("#app").innerHTML = User(users);
+            app.innerHTML = User(users);
         })
     });
 
-    const app = document.querySelector("#app");
     app.addEventListener("click", function(){
         if(event.target.classList.contains("userName")){
             const userid = event.target.parentElement.querySelector(".user_id").value;
             apiActions.getRequest(`https://localhost:44306/api/users/${userid}`, users =>{
-                document.querySelector("#app").innerHTML = User(users);
+                app.innerHTML = User(users);
             })
         }
     })
@@ -37,7 +37,7 @@ function displayUser(){
             phone: addPhone
         },
         users => {
-            document.querySelector("#app").innerHTML = User(users)
+            app.innerHTML = User(users)
         })
         }
     });
@@ -79,7 +79,7 @@ function displayUser(){
             apiActions.putRequest(`https://localhost:44306/api/users/${userid}`,
             userdata,
             users => {
-                document.querySelector("#app").innerHTML = User(users);
+                app.innerHTML = User(users);
             })
         }
     })
