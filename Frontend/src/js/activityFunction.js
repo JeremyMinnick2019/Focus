@@ -1,6 +1,7 @@
 import Activity from "./components/activity"
 import ActivityEdit from "./components/activityEdit"
 import apiActions from "./api/apiActions"
+import ActivityComplete from "./components/activityComplete"
 
 export default () =>{
     displayActivity()
@@ -85,6 +86,7 @@ app.addEventListener("click", function() {
         const updateImportance = event.target.parentElement.querySelector(".update-activity_importance").value
         const updateUrgency = event.target.parentElement.querySelector(".update-activity_urgency").value
         const updateCategoryid = event.target.parentElement.querySelector(".update-activity_categoryId").value
+        const updateDone = event.target.parentElement.querySelector(".update-activity_done").value
         console.log(updateName, updateImportance, updateCategoryid)
         
         const activityData = {
@@ -96,6 +98,7 @@ app.addEventListener("click", function() {
             importance: updateImportance,
             urgency: updateUrgency,
             categoryID: updateCategoryid,
+            done: updateDone
         }
         apiActions.putRequest(`https://localhost:44306/api/activities/${activityid}`,
             activityData,
@@ -106,27 +109,46 @@ app.addEventListener("click", function() {
         )
     }
 })
-app.addEventListener("click", function() {
+app.addEventListener("click", function(){
+    if(event.target.classList.contains("mark-complete-activity")) {
+        const activityid = event.target.parentElement.querySelector(".activity_id").value;
+        console.log("edit"  + activityid);
+        apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, 
+        completedActivity => {
+            app.innerHTML = ActivityComplete(completedActivity)
+        })
+    }
+});
+app.addEventListener("click", function(){
     if(event.target.classList.contains("complete-activity")) {
-        const activityid = event.target.parentElement.querySelector(".activity_id").value
-        const Name = event.target.parentElement.querySelector(".activity_name").value
-        const activityCategoryid = event.target.parentElement.querySelector(".activity_categoryId").value
-        const Done = true
-        console.log(activityid, Name, activityCategoryid, Done)
+        const completeActivityid = event.target.parentElement.querySelector(".complete-activity_id").value
+        const completeName = event.target.parentElement.querySelector(".complete-activity_name").value
+        const completeDescription = event.target.parentElement.querySelector(".complete-activity_description").value
+        const completeCreation = event.target.parentElement.querySelector(".complete-activity_creation").value
+        const completeCompletion = event.target.parentElement.querySelector(".complete-activity_completion").value 
+        const completeImportance = event.target.parentElement.querySelector(".complete-activity_importance").value
+        const completeUrgency = event.target.parentElement.querySelector(".complete-activity_urgency").value
+        const completeCategoryid = event.target.parentElement.querySelector(".complete-activity_categoryId").value
+        const completeDone = true
+        console.log(completeName, completeImportance, completeCategoryid)
         
         const activityData = {
-            id: activityid,
-            name: Name,
-            done: Done,
-            categoryID: activityCategoryid
+            id: completeActivityid,
+            name: completeName,
+            description: completeDescription,
+            creation: completeCreation,
+            completion: completeCompletion,
+            importance: completeImportance,
+            urgency: completeUrgency,
+            categoryID: completeCategoryid,
+            done: completeDone
         }
-        apiActions.putRequest(`https://localhost:44306/api/activities/${activityid}`,
+        apiActions.putRequest(`https://localhost:44306/api/activities/${completeActivityid}`,
             activityData,
             activities => {
                 console.log(activities);
                 document.querySelector("#app").innerHTML = Activity(activities);
             }
-        )
-    }
+        )}
 })
 }

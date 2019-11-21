@@ -13,8 +13,8 @@ export default function Activity(activities) {
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
                 <input class="activity_done" type="hidden" value="${activity.done}">
-                <input class="complete-activity" type="checkbox">
                 <button class="edit-activity">Edit</button>
+                <button class="mark-complete-activity">Mark Activity Complete</button>
                 <button class="delete-activity">Delete</button>
                 </section>
                 `;
