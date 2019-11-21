@@ -1,6 +1,7 @@
 export default function Business(businesses) {
     return `
-        <section class="businessAdd">
+    <section class="gridMain">
+        <section class="businessAdd" id="gridItem">
             <input class="add-business_name" type="text" placeholder="Add your business">
             <input class="add-business_industry" type="text" placeholder="Add your business industry">
             <select class= 'add-business_user' name="User">
@@ -13,7 +14,7 @@ export default function Business(businesses) {
     ${businesses
         .map(business => {
             return `
-            <section class="business">
+            <section class="business"  id="gridItem">
                 <h3 class = "businessName">${business.name}</h3>
                 <h5>${business.industry}</h5>
                 <input class="business_id" type="hidden" value="${business.id}">
@@ -23,6 +24,6 @@ export default function Business(businesses) {
             `;
         })
     .join("")}
-
+    </section>
     `
 }

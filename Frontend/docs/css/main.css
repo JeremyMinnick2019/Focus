@@ -101,6 +101,16 @@ footer{
 
 .gridMain{
   display: grid;
+  padding-left: 15rem;
+  padding-bottom: .5rem;
+  grid-template-columns: repeat(3, 13rem);
+  grid-gap: 1rem 1.5rem;
+  grid-template-rows: repeat(1, 13rem);
+  width: 42rem;
+}
+
+.gridCat{
+  display: grid;
   padding-left: 9rem;
   grid-template-columns: repeat(4, 13rem);
   grid-gap: 1rem 1.5rem;

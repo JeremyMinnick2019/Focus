@@ -7,11 +7,10 @@ export default () =>{
 }
 
 function displayActivity(){
-    const sign = document.querySelector("#sign")
-    sign.innerHTML = ``
-
     const activityBTN = document.querySelector("#activityButton");
     activityBTN.addEventListener("click", function(){
+        const sign = document.querySelector("#sign")
+        sign.innerHTML = ``
         apiActions.getRequest("https://localhost:44306/api/activities", activities =>{
             document.querySelector("#app").innerHTML = Activity(activities);
         });

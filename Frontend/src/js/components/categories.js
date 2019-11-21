@@ -1,6 +1,6 @@
 export default function Category(categories) {
     return `
-    <section class="gridMain">
+    <section class="gridCat">
         <section class="categoryAdd" id="gridItem">
             <input class="add-category_name" id="input" type="text" placeholder="Add a Category Name">
             <article><textarea rows="5" cols="21" class="add-category_description" id="input" placeholder="Add a Category Description"></textarea>

@@ -42,9 +42,12 @@ function footer(){
 }
 
 function home(){
+    const sign = document.querySelector("#sign")
+    sign.innerHTML = ``
     const landing = document.querySelector("#app");
     landing.innerHTML = Home()
     const homeBTN = document.querySelector("#homeButton");
+    sign.innerHTML = ``
     homeBTN.addEventListener("click", function(){
     document.querySelector("#app").innerHTML = Home();    
     })

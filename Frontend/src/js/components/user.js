@@ -1,6 +1,7 @@
 export default function User(users) {
     return `
-        <section class="userAdd">
+    <section class="gridMain">
+        <section class="userAdd" id="gridItem">
             <input class="add-user_name" type="text" placeholder="Add your name">
             <input class="add-user_email" type="text" placeholder="Add your email">
             <input class="add-user_phone" type="text" placeholder="Add your phone number">
@@ -10,7 +11,7 @@ export default function User(users) {
     ${users
         .map(user => {
             return `
-            <section class="user">
+            <section class="user" id="gridItem">
                 <h3 class="userName">${user.name}</h3>
                 <h5>${user.email}</h5>
                 <h5>${user.phone}</h5>
@@ -21,6 +22,6 @@ export default function User(users) {
             `;
         })
     .join("")}
-
+    </section>
     `
 }
