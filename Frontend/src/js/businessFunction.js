@@ -7,7 +7,7 @@ export default () =>{
 }
 
 function displayBusiness(){
-    const businessBTN = document.querySelector("#businessButton");
+    const businessBTN = document.querySelector("#profileButton");
     businessBTN.addEventListener("click", function(){
         apiActions.getRequest("https://localhost:44306/api/businesses", businesses =>{
             document.querySelector("#app").innerHTML = Business(businesses);

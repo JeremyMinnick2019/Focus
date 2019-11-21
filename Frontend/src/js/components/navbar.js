@@ -5,8 +5,7 @@ export default function Navbar() {
     <nav class='navbar'>
         <ul>
             <li><a id="homeButton">Home</a></li>
-            <li><a id="userButton">User</a></li>
-            <li><a id="businessButton">Business</a></li>
+            <li><a id="profileButton">Profile</a></li>
             <li><a id="categoryButton">Categories</a></li>
             <li><a id="activityButton">Activities</a></li>
         </ul>
