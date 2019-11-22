@@ -38,9 +38,9 @@ namespace FocusBackend.Controllers
 
         //Get api/activities/
         [HttpGet("{done}")]
-        public Activity GetDone(bool done)
+        public IEnumerable<Activity> GetDone()
         {
-            return activityRepo.GetByDone(done);
+            return activityRepo.GetByDone();
         }
 
         // POST api/Activitys

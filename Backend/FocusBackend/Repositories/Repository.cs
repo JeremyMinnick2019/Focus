@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -32,9 +33,14 @@ namespace FocusBackend.Repositories
             return db.Set<T>().Find(id);
         }
 
-        public virtual T GetByDone(bool done)
+        //public virtual IEnumerable<T> GetByDone()
+        //{
+        //    return db.Set<T>().ToList();
+        //}
+
+        public virtual IEnumerable<T> GetByDone()
         {
-            return db.Set<T>().Find(done);
+            throw new NotImplementedException();
         }
 
         public void Delete(T entity)

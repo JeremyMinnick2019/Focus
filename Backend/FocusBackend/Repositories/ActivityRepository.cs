@@ -10,24 +10,25 @@ namespace FocusBackend.Repositories
 {
     public class ActivityRepository : Repository<Activity>, IRepository<Activity>
     {
-        private FocusContext db;
+        private DbContext db;
 
         public ActivityRepository(FocusContext context) : base(context)
         {
+            this.db = context;
 
         }
-        public IEnumerable<Activity> GetByCategoryID(int categoryID)
+
+        //public IEnumerable<Activity> GetByCategoryID(int categoryID)
+        //{
+        //    var activities = db.Activities.Where(p => p.CategoryID == categoryID);
+
+        //    return activities;
+        //}
+
+
+        public  override IEnumerable<Activity> GetByDone()
         {
-            var activities = db.Activities.Where(p => p.CategoryID == categoryID);
-
-            return activities;
-        }
-
-
-        public  override Activity GetByDone(bool done)
-        {
-            //done = true;
-            return db.Set<Activity>().Where(d => d.Done == done).Include("Category").FirstOrDefault();
+            return db.Set<Activity>().Where(d => d.Done == true).Include("Category");
         }
     }
 }
