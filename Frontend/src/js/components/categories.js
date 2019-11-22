@@ -19,8 +19,8 @@ export default function Category(categories) {
                 <h3 class ="categoryName">${category.name}</h3>
                 <p>${category.description}</p>
                 <input class="category_id" type="hidden" value="${category.id}">
-                <button class="edit-category" id="button">Edit</button>
-                <button class="delete-category" id="button">Delete</button>
+                <button class="edit-category" id="mainbutton">Edit</button>
+                <button class="delete-category" id="mainbutton">Delete</button>
             </section>
             `;
         })

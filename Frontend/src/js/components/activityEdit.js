@@ -1,6 +1,6 @@
 export default function ActivityEdit(editActivity) {
     return `
-        <section class="activity">
+        <section class="activityeditdisplay">
             <h3>${editActivity.name}</h3>
             <h3>Importance: ${editActivity.importance}</h3>
             <h3>Urgency: ${editActivity.urgency}</h3>
@@ -25,7 +25,7 @@ export default function ActivityEdit(editActivity) {
                 <option value="8">Small Tasks</option>
             </select>
             <textarea rows="10" cols="30" class="update-activity_description" value="${editActivity.description}"></textarea>
-            <button class='update-activity'>Update</button>
+            <button class='update-activity' id="mainbutton">Update</button>
             <input class="update-activity_id" type="hidden" value="${editActivity.id}">
         </section>
     `
