@@ -8,20 +8,20 @@ export default () =>{
 
 function displayCategory(){
     const categoryBTN = document.querySelector("#categoryButton");
+    const app = document.querySelector("#app");
     categoryBTN.addEventListener("click", function(){
         const sign = document.querySelector("#sign")
         sign.innerHTML = ``
         apiActions.getRequest("https://localhost:44306/api/categories", categories =>{
-            document.querySelector("#app").innerHTML = Category(categories);
+            app.innerHTML = Category(categories);
         })
     })
 
-const app = document.querySelector("#app");
 app.addEventListener("click", function(){
     if(event.target.classList.contains("categoryName")){
         const categoryId = event.target.parentElement.querySelector(".category_id").value;
         apiActions.getRequest(`https://localhost:44306/api/categories/${categoryId}`, categories =>{
-            document.querySelector("#app").innerHTML = Category(categories);
+            app.innerHTML = Category(categories);
             console.log(categories);
         })
     }
@@ -43,7 +43,7 @@ app.addEventListener("click", function(){
         },
 
         categories => {
-            document.querySelector("#app").innerHTML = Category(categories)
+            app.innerHTML = Category(categories)
         }
     )}
 })
@@ -88,7 +88,7 @@ app.addEventListener("click", function() {
             `https://localhost:44306/api/categories/${categoryId}`,
             categoryData,
             categories => {
-                document.querySelector("#app").innerHTML = Category(categories)
+                app.innerHTML = Category(categories)
             }
         )
     }

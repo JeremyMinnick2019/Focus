@@ -1,13 +1,22 @@
-export default function Success(activity) {
-    if (activity.done = true)
+// import Activity from "./activity"
+
+export default function Success(activities) {
     return `
-        <section class="activity">
-            <h3 class="activityName">${activity.name}</h3>
-            <p>${activity.description}</p>
-            <h5>Created: ${activity.creation}</h5>
-            <h5>Completed: ${activity.completion}</h5>
-            <h5>${activity.done}</h5>
-            <input class="activity_id" type="hidden" value="${activity.id}">
-        </section>
-    `
-}
+        ${activities
+            .map(activity => {
+            return `
+            <section class="activity">
+                <h3 class="activity_name">${activity.name}</h3>
+                <h3 class="activity_category">Category: ${activity.category.name}</h3>
+                <p class="activity_description">${activity.description}</p>
+                <h3 class="activity_creation">Creation Date: ${activity.creation}</h3>
+                <h3 class="activity_completion">Completion Date: ${activity.completion}</h3>
+                <input class="activity_id" type="hidden" value="${activity.id}">
+                <h3>Done: ${activity.done}</h3>
+            </section>
+            `;
+            
+        })
+        .join("")}
+        `
+    }

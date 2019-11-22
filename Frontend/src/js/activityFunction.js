@@ -9,14 +9,14 @@ export default () =>{
 
 function displayActivity(){
     const activityBTN = document.querySelector("#activityButton");
+    const app = document.querySelector("#app");
     activityBTN.addEventListener("click", function(){
         const sign = document.querySelector("#sign")
         sign.innerHTML = ``
         apiActions.getRequest("https://localhost:44306/api/activities", activities =>{
-            document.querySelector("#app").innerHTML = Activity(activities);
+            app.innerHTML = Activity(activities);
         });
     });
-    const app = document.querySelector("#app");
     app.addEventListener("click", function(){
         if(event.target.classList.contains("activityName")){
         const activityid = event.target.parentElement.querySelector(".activity_id").value;
@@ -50,7 +50,7 @@ app.addEventListener("click", function(){
         },
 
         activities => {
-            document.querySelector("#app").innerHTML = Activity(activities)
+            app.innerHTML = Activity(activities)
         }
        
     )}
@@ -108,7 +108,7 @@ app.addEventListener("click", function() {
             activityData,
             activities => {
                 console.log(activities);
-                document.querySelector("#app").innerHTML = Activity(activities);
+                app.innerHTML = Activity(activities);
             }
         )
     }
@@ -151,7 +151,7 @@ app.addEventListener("click", function(){
             activityData,
             activities => {
                 console.log(activities);
-                document.querySelector("#app").innerHTML = Activity(activities);
+                app.innerHTML = Activity(activities);
             }
         )}
 })

@@ -7,9 +7,14 @@ export default () =>{
 
 function displaySuccess(){
     const successBTN = document.querySelector("#successButton");
+    const app = document.querySelector("#app");
     successBTN.addEventListener("click", function(){
-        apiActions.getRequest("https://localhost:44306/api/activities", activities =>{
-            document.querySelector("#app").innerHTML = Success(activities);
-        })
-    });
+        const sign = document.querySelector("#sign")
+        sign.innerHTML = ``
+
+        apiActions.getRequest(`https://localhost:44306/api/activities/done`, activities =>{
+        app.innerHTML = Success(activities)
+        });
+            // console.log(activity)
+    })
 }

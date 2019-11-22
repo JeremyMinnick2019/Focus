@@ -8,18 +8,18 @@ export default () =>{
 
 function displayBusiness(){
     const businessBTN = document.querySelector("#profileButton");
+    const app = document.querySelector("#app");
     businessBTN.addEventListener("click", function(){
         apiActions.getRequest("https://localhost:44306/api/businesses", businesses =>{
-            document.querySelector("#app").innerHTML = Business(businesses);
+            app.innerHTML = Business(businesses);
         })
     })
 
-    const app = document.querySelector("#app");
     app.addEventListener("click", function(){
         if(event.target.classList.contains("businessName")){
         const businessId = event.target.parentElement.querySelector(".business_id").value;
         apiActions.getRequest(`https://localhost:44306/api/businesses/${businessId}`, businesses => {
-            document.querySelector("#app").innerHTML = Business(businesses);
+            app.innerHTML = Business(businesses);
             console.log(businesses);
         })
 
@@ -40,7 +40,7 @@ app.addEventListener("click", function(){
         },
 
         businesses => {
-            document.querySelector("#app").innerHTML = Business(businesses)
+            app.innerHTML = Business(businesses)
         }
     )}
 })
@@ -83,7 +83,7 @@ app.addEventListener("click", function() {
             `https://localhost:44306/api/businesses/${businessId}`,
             businessData,
             businesses => {
-                document.querySelector("#app").innerHTML = Business(businesses)
+                app.innerHTML = Business(businesses)
             }
         )
     }

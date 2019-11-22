@@ -1,7 +1,4 @@
-// import displayUser from "./userFunction"
-// import displayBusiness from "./businessFunction"
 import displayProfile from "./profile"
-// import businessProfile from "./profile"
 import displayCategory from "./categoryFunction"
 import displayActivity from "./activityFunction"
 import displaySuccess from "./successFunction"
@@ -48,8 +45,8 @@ function home(){
     const landing = document.querySelector("#app");
     landing.innerHTML = Home()
     const homeBTN = document.querySelector("#homeButton");
-    sign.innerHTML = ``
     homeBTN.addEventListener("click", function(){
+    sign.innerHTML = ``
     document.querySelector("#app").innerHTML = Home();    
     })
 }

@@ -23,21 +23,21 @@ export default function Activity(activities) {
         .map(activity => {
             return `
 
-            <section class="activity">
+            <section class="activity" id="grid-Item">
 
                 <h3 class="activity_name">${activity.name}</h3>
-                <p class="activity_importance">${activity.importance}</p>
-                <p class="activity_urgency">${activity.urgency}</p>
-                <p class="activity_description">${activity.description}</p>
-                <p class="activity_creation">${activity.creation}</p>
-                <p class="activity_completion">${activity.completion}</p>
+                <h3 class="activity_importance">${activity.importance}</h3>
+                <h3 class="activity_urgency">${activity.urgency}</h3>
+                <h2 class="activity_description">${activity.description}</h2>
+                <h3 class="activity_creation">${activity.creation}</h3>
+                <h3 class="activity_completion">${activity.completion}</h3>
 
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
                 <input class="activity_done" type="hidden" value="${activity.done}">
-                <button class="edit-activity" id="mainbutton">Edit</button>
-                <button class="mark-complete-activity">Mark Activity Complete</button>
-                <button class="delete-activity" id="mainbutton">Delete</button>
+                <button class="edit-activity" id="button">Edit</button>
+                <button class="mark-complete-activity" id="button">Mark Activity Complete</button>
+                <button class="delete-activity" id="button">Delete</button>
 
                 </section>
                 `;
