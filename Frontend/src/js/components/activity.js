@@ -47,13 +47,3 @@ export default function Activity(activities) {
     </section>
             `
 }
-            // <select class="add-Activity_importance" name='importance' placeholder="Add Activity Importance">
-            // <option value="1">Important</option>
-            // <option value="2">Not Important</option>
-            // </select>
-            // <select class="add-Activity_uurgency" name='urgency' placeholder="Add Activity Urgency">
-            // <option value="1">Urgent</option>
-            // <option value="2">Not Urgent</option>
-            // </select>
-            // <input class="add-Activity_time" type"text" placeholder="Add a Activity Time">
-            // <h3>${Activity.time}</h3>

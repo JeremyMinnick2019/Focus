@@ -15,6 +15,5 @@ function displaySuccess(){
         apiActions.getRequest(`https://localhost:44306/api/activities/done`, activities =>{
         app.innerHTML = Success(activities)
         });
-            // console.log(activity)
     })
 }

@@ -1,5 +1,3 @@
-// import Activity from "./activity"
-
 export default function Success(activities) {
     return `
         ${activities
