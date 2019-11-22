@@ -9,7 +9,7 @@ export default function Category(categories) {
             <option value="1">Small Business</option>
             <option value="2">Fish Shop</option>
             </select></article>
-            <button class="add-category" id="button">Submit</button>
+            <button class="add-category" id="mainbutton">Submit</button>
         </section>
 
     ${categories

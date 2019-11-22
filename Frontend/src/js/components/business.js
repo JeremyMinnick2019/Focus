@@ -8,7 +8,7 @@ export default function Business(businesses) {
             <option value="1">John Smith</option>
             <option value="2">Brad Jones</option>
             </select>
-            <button class="add-business" id="button">Submit</button>
+            <button class="add-business" id="mainbutton">Submit</button>
         </section>
 
     ${businesses

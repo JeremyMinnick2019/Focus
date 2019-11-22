@@ -133,8 +133,8 @@ footer{
   display: grid;
   justify-content: center;
   padding-bottom: 5rem;
-  grid-template-columns: repeat(3, 13rem);
-  grid-gap: 5rem 5rem;
+  grid-template-columns: repeat(2, 13rem);
+  grid-gap: 3rem 3rem;
   grid-template-rows: repeat(1, 13rem);
 }
 
@@ -142,7 +142,7 @@ footer{
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(4, 13rem);
-  grid-gap: 1rem 1.5rem;
+  grid-gap: 3rem 3rem;
   grid-template-rows: repeat(3, 13rem);
 }
 
