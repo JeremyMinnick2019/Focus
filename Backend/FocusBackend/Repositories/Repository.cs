@@ -32,10 +32,10 @@ namespace FocusBackend.Repositories
             return db.Set<T>().Find(id);
         }
 
-        public virtual T GetByDone(bool done)
-        {
-            return db.Set<T>().Find(done);
-        }
+        //public virtual T GetByDone()
+        //{
+        //    return db.Set<T>().Find(done);
+        //}
 
         public void Delete(T entity)
         {

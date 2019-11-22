@@ -24,10 +24,9 @@ namespace FocusBackend.Repositories
         }
 
 
-        public override Activity GetByDone(bool done)
+        public  IEnumerable<Activity> GetByDone()
         {
-            done = true;
-            return db.Set<Activity>().Where(d => d.Done == done).Include("Activity").FirstOrDefault();
+            return db.Set<Activity>().Where(d => d.Done == true).Include("Category");
         }
     }
 }
