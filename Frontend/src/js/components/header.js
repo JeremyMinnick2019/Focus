@@ -1,5 +1,6 @@
 export default function Header() {
     return `
-            <h1>Welcome To Focu$</h1>
+            <h2>Welcome To</h2>
+            <h1>Focu$</h1>
         `
 }
