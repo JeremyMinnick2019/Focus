@@ -1,10 +1,7 @@
-// import displayUser from "./userFunction"
-// import displayBusiness from "./businessFunction"
 import displayProfile from "./profile"
 import displayCategory from "./categoryFunction"
 import displayActivity from "./activityFunction"
-import Success from "./components/success"
-import apiActions from "./api/apiActions"
+import displaySuccess from "./successFunction"
 import Header from "./components/header"
 import Footer from "./components/footer"
 import Navbar from "./components/navbar"
@@ -59,16 +56,8 @@ function profileAction(){
 }
 
 function successAction(){
-    const successBTN = document.querySelector("#successButton");
-    const app = document.querySelector("#app");
-    successBTN.addEventListener("click", function(){
-        const sign = document.querySelector("#sign")
-        sign.innerHTML = ``
-        apiActions.getRequest(`https://localhost:44306/api/activities/done`, activities =>{
-        app.innerHTML = Success(activities)
-        });
-            // console.log(activity)
-    })}
+    displaySuccess()
+}
 
 function categoryAction(){
     displayCategory()
