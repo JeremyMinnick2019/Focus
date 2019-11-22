@@ -35,15 +35,13 @@ html{
     text-transform: uppercase;
     font-size: 90%;
     border-bottom: 2px solid transparent;
-    -webkit-transition: border-bottom 0.2s;
-    transition: border-bottom 0.2s;
 }
 
 .navbar li a:hover,
 .navbar li a:active
 {
     border-bottom: 2px solid #00EEC0;
-
+    transition: 0.2s;
     cursor: pointer;
 }
 
@@ -127,9 +125,9 @@ footer{
 .gridMain{
   display: grid;
   justify-content: center;
-  padding-bottom: .5rem;
+  padding-bottom: 5rem;
   grid-template-columns: repeat(3, 13rem);
-  grid-gap: 1rem 1.5rem;
+  grid-gap: 5rem 5rem;
   grid-template-rows: repeat(1, 13rem);
 }
 
@@ -142,9 +140,23 @@ footer{
 }
 
 #gridItem{
-  border: .25rem solid var(--colorDark);
-  border-radius: 3rem;
-  padding: 1rem;
+  border-radius: 5px;
+  /* border-radius: 100px; */
+  box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.342);
+  overflow: hidden;
+  background: linear-gradient( to bottom, var(--colorDark), var(--moneyBlue1), var(--colorDark));
+  /* background: radial-gradient( var(--moneyBlue1), var(--colorDark)); */
+  transition: 0.5s;
+}
+
+#gridItem:hover{
+  box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.658);
+}
+
+#gridItem h3,h5,.edit-user,.delete-user
+{
+  display: flex;
+  justify-content: center;
 }
 
 #button{
