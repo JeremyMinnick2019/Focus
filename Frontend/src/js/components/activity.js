@@ -5,6 +5,7 @@ export default function Activity(activities) {
             <input class="add-activity_name" id="input" type="text" placeholder="Add an Activity Name">
             <input class="add-activity_importance" id="input" type="text" placeholder="Add an Activity Importance 1-10">
             <input class="add-activity_urgency" id="input" type="text" placeholder="Add an Activity Urgency 1-10">
+            <input class="add-activity_done" type="hidden">
             <select class="add-activity_categoryId" id="input" name="Category">
                 <option value="1">Marketing</option>
                 <option value="2">Payroll</option>
@@ -34,9 +35,9 @@ export default function Activity(activities) {
 
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
-                <input class="activity_done" type="hidden" value="${activity.done}">
+                <h3 class="activity_done">Completed: ${activity.done}</h3>
+                <button class="mark-complete-activity" id="button">Mark Complete</button>
                 <button class="edit-activity" id="button">Edit</button>
-                <button class="mark-complete-activity" id="button">Mark Activity Complete</button>
                 <button class="delete-activity" id="button">Delete</button>
 
                 </section>
@@ -44,15 +45,5 @@ export default function Activity(activities) {
             })
             .join("")}
     </section>
-            `
+    `
 }
-            // <select class="add-Activity_importance" name='importance' placeholder="Add Activity Importance">
-            // <option value="1">Important</option>
-            // <option value="2">Not Important</option>
-            // </select>
-            // <select class="add-Activity_uurgency" name='urgency' placeholder="Add Activity Urgency">
-            // <option value="1">Urgent</option>
-            // <option value="2">Not Urgent</option>
-            // </select>
-            // <input class="add-Activity_time" type"text" placeholder="Add a Activity Time">
-            // <h3>${Activity.time}</h3>
