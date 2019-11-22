@@ -38,7 +38,7 @@ namespace FocusBackend.Repositories
         //    return db.Set<T>().ToList();
         //}
 
-        public virtual IEnumerable<T> GetByDone()
+        public virtual IEnumerable<T> GetByDoneFalse()
         {
             throw new NotImplementedException();
         }

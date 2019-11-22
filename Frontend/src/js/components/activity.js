@@ -6,7 +6,7 @@ export default function Activity(activities) {
             <input class="add-activity_importance" id="input" type="text" placeholder="Add an Activity Importance 1-10">
             <input class="add-activity_urgency" id="input" type="text" placeholder="Add an Activity Urgency 1-10">
             <select class="add-activity_categoryId" id="input" name="Category">
-                <option value="1">Marketing</option>
+                <option value="1">${category.name}</option>
                 <option value="2">Payroll</option>
                 <option value="3">Accounting/Auditing</option>
                 <option value="4">Customer Service</option>
