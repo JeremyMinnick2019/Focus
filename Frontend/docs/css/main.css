@@ -5,7 +5,7 @@
 html{
   font-family: 'Poppins', sans-serif;
   color: var(--navText);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.698),rgb(0, 0, 0, 0.698)) ,url("/images/time.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.698),rgb(0, 0, 0, 0.698));
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -13,15 +13,13 @@ html{
 }
 
 :root{
-  --navColor: rgb(7, 224, 7);
-  --colorDark: #036103;
-  --navAccent2: #07ED07;
-  --navAccent3: #06C706;
-  --navAcccent4: rgb(250, 8, 197);
+  --navColor: #0fff95;
+  --colorDark: #06BA63;
+  --navAccent2: #cc264a;
   --navComp: #E00774;
-  --moneyBlue1: #00EEC0;
-  --moneyBlue2: #80F2DF;
+  --moneyBlue1: #5c80BC;
   --navText: rgb(252, 253, 253);
+  
 }
 
 /* NavBar*/ 
@@ -35,15 +33,13 @@ html{
     text-transform: uppercase;
     font-size: 90%;
     border-bottom: 2px solid transparent;
-    -webkit-transition: border-bottom 0.2s;
-    transition: border-bottom 0.2s;
 }
 
 .navbar li a:hover,
 .navbar li a:active
 {
     border-bottom: 2px solid #00EEC0;
-
+    transition: 0.2s;
     cursor: pointer;
 }
 
@@ -136,9 +132,9 @@ footer{
 .gridMain{
   display: grid;
   justify-content: center;
-  padding-bottom: 1.5rem;
-  grid-template-columns: repeat(2, 13rem);
-  grid-gap: 1rem 1.5rem;
+  padding-bottom: 5rem;
+  grid-template-columns: repeat(3, 13rem);
+  grid-gap: 5rem 5rem;
   grid-template-rows: repeat(1, 13rem);
 }
 
@@ -158,29 +154,61 @@ footer{
   grid-template-rows: repeat(1, 35rem);
 }
 
-#gridItemA{
-  border: .25rem solid var(--colorDark);
-  border-radius: 3rem;
-  padding: .25rem;
-  padding-left: 1.5rem;
+#gridItem, #gridItemA, #grid-Item, .activity
+{
+  border-radius: 5px;
+  /* border-radius: 100px; */
+  box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.122);
+  
+  background: linear-gradient( to bottom, var(--colorDark), var(--moneyBlue1));
+  /* background: radial-gradient( var(--moneyBlue1), var(--colorDark)); */
+  transition: 0.5s;
 }
 
-#gridItem{
-  border: .25rem solid var(--colorDark);
-  border-radius: 3rem;
-  padding: .75rem;
-  padding-top: 2rem;
+#gridItem:hover,
+#gridItemA:hover,
+#grid-Item:hover,
+.activity:hover
+{
+  box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.658);
 }
 
-#grid-Item{
-  border: .25rem solid var(--colorDark);
-  border-radius: 3rem;
-  padding: .75rem;
+#gridItem h3,h5,.edit-user,.delete-user
+{
+  display: flex;
+  justify-content: center;
 }
 
-#button{
-  border-radius: 5rem;
+#gridItemA h3,h5,.edit-user,.delete-user
+{
+  display: flex;
+  justify-content: center;
 }
+
+#grid-Item h3,h5,.edit-user,.delete-user
+{
+  display: flex;
+  justify-content: center;
+}
+
+#mainbutton{
+ 
+  background-color: rgb(47, 105, 47); 
+  border: none;
+  color: white;
+  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  display:grid;
+  align-items: end;
+  
+  margin: 10px;
+
+
+}
+
 
 #input{
   border-radius: .5rem;

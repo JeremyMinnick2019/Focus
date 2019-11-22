@@ -18,8 +18,8 @@ export default function Business(businesses) {
                 <h3 class = "businessName">${business.name}</h3>
                 <h5>${business.industry}</h5>
                 <input class="business_id" type="hidden" value="${business.id}">
-                <button class="edit-business" id="button">Edit</button>
-                <button class="delete-business" id="button">Delete</button>
+                <button class="edit-business" id="mainbutton">Edit</button>
+                <button class="delete-business" id="mainbutton">Delete</button>
             </section>
             `;
         })
