@@ -4,6 +4,7 @@ export default function Activity(activities) {
         <section class="activityAdd" id="grid-Item">
             <input class="add-activity_name" id="input" type="text" placeholder="Add an Activity Name">
             <input class="add-activity_importance" id="input" type="text" placeholder="Add an Activity Importance 1-10">
+            <input class="add-activity_creation" type="datetime-local"> 
             <input class="add-activity_urgency" id="input" type="text" placeholder="Add an Activity Urgency 1-10">
             <select class="add-activity_categoryId" id="input" name="Category">
                 <option value="1">Marketing</option>
