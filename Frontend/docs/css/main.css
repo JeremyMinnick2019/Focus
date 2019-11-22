@@ -13,15 +13,13 @@ html{
 }
 
 :root{
-  --navColor: rgb(7, 224, 7);
-  --colorDark: #036103;
-  --navAccent2: #07ED07;
-  --navAccent3: #06C706;
-  --navAcccent4: rgb(250, 8, 197);
+  --navColor: #0fff95;
+  --colorDark: #06BA63;
+  --navAccent2: #cc264a;
   --navComp: #E00774;
-  --moneyBlue1: #00EEC0;
-  --moneyBlue2: #80F2DF;
+  --moneyBlue1: #5c80BC;
   --navText: rgb(252, 253, 253);
+  
 }
 
 /* NavBar*/ 
