@@ -1,7 +1,4 @@
-// import displayUser from "./userFunction"
-// import displayBusiness from "./businessFunction"
 import displayProfile from "./profile"
-// import businessProfile from "./profile"
 import displayCategory from "./categoryFunction"
 import displayActivity from "./activityFunction"
 import displaySuccess from "./successFunction"

@@ -11,8 +11,10 @@ function displaySuccess(){
     successBTN.addEventListener("click", function(){
         const sign = document.querySelector("#sign")
         sign.innerHTML = ``
-        apiActions.getRequest("https://localhost:44306/api/activities", activity =>{
-        app.innerHTML = Success(activity)});
-            console.log(activities.done)
-        })
+
+        apiActions.getRequest(`https://localhost:44306/api/activities/done`, activities =>{
+        app.innerHTML = Success(activities)
+        });
+            // console.log(activity)
+    })
 }
