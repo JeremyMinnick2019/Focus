@@ -8,15 +8,11 @@ export default () =>{
 function displaySuccess(){
     const successBTN = document.querySelector("#successButton");
     const app = document.querySelector("#app");
+    const sign = document.querySelector("#sign")
     successBTN.addEventListener("click", function(){
-        const sign = document.querySelector("#sign")
         sign.innerHTML = ``
-        // if(activtiy.done == true){
-        apiActions.getRequest(`https://localhost:44306/api/activities/`, activities =>{
+        apiActions.getRequest(`https://localhost:44306/api/activities/done`, activities =>{
         app.innerHTML = Success(activities)
         });
-        // }
-
     })
-    
 }

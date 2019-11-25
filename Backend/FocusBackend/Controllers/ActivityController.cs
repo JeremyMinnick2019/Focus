@@ -30,18 +30,18 @@ namespace FocusBackend.Controllers
             //return new List<Activity>();
         }
 
-        // GET api/Activitys/5
+        // GET api/activities/5
         [HttpGet("{id}")]
         public Activity Get(int id)
         {
             return activityRepo.GetById(id);
         }
 
-        //Get api/activities/
-        [HttpGet("{true}")]
-        public Activity GetDone(bool done)
+        //Get api/activities/done
+        [HttpGet("done")]
+        public IEnumerable<Activity> GetDone()
         {
-            return activityRepo.GetByDone(done);
+            return activityRepo.GetByDone();
         }
 
         // POST api/Activitys
