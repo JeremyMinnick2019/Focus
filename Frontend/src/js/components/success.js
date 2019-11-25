@@ -1,5 +1,4 @@
 export default function Success(activities) {
-    // if(activtiy.done == true){
         return `
             ${activities
                 .map(activity => {
@@ -21,4 +20,3 @@ export default function Success(activities) {
             </section>
             `
         }
-    // }

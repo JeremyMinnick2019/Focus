@@ -19,6 +19,7 @@ function pageBuild(){
     navbar();
     footer();
     home();
+    homeAction();
     profileAction();
     successAction();
     categoryAction();
@@ -42,13 +43,18 @@ function footer(){
 
 function home(){
     const sign = document.querySelector("#sign")
-    sign.innerHTML = ``
     const landing = document.querySelector("#app");
+    sign.innerHTML = ``
     landing.innerHTML = displayHome()
+}
+
+function homeAction(){
     const homeBTN = document.querySelector("#homeButton");
+    const sign = document.querySelector("#sign")
+    const landing = document.querySelector("#app");
     homeBTN.addEventListener("click", function(){
     sign.innerHTML = ``
-    document.querySelector("#app").innerHTML = displayHome();    
+    landing.innerHTML = displayHome();    
     })
 }
 
