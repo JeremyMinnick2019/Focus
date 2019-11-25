@@ -9,6 +9,3 @@ function displayProfile(){
     displayUser()
     displayBusiness()
 }
-
-// function businessProfile(){
-// }

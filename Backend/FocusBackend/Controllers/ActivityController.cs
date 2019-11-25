@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FocusBackend.Data;
 using FocusBackend.Models;
 using FocusBackend.Repositories;
 using Microsoft.AspNetCore.Http;
@@ -29,15 +30,15 @@ namespace FocusBackend.Controllers
             //return new List<Activity>();
         }
 
-        // GET api/Activitys/5
+        // GET api/activities/5
         [HttpGet("{id}")]
         public Activity Get(int id)
         {
             return activityRepo.GetById(id);
         }
 
-        //Get api/activities/
-        [HttpGet("{done}")]
+        //Get api/activities/done
+        [HttpGet("done")]
         public IEnumerable<Activity> GetDone()
         {
             return activityRepo.GetByDone();

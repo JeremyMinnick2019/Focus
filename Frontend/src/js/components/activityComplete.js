@@ -12,7 +12,8 @@ export default function ActivityComplete(completedActivity) {
             <input class="complete-activity_importance" type="hidden" value="${completedActivity.importance}">
             <input class="complete-activity_urgency" type="hidden" value="${completedActivity.urgency}">
             <input class="complete-activity_creation" type="hidden" value="${completedActivity.creation}">
-            <input class="complete-activity_completion" type="hidden" value="${completedActivity.completion}">
+            
+            <input class="complete-activity_creation" type="datetime-local"> 
             <input class="complete-activity_categoryId" type="hidden" value="${completedActivity.categoryID}">
             <input class="complete-activity_description" type="hidden" value="${completedActivity.description}">
             <input class="complete-activity" type="checkbox">

@@ -1,5 +1,6 @@
 import Category from "./components/categories"
 import categoryEdit from "./components/categoriesEdit"
+import CategoryActivity from "./components/categoryActivity"
 import apiActions from "./api/apiActions"
 
 export default () =>{
@@ -15,6 +16,15 @@ function displayCategory(){
         apiActions.getRequest("https://localhost:44306/api/categories", categories =>{
             app.innerHTML = Category(categories);
         })
+    })
+    app.addEventListener("click", function(){
+        if(event.target.classList.contains("categoryName")){
+            const categoryId = event.target.parentElement.querySelector(".category_id").value;
+            apiActions.getRequest(`https://localhost:44306/api/categories/${categoryId}`, category =>{
+                app.innerHTML = CategoryActivity(category);
+                console.log(category);
+            })
+        }
     })
 
 app.addEventListener("click", function(){
