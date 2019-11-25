@@ -16,6 +16,7 @@ function displaySuccess(){
         app.innerHTML = Success(activities)
         });
         // }
+
     })
     
 }

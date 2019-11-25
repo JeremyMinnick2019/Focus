@@ -31,7 +31,7 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("add-activity")){
     const addName = event.target.parentElement.querySelector(".add-activity_name").value
     const addDescription = event.target.parentElement.querySelector(".add-activity_description").value
-    const addCreation = Date.now;
+    const addCreation = new Date(document.querySelector('.add-activity_creation').value).toISOString()
     const addCompletion = Date.now;
     const addImportance = event.target.parentElement.querySelector(".add-activity_importance").value
     const addUrgency = event.target.parentElement.querySelector(".add-activity_urgency").value
@@ -129,7 +129,7 @@ app.addEventListener("click", function(){
         const completeName = event.target.parentElement.querySelector(".complete-activity_name").value
         const completeDescription = event.target.parentElement.querySelector(".complete-activity_description").value
         const completeCreation = event.target.parentElement.querySelector(".complete-activity_creation").value
-        const completeCompletion = event.target.parentElement.querySelector(".complete-activity_completion").value 
+        const completeCompletion = new Date(document.querySelector('.complete-activity_creation').value).toISOString()
         const completeImportance = event.target.parentElement.querySelector(".complete-activity_importance").value
         const completeUrgency = event.target.parentElement.querySelector(".complete-activity_urgency").value
         const completeCategoryid = event.target.parentElement.querySelector(".complete-activity_categoryId").value

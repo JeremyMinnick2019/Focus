@@ -18,12 +18,12 @@ namespace FocusBackend.Repositories
 
         }
 
-        //public IEnumerable<Activity> GetByCategoryID(int categoryID)
-        //{
-        //    var activities = db.Activities.Where(p => p.CategoryID == categoryID);
+        public IEnumerable<Activity> GetByCategoryID(int categoryID)
+        {
+            var activities = db.Set<Activity>().Where(p => p.CategoryID == categoryID);
 
-        //    return activities;
-        //}
+            return activities;
+        }
 
 
         public override Activity GetByDone(bool done)
