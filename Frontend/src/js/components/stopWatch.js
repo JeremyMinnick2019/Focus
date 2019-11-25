@@ -1,4 +1,4 @@
-export default function Navbar() {
+export default function StopWatch() {
     return `
     // constructor / variables
     function StopWatch(){

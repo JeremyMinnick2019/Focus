@@ -11,10 +11,11 @@ function displaySuccess(){
     successBTN.addEventListener("click", function(){
         const sign = document.querySelector("#sign")
         sign.innerHTML = ``
-
-        apiActions.getRequest(`https://localhost:44306/api/activities/done`, activities =>{
+        // if(activtiy.done == true){
+        apiActions.getRequest(`https://localhost:44306/api/activities/`, activities =>{
         app.innerHTML = Success(activities)
         });
-            // console.log(activity)
+        // }
     })
+    
 }

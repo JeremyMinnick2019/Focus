@@ -28,11 +28,3 @@ export default function Category(categories) {
     </section>
         `
     }
-        // <select class="add-category_importance" name='importance' placeholder="Add Category Importance">
-        // <option value="1">Important</option>
-        // <option value="2">Not Important</option>
-        // </select>
-        // <select class="add-category_uurgency" name='urgency' placeholder="Add Category Urgency">
-        // <option value="1">Urgent</option>
-        // <option value="2">Not Urgent</option>
-        // </select>
