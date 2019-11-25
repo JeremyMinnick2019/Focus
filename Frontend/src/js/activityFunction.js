@@ -13,7 +13,7 @@ function displayActivity(){
     activityBTN.addEventListener("click", function(){
         const sign = document.querySelector("#sign")
         sign.innerHTML = ``
-        apiActions.getRequest("https://localhost:44306/api/activities", activities =>{
+        apiActions.getRequest("https://localhost:44306/api/activities/suggested", activities =>{
             app.innerHTML = Activity(activities);
         });
     });

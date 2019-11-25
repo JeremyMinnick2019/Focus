@@ -5,7 +5,8 @@ import displaySuccess from "./successFunction"
 import Header from "./components/header"
 import Footer from "./components/footer"
 import Navbar from "./components/navbar"
-import Home from "./components/home"
+import displayHome from "./components/home"
+
 
 
 
@@ -43,11 +44,11 @@ function home(){
     const sign = document.querySelector("#sign")
     sign.innerHTML = ``
     const landing = document.querySelector("#app");
-    landing.innerHTML = Home()
+    landing.innerHTML = displayHome()
     const homeBTN = document.querySelector("#homeButton");
     homeBTN.addEventListener("click", function(){
     sign.innerHTML = ``
-    document.querySelector("#app").innerHTML = Home();    
+    document.querySelector("#app").innerHTML = displayHome();    
     })
 }
 
