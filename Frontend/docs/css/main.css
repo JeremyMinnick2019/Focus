@@ -149,12 +149,19 @@ footer{
 .gridAct{
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(4, 13rem);
-  grid-gap: 1rem 1.5rem;
-  grid-template-rows: repeat(1, 35rem);
+  grid-gap: 5rem 20rem;
+  grid-template-columns: repeat(1, 75rem);
 }
 
-#gridItem, #gridItemA, #grid-Item, .activity
+#Success
+{
+  display: grid;
+  justify-content: center;
+  grid-gap: 5rem 20rem;
+  grid-template-columns: repeat(1, 50rem);
+}
+
+#gridItem, #gridItemA, #grid-Item, .activity, .Success
 {
   border-radius: 5px;
   /* border-radius: 100px; */
@@ -168,9 +175,31 @@ footer{
 #gridItem:hover,
 #gridItemA:hover,
 #grid-Item:hover,
-.activity:hover
+.activity:hover,
+.Success:hover
 {
   box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.658);
+}
+
+.Success
+{
+  display: flex;
+  justify-content: center;
+}
+
+.Success p
+{
+  padding-right: 20px;
+}
+
+.Success h3
+{
+  font-weight: bolder;
+  letter-spacing: 6px;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
+  padding-right: 50px;
+  padding-left: 20px;
 }
 
 #gridItem h3,h5,.edit-user,.delete-user
@@ -185,10 +214,25 @@ footer{
   justify-content: center;
 }
 
-#grid-Item h3,h5,.edit-user,.delete-user
+.activity
 {
   display: flex;
-  justify-content: center;
+  align-items: center;
+}
+
+.activity p
+{
+  padding-right: 20px;
+}
+
+.activity h3
+{
+  font-weight: bolder;
+  letter-spacing: 6px;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
+  padding-right: 50px;
+  padding-left: 20px;
 }
 
 #mainbutton{

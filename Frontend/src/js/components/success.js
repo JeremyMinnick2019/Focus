@@ -4,19 +4,21 @@ export default function Success(activities) {
             ${activities
                 .map(activity => {
                 return `
-                <section class="activity">
+                <section id="Success">
+                <section class="Success">
                     <h3 class="activity_name">${activity.name}</h3>
-                    <h3 class="activity_category">Category: ${activity.category.name}</h3>
+                    <p class="activity_category">Category: ${activity.category.name}</p>
                     <p class="activity_description">${activity.description}</p>
-                    <h3 class="activity_creation">Creation Date: ${activity.creation}</h3>
-                    <h3 class="activity_completion">Completion Date: ${activity.completion}</h3>
+                    <p class="activity_creation">Creation Date: ${activity.creation}</p>
+                    <p class="activity_completion">Completion Date: ${activity.completion}</p>
                     <input class="activity_id" type="hidden" value="${activity.id}">
-                    <h3>Done: ${activity.done}</h3>
+                    <p>Done: ${activity.done}</p>
                 </section>
                 `;
                 
             })
             .join("")}
+            </section>
             `
         }
     // }
