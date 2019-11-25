@@ -38,6 +38,12 @@ namespace FocusBackend.Repositories
             throw new NotImplementedException();
         }
 
+        public virtual IEnumerable<T> GetByImportance()
+        {
+            throw new NotImplementedException();
+        }
+
+
         public void Delete(T entity)
         {
             db.Set<T>().Remove(entity);

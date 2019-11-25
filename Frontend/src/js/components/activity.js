@@ -23,7 +23,20 @@ export default function Activity(activities) {
         
     ${activities
         .map(activity => {
+            // const createDisplay =new Date(activity.creation);
+            // const completeDisplay =new Date(activity.completion);
+            // const createMonth = dateDisplay.getMonth();
+            // const createDay = dateDisplay.getDay()
+            // const createHours = dateDisplay.getHours()
+            // const createMinutes = dateDisplay.getMinutes()
+            // const completeMonth = dateDisplay.getMonth();
+            // const completeDay = dateDisplay.getDay()
+            // const completeHours = dateDisplay.getHours()
+            // const completeMinutes = dateDisplay.getMinutes()
+            
+
             return `
+            
 
             <section class="activity" id="grid-Item">
 

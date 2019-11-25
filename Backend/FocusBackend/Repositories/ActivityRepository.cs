@@ -33,5 +33,10 @@ namespace FocusBackend.Repositories
             //return activity.Where(d => d.Done == true).Include("Category").FirstOrDefault();
             return db.Set<Activity>().Where(d => d.Done == true).Include("Category");
         }
+        public override IEnumerable<Activity> GetByImportance()
+        {   var activities = db.Set<Activity>().Where(p => p.Importance >= 5);
+            return activities.OrderByDescending(activity => activity.Importance);
+            //return db.Set<Activity>().Where(d => d.Done == true).Include("Category");
+        }
     }
 }
