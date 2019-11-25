@@ -5,7 +5,7 @@ export default function User(users) {
             <input class="add-user_name" id="input" type="text" placeholder="Add your name">
             <input class="add-user_email" id="input" type="text" placeholder="Add your email">
             <input class="add-user_phone" id="input" type="text" placeholder="Add your phone number">
-            <button class='add-user' id="button">Submit</button>
+            <button class='add-user' id="mainbutton">Submit</button>
         </section>
         
     ${users
@@ -16,8 +16,8 @@ export default function User(users) {
                 <h5>${user.email}</h5>
                 <h5>${user.phone}</h5>
                 <input class="user_id" type="hidden" value="${user.id}">
-                <button class="edit-user" id="button">Edit</button>
-                <button class="delete-user" id="button">Delete</button>
+                <button class="edit-user" id="mainbutton">Edit</button>
+                <button class="delete-user" id="mainbutton">Delete</button>
             </section>
             `;
         })

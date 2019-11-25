@@ -12,7 +12,7 @@ export default function categoryEdit(editCategory) {
             <option value="1">Small Business</option>
             <option value="2">Fish Shop</option>
             </select>   
-            <button class="update-category_submit">Update</button>
+            <button class="update-category_submit" id="mainbutton">Update</button>
             <input class="update-category_id" type="hidden" value="${editCategory.id}">
         </section>
     `

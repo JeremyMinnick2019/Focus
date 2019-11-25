@@ -18,7 +18,7 @@ export default function Activity(activities) {
                 <option value="8">Small Tasks</option>
             </select>
             <textarea rows="5" cols="20" class="add-activity_description" id="input" placeholder="Add an Activity Description"></textarea>
-            <button class='add-activity' id="button">Submit</button>
+            <button class='add-activity' id="mainbutton">Submit</button>
         </section>
         
     ${activities
@@ -28,11 +28,11 @@ export default function Activity(activities) {
             <section class="activity" id="grid-Item">
 
                 <h3 class="activity_name">${activity.name}</h3>
-                <h3 class="activity_importance">${activity.importance}</h3>
-                <h3 class="activity_urgency">${activity.urgency}</h3>
-                <h2 class="activity_description">${activity.description}</h2>
-                <h3 class="activity_creation">${activity.creation}</h3>
-                <h3 class="activity_completion">${activity.completion}</h3>
+                <p class="activity_importance">${activity.importance}</p>
+                <p class="activity_urgency">${activity.urgency}</p>
+                <p class="activity_description">${activity.description}</p>
+                <p class="activity_creation">${activity.creation}</p>
+                <p class="activity_completion">${activity.completion}</p>
 
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">

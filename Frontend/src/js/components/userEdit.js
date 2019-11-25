@@ -10,7 +10,7 @@ export default function UserEdit(editUser) {
             <input class="update-user_name" type"text" value="${editUser.name}">
             <input class="update-user_email" type"text" value="${editUser.email}">
             <input class="update-user_phone" type"text"value="${editUser.phone}">
-            <button class="update-user_submit">Update</button>
+            <button class="update-user_submit" id="mainbutton">Update</button>
             <input class="update-user_id" type="hidden" value="${editUser.id}">
         </section>
     `
