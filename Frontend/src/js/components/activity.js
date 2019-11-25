@@ -46,4 +46,5 @@ export default function Activity(activities) {
             })
             .join("")}
     </section>
+    `
 }

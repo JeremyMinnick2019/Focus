@@ -19,7 +19,7 @@ function pageBuild(){
     footer();
     home();
     profileAction();
-    // successAction();
+    successAction();
     categoryAction();
     activityAction();
 }
@@ -55,9 +55,9 @@ function profileAction(){
     displayProfile()
 }
 
-// function successAction(){
-//     displaySuccess()
-// }
+function successAction(){
+    displaySuccess()
+}
 
 function categoryAction(){
     displayCategory()
