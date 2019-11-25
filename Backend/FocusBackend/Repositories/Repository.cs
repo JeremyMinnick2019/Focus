@@ -38,7 +38,7 @@ namespace FocusBackend.Repositories
             throw new NotImplementedException();
         }
 
-        public virtual IEnumerable<T> GetByImportance()
+        public virtual IEnumerable<T> GetByRank()
         {
             throw new NotImplementedException();
         }

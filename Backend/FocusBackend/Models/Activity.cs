@@ -16,6 +16,7 @@ namespace FocusBackend.Models
         public int Urgency { get; set; }
         public bool Done { get; set; }
         public int CategoryID { get; set; }
+        public int Rank { get; set;}
         
         public virtual Category Category { get; set; }
 
@@ -27,6 +28,7 @@ namespace FocusBackend.Models
             Creation = creation;
             Completion = completion;
             Importance = importance;
+            Rank = importance + urgency;
             Urgency = urgency;
             Done = done;
             CategoryID = categoryID;
