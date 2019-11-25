@@ -154,7 +154,15 @@ footer{
   grid-template-rows: repeat(1, 35rem);
 }
 
-#gridItem, #gridItemA, #grid-Item, .activity
+#Success
+{
+  display: grid;
+  justify-content: center;
+  grid-gap: 5rem 20rem;
+  grid-template-columns: repeat(1, 50rem);
+}
+
+#gridItem, #gridItemA, #grid-Item, .activity, .Success
 {
   border-radius: 5px;
   /* border-radius: 100px; */
@@ -168,9 +176,27 @@ footer{
 #gridItem:hover,
 #gridItemA:hover,
 #grid-Item:hover,
-.activity:hover
+.activity:hover,
+.Success:hover
 {
   box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.658);
+}
+
+.Success
+{
+  display: flex;
+  justify-content: center;
+}
+
+.Success p
+{
+  padding-right: 20px;
+}
+
+.Success h3
+{
+  padding-right: 50px;
+  padding-left: 20px;
 }
 
 #gridItem h3,h5,.edit-user,.delete-user

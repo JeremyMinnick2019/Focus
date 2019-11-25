@@ -25,7 +25,7 @@ export default function Activity(activities) {
         .map(activity => {
             return `
 
-            <section class="activity" id="grid-Item">
+            <section class="activity">
 
                 <h3 class="activity_name">${activity.name}</h3>
                 <p class="activity_importance">${activity.importance}</p>
