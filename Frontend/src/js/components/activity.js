@@ -36,7 +36,7 @@ export default function Activity(activities) {
 
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
-                <h3 class="activity_done">Completed: ${activity.done}</h3>
+                <p class="activity_done">Completed: ${activity.done}</p>
                 <button class="mark-complete-activity" id="button">Mark Complete</button>
                 <button class="edit-activity" id="button">Edit</button>
                 <button class="delete-activity" id="button">Delete</button>
