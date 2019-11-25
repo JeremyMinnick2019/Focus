@@ -10,7 +10,7 @@ namespace FocusBackend.Repositories
         IEnumerable<T> GetAll();
         T GetById(int id);
         IEnumerable<T> GetByDone();
-        IEnumerable<T> GetByImportance();
+        IEnumerable<T> GetByRank();
         void Create(T entity);
         void Delete(T entity);
         void Update(T entity);
