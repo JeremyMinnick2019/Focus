@@ -1,4 +1,5 @@
-export default function stopWatch() {
+export default function StopWatch() {
+
     return `
     // constructor / variables
     function StopWatch(){

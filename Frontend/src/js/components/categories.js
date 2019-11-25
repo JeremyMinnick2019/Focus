@@ -14,7 +14,7 @@ export default function Category(categories) {
 
     ${categories
         .map(category => {
-            return`
+            return `
             <section class="category" id="grid-Item">
                 <h3 class ="categoryName">${category.name}</h3>
                 <p>${category.description}</p>

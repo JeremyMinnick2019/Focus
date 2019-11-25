@@ -1,7 +1,5 @@
 export default function Navbar() {
     return `
-    
-    
     <nav class='navbar'>
         <ul>
             <li><a id="homeButton">Home</a></li>
