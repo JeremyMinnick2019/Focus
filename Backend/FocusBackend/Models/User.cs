@@ -15,6 +15,8 @@ namespace FocusBackend.Models
 
         public virtual ICollection<Business> Businesses { get; set; }
 
+        public Game Game { get; set; }
+
         public User(int id, string name, string email, string phone, string image)
         {
             ID = id;
