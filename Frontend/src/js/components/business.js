@@ -7,15 +7,15 @@ export default function Business(businesses) {
             <h3 class = "businessName">${business.name}</h3>
             <h5>${business.industry}</h5>
             <input class="business_id" type="hidden" value="${business.id}">
+            <button class="edit-business" id="mainbutton">Edit</button>
             </section>
             `;
         })
         .join("")}
         </section>
         `
-        // <button class="edit-business" id="mainbutton">Edit</button>
         // <button class="delete-business" id="mainbutton">Delete</button>
-        
+
     // <section class="gridMain">
     //     <section class="businessAdd" id="gridItem">
     //         <input class="add-business_name" id="input" type="text" placeholder="Add your business">

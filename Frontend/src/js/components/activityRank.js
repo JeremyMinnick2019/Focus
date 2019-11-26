@@ -25,9 +25,9 @@ export default function ActivityRank(activities) {
                 <p class="activity_done">Completed: ${activity.done}</p>
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
-                <button class="mark-complete-activity" id="button">Mark Complete</button>
-                <button class="edit-activity" id="button">Edit</button>
-                <button class="delete-activity" id="button">Delete</button>
+                <button class="mark-complete-activity" id="mainbutton">Mark Complete</button>
+                <button class="edit-activity" id="mainbutton">Edit</button>
+                <button class="delete-activity" id="mainbutton">Delete</button>
             </section>
                 `;
             })
