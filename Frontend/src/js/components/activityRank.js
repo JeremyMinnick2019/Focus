@@ -19,7 +19,19 @@ export default function ActivityRank(activities) {
 
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
-                <button class="mark-complete-activity" id="mainbutton">Mark Complete</button>
+                <section class="complete-activity">
+                    <input class="complete-activity_name" type="hidden" value="${activity.name}">
+                    <input class="complete-activity_importance" type="hidden" value="${activity.importance}">
+                    <input class="complete-activity_urgency" type="hidden" value="${activity.urgency}">
+                    <input class="complete-activity_creation" type="hidden" value="${activity.creation}">
+                    
+                    <p class="activity_completion">Time Completed: ${timeCompleted}</p>
+                    <input class="complete-activity_categoryId" type="hidden" value="${activity.categoryID}">
+                    <input class="complete-activity_description" type="hidden" value="${activity.description}">
+                    <input class="complete-activity" type="checkbox" <p>Mark Complete</p>
+                    <input class="complete-activity_id" type="hidden" value="${activity.id}">
+                    <input class="complete-activity_done" type="hidden" value="${activity.done}">
+                </section>
                 <button class="edit-activity" id="mainbutton">Edit</button>
                 <button class="delete-activity" id="mainbutton">Delete</button>
             </section>
