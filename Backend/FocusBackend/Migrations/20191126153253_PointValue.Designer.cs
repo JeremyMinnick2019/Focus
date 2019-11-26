@@ -4,14 +4,16 @@ using FocusBackend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FocusBackend.Migrations
 {
     [DbContext(typeof(FocusContext))]
-    partial class FocusContextModelSnapshot : ModelSnapshot
+    [Migration("20191126153253_PointValue")]
+    partial class PointValue
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,20 +47,16 @@ namespace FocusBackend.Migrations
 
                     b.Property<int>("Urgency");
 
-                    b.Property<int?>("UserID");
-
                     b.HasKey("ID");
 
                     b.HasIndex("CategoryID");
 
-                    b.HasIndex("UserID");
-
                     b.ToTable("Activities");
 
                     b.HasData(
-                        new { ID = 1, CategoryID = 2, Completion = new DateTime(2019, 11, 26, 10, 46, 5, 380, DateTimeKind.Local), Creation = new DateTime(2019, 11, 26, 10, 46, 5, 379, DateTimeKind.Local), Description = "Outsourced From Temp Agency", Done = false, Importance = 9, Name = "Pay Workers", Points = 180, Rank = 18, Urgency = 9 },
-                        new { ID = 2, CategoryID = 6, Completion = new DateTime(2019, 11, 26, 10, 46, 5, 381, DateTimeKind.Local), Creation = new DateTime(2019, 11, 26, 10, 46, 5, 381, DateTimeKind.Local), Description = "Follow Up With Prospects", Done = false, Importance = 10, Name = "Sales Planning", Points = 130, Rank = 13, Urgency = 3 },
-                        new { ID = 3, CategoryID = 8, Completion = new DateTime(2019, 11, 26, 10, 46, 5, 381, DateTimeKind.Local), Creation = new DateTime(2019, 11, 26, 10, 46, 5, 381, DateTimeKind.Local), Description = "Get More Stamps For Pay Checks", Done = false, Importance = 4, Name = "Buy Stamps", Points = 100, Rank = 10, Urgency = 6 }
+                        new { ID = 1, CategoryID = 2, Completion = new DateTime(2019, 11, 26, 10, 32, 53, 111, DateTimeKind.Local), Creation = new DateTime(2019, 11, 26, 10, 32, 53, 110, DateTimeKind.Local), Description = "Outsourced From Temp Agency", Done = false, Importance = 9, Name = "Pay Workers", Points = 180, Rank = 18, Urgency = 9 },
+                        new { ID = 2, CategoryID = 6, Completion = new DateTime(2019, 11, 26, 10, 32, 53, 111, DateTimeKind.Local), Creation = new DateTime(2019, 11, 26, 10, 32, 53, 111, DateTimeKind.Local), Description = "Follow Up With Prospects", Done = false, Importance = 10, Name = "Sales Planning", Points = 130, Rank = 13, Urgency = 3 },
+                        new { ID = 3, CategoryID = 8, Completion = new DateTime(2019, 11, 26, 10, 32, 53, 111, DateTimeKind.Local), Creation = new DateTime(2019, 11, 26, 10, 32, 53, 111, DateTimeKind.Local), Description = "Get More Stamps For Pay Checks", Done = false, Importance = 4, Name = "Buy Stamps", Points = 100, Rank = 10, Urgency = 6 }
                     );
                 });
 
@@ -146,10 +144,6 @@ namespace FocusBackend.Migrations
                         .WithMany("Activities")
                         .HasForeignKey("CategoryID")
                         .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("FocusBackend.Models.User", "User")
-                        .WithMany("Activities")
-                        .HasForeignKey("UserID");
                 });
 
             modelBuilder.Entity("FocusBackend.Models.Business", b =>

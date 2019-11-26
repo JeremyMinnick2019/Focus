@@ -58,6 +58,14 @@ namespace FocusBackend.Controllers
             return activityRepo.GetByNotDone();
         }
 
+
+        //Get api/activities/totalPoints
+        [HttpGet("totalPoints")]
+        public int GetPoints()
+        {
+            return activityRepo.GetUserPoints();
+        }
+
         // POST api/Activitys
         [HttpPost]
         public IEnumerable<Activity> Post([FromBody] Activity Activity)

@@ -49,6 +49,11 @@ namespace FocusBackend.Repositories
             throw new NotImplementedException();
         }
 
+        public virtual int GetUserPoints()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(T entity)
         {
             db.Set<T>().Remove(entity);

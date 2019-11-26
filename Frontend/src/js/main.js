@@ -6,6 +6,8 @@ import Header from "./components/header"
 import Footer from "./components/footer"
 import Navbar from "./components/navbar"
 import displayHome from "./components/home"
+import Point from "./components/points"
+import apiActions from "./api/apiActions"
 
 
 export default () => {
@@ -18,6 +20,7 @@ function pageBuild(){
     footer();
     home();
     homeAction();
+    userPoints();
     profileAction();
     successAction();
     categoryAction();
@@ -72,4 +75,11 @@ function categoryAction(){
 
 function activityAction(){
     displayActivity()
+}
+
+function userPoints(){
+    const total = document.querySelector("#points");
+        apiActions.getRequest("https://localhost:44306/api/activities/totalPoints", points =>{
+            total.innerHTML = Point(points);
+        })
 }

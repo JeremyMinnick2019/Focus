@@ -17,7 +17,7 @@ namespace FocusBackend.Models
         public bool Done { get; set; }
         public int CategoryID { get; set; }
         public int Rank { get; set;}
-        
+
         public virtual Category Category { get; set; }
 
         public Activity(int id, string name, string description, DateTime creation, DateTime completion, int importance, int urgency, bool done, int categoryID)
