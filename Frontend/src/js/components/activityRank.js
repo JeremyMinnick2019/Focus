@@ -22,7 +22,6 @@ export default function ActivityRank(activities) {
                 <p class="activity_urgency">Urgency: ${activity.urgency}</p>
                 <p class="activity_creation">Time Created: ${activity.creation}</p>
                 <p class="activity_completion">Time ${activity.completion}</p>
-                <p class="activity_done">Completed: ${activity.done}</p>
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
                 <button class="mark-complete-activity" id="mainbutton">Mark Complete</button>
