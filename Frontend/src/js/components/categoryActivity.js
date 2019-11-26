@@ -1,6 +1,6 @@
 export default function CategoryActivity(category){
     return `
-    <section clas="category">
+    <section class="category">
     <h3>Category ${category.name}</h3>
     </section>
 
