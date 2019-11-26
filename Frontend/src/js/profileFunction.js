@@ -4,19 +4,32 @@ import Business from "./components/business"
 import businessEdit from "./components/businessEdit"
 import HeaderPro from "./components/headerPro"
 import apiActions from "./api/apiActions"
+import Point from "./components/points"
 
 export default () =>{
     displayUser();
     displayHeader();
     displayBusiness();
+    userPoints();
 }
+
 
 function displayHeader(){
     const userBTN = document.querySelector("#profileButton");
     const head = document.querySelector("#header");
     userBTN.addEventListener("click", function(){
-            head.innerHTML = HeaderPro();
+        head.innerHTML = HeaderPro();
+    })
+}
+
+function userPoints(){
+    const userBTN = document.querySelector("#profileButton");
+    const total = document.querySelector("#points");
+    userBTN.addEventListener("click", function(){
+        apiActions.getRequest("https://localhost:44306/api/activities/totalPoints", points =>{
+            total.innerHTML = Point(points);
         })
+    })
 }
 
 function displayUser(){

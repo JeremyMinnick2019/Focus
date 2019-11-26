@@ -256,7 +256,12 @@ footer{
   margin: 10px;
 }
 
-
 #input{
   border-radius: .5rem;
+}
+
+#totalP{
+  border: .125rem solid goldenrod;
+  border-radius: .5rem;
+  font-size: large;
 }
