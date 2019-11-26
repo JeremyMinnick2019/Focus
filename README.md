@@ -4,5 +4,5 @@ Many small business owners, particularly those with businesses that have become 
 
 Focus is an API app designed to help small business owners organize their responsibilities into categories of activities and then activities themselves.
 
-The user will able to create, read, add, edit and delete activities, as well as to cross off checklist items. This app will help the small bsiness owner to eliminate distractions, group all daily and longer term objectives in one place, and allow tracking for all activities. 
+The user will able to create, read, add, edit and delete activities, as well as to check off checklist items. This app will help the small business owner to eliminate distractions, group all daily and longer term objectives in one place, and allow tracking for all activities. 
   
