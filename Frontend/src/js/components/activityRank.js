@@ -1,18 +1,11 @@
+import moment from "moment";
+
 export default function ActivityRank(activities) {
     return `
     ${activities
         .map(activity => {
-            // const createDisplay =new Date(activity.creation);
-            // const completeDisplay =new Date(activity.completion);
-            // const createMonth = dateDisplay.getMonth();
-            // const createDay = dateDisplay.getDay()
-            // const createHours = dateDisplay.getHours()
-            // const createMinutes = dateDisplay.getMinutes()
-            // const completeMonth = dateDisplay.getMonth();
-            // const completeDay = dateDisplay.getDay()
-            // const completeHours = dateDisplay.getHours()
-            // const completeMinutes = dateDisplay.getMinutes()
-            
+            var timeCreated = moment(activity.creation).format('MMMM Do YYYY, h:mm a');
+            var timeCompleted = moment(activity.completion).format('MMMM Do YYYY, h:mm a');
 
             return `
             <section class="activity">
@@ -20,9 +13,8 @@ export default function ActivityRank(activities) {
                 <p class="activity_description">Description: ${activity.description}</p>
                 <p class="activity_importance">Importance: ${activity.importance}</p>
                 <p class="activity_urgency">Urgency: ${activity.urgency}</p>
-                <p class="activity_creation">Time Created: ${activity.creation}</p>
-                <p class="activity_completion">Time ${activity.completion}</p>
-                <p class="activity_done">Completed: ${activity.done}</p>
+                <p class="activity_creation">Time Created:<br> ${timeCreated}</p>
+                <p class="activity_completion">Time ${timeCompleted}</p>
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
                 <button class="mark-complete-activity" id="mainbutton">Mark Complete</button>
