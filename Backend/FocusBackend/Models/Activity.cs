@@ -17,6 +17,7 @@ namespace FocusBackend.Models
         public bool Done { get; set; }
         public int CategoryID { get; set; }
         public int Rank { get; set;}
+        public int Points { get; set; }
         
         public virtual Category Category { get; set; }
 
@@ -29,6 +30,7 @@ namespace FocusBackend.Models
             Completion = completion;
             Importance = importance;
             Rank = importance + urgency;
+            Points = (importance + urgency) * 10;
             Urgency = urgency;
             Done = done;
             CategoryID = categoryID;
