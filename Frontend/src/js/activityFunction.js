@@ -165,14 +165,20 @@ app.addEventListener("click", function(){
             categoryID: completeCategoryid,
             done: completeDone
         }
+        // apiActions.putRequest(`https://localhost:44306/api/activities/totalPoints`,
+        // activityData,
+        // apiActions.getRequest("https://localhost:44306/api/activities/totalPoints", points =>{
+        //     total.innerHTML = Point(points);
+        // })       
+        // )
         apiActions.putRequest(`https://localhost:44306/api/activities/${completeActivityid}`,
             activityData,
             activities => {
                 console.log(activities);
                 apiActions.getRequest(`https://localhost:44306/api/activities/notdone`, activities =>{
-                    app.innerHTML = Activity(activities);
-                });
-            }
+                app.innerHTML = Activity(activities);
+            });
+        }
         )}
-})
+    })
 }

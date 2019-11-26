@@ -15,7 +15,8 @@ export default function User(users) {
         })
         .join("")}
         </section>
-        `
+    `
+}
         // <button class="delete-user" id="mainbutton">Delete</button>
 
     // <section class="gridMain">
@@ -25,4 +26,3 @@ export default function User(users) {
     //         <input class="add-user_phone" id="input" type="text" placeholder="Add your phone number">
     //         <button class='add-user' id="mainbutton">Submit</button>
     //     </section>
-}
