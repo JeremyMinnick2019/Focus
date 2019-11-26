@@ -37,6 +37,18 @@ function displayActivity(){
 
     }
 })
+
+app.addEventListener("click", function(){
+    if(event.target.classList.contains("activityName")){
+    const activityid = event.target.parentElement.querySelector(".activity_id").value;
+    apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, activities => {
+        document.querySelector("#app").innerHTML = Activity(activities);
+        console.log(activities);
+    })
+
+}
+})
+
 app.addEventListener("click", function(){
     if(event.target.classList.contains("add-activity")){
     const addName = event.target.parentElement.querySelector(".add-activity_name").value

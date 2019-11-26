@@ -1,8 +1,9 @@
 export default function Navbar() {
     return `
     <nav class='navbar'>
+    <div id="Logo">Focu$</div>
         <ul>
-            <li><a id="Logo">Focu$</a></li>
+            
             <li><a id="homeButton">Home</a></li>
             <li><a id="profileButton">Profile</a></li>
             <li><a id="successButton">Success</a></li>
