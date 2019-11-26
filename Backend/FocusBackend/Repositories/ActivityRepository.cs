@@ -18,6 +18,11 @@ namespace FocusBackend.Repositories
 
         }
 
+        public override IEnumerable<Activity> GetAll()
+        {
+            var activities = db.Set<Activity>().Where(p => p.ID >= 0);
+            return activities.OrderBy(activity => activity.ID);
+        }
         public IEnumerable<Activity> GetByCategoryID(int categoryID)
         {
             var activities = db.Set<Activity>().Where(p => p.CategoryID == categoryID);
@@ -39,8 +44,8 @@ namespace FocusBackend.Repositories
 
         public override IEnumerable<Activity> GetByRank()
         {
-            var activities = db.Set<Activity>().Where(p => p.Rank >= 11);
-            return activities.OrderBy(activity => activity.Rank);
+            var activities = db.Set<Activity>();
+            return activities.OrderByDescending(activity => activity.Rank).Take(3);
         }
 
         public override int GetUserPoints()
