@@ -181,8 +181,13 @@ footer{
   box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.658);
 }
 
+.activity, .business, .category, .user, .activityAdd{
+  border: .125rem solid var(--navText);
+}
+
 .Success
 {
+  border: .125rem solid var(--navText);
   display: flex;
   justify-content: center;
 }
