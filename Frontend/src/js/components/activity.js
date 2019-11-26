@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export default function Activity(activities) {
     return `
     <section class="gridAct">
@@ -33,7 +35,8 @@ export default function Activity(activities) {
             // const completeDay = dateDisplay.getDay()
             // const completeHours = dateDisplay.getHours()
             // const completeMinutes = dateDisplay.getMinutes()
-            
+            var timeCreated = moment(activity.creation).format('MMMM Do YYYY, h:mm a');
+            var timeCompleted = moment(activity.completion).format('MMMM Do YYYY, h:mm a');
 
             return `
             
@@ -44,9 +47,8 @@ export default function Activity(activities) {
                 <p class="activity_description">Description: ${activity.description}</p>
                 <p class="activity_importance">Importance: ${activity.importance}</p>
                 <p class="activity_urgency">Urgency: ${activity.urgency}</p>
-                <p class="activity_creation">Time Created: ${activity.creation}</p>
-                <p class="activity_completion">Time Completed: ${activity.completion}</p>
-                <p class="activity_done">Completed: ${activity.done}</p>
+                <p class="activity_creation">Time Created: ${timeCreated}</p>
+                <p class="activity_completion">Time Completed: ${timeCompleted}</p>
 
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
