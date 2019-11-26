@@ -4,6 +4,7 @@ export default function Business(businesses) {
         .map(business => {
             return `
             <section class="business"  id="gridItemA">
+            <h2>Business Profile</h2>
             <h3 class = "businessName">${business.name}</h3>
             <h5>${business.industry}</h5>
             <input class="business_id" type="hidden" value="${business.id}">

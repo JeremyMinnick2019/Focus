@@ -43,21 +43,23 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("add-activity")){
     const addName = event.target.parentElement.querySelector(".add-activity_name").value
     const addDescription = event.target.parentElement.querySelector(".add-activity_description").value
-    const addCreation = new Date(document.querySelector('.add-activity_creation').value).toISOString()
-    const addCompletion = Date.now;
+    const addCreation = new Date();
+    const addCompletion = new Date();
     const addImportance = event.target.parentElement.querySelector(".add-activity_importance").value
     const addUrgency = event.target.parentElement.querySelector(".add-activity_urgency").value
+    const addRank = parseInt(addImportance) + parseInt(addUrgency)
     const addCategoryid = event.target.parentElement.querySelector(".add-activity_categoryId").value
     console.log(addName, addDescription, addImportance, addUrgency, addCategoryid)
     apiActions.postRequest
     (
-        "https://localhost:44306/api/activities",{
+        "https://localhost:44306/api/activities/notdone",{
         name: addName,
         description: addDescription,
         creation: addCreation,
         completion: addCompletion,
         importance: addImportance,
         urgency: addUrgency,
+        rank: addRank,
         categoryID: addCategoryid
         },
 
@@ -101,6 +103,7 @@ app.addEventListener("click", function() {
         const updateCompletion = event.target.parentElement.querySelector(".update-activity_completion").value 
         const updateImportance = event.target.parentElement.querySelector(".update-activity_importance").value
         const updateUrgency = event.target.parentElement.querySelector(".update-activity_urgency").value
+        const updateRank = parseInt(updateImportance) + parseInt(updateUrgency)
         const updateCategoryid = event.target.parentElement.querySelector(".update-activity_categoryId").value
         const updateDone = event.target.parentElement.querySelector(".update-activity_done").value
         console.log(updateName, updateImportance, updateCategoryid)
@@ -113,6 +116,7 @@ app.addEventListener("click", function() {
             completion: updateCompletion,
             importance: updateImportance,
             urgency: updateUrgency,
+            rank: updateRank,
             categoryID: updateCategoryid,
             done: updateDone
         }
@@ -143,7 +147,7 @@ app.addEventListener("click", function(){
         const completeName = event.target.parentElement.querySelector(".complete-activity_name").value
         const completeDescription = event.target.parentElement.querySelector(".complete-activity_description").value
         const completeCreation = event.target.parentElement.querySelector(".complete-activity_creation").value
-        const completeCompletion = new Date(document.querySelector('.complete-activity_creation').value).toISOString()
+        const completeCompletion = new Date();
         const completeImportance = event.target.parentElement.querySelector(".complete-activity_importance").value
         const completeUrgency = event.target.parentElement.querySelector(".complete-activity_urgency").value
         const completeCategoryid = event.target.parentElement.querySelector(".complete-activity_categoryId").value

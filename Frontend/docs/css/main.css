@@ -213,7 +213,7 @@ footer{
   justify-content: center;
 }
 
-#gridItemA h3,h5,.edit-user,.delete-user
+#gridItemA h2,h3,h5,.edit-user,.delete-user
 {
   display: flex;
   justify-content: center;
@@ -264,4 +264,9 @@ footer{
   border: .125rem solid goldenrod;
   border-radius: .5rem;
   font-size: large;
+}
+
+.checkBox {
+  min-width: 15px;
+  min-height: 15px;
 }

@@ -1,5 +1,5 @@
 export default function Header(){
   return `
-            <h1>FOCU$</h1>
+            <h1>PRIORITI$E</h1>
         `
 }

@@ -1,5 +1,5 @@
 import Success from "./components/success"
-import Header from "./components/header"
+import HeaderSuc from "./components/headerSuc"
 import apiActions from "./api/apiActions"
 
 export default () =>{
@@ -11,7 +11,7 @@ function displayHeader(){
     const successBTN = document.querySelector("#successButton");
     const head = document.querySelector("#header");
     successBTN.addEventListener("click", function(){
-            head.innerHTML = Header();
+            head.innerHTML = HeaderSuc();
         })
 }
 
