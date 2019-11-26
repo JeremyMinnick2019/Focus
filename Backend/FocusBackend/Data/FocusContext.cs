@@ -17,7 +17,7 @@ namespace FocusBackend.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=FocusPocus;Trusted_Connection=True;";
+            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=FocusDB;Trusted_Connection=True;";
             optionsBuilder.UseSqlServer(connectionString);
             //.UseLazyLoadingProxies();
             base.OnConfiguring(optionsBuilder);
@@ -25,11 +25,11 @@ namespace FocusBackend.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasData(
-                new User(1, "John Smith", "JSmith@MyEmail.com", "14404541980", "Image")
+                new User(1, "Bubba Gump", "BGump@MyEmail.com", "14404541980", "Image")
                 );
                 
             modelBuilder.Entity<Business>().HasData(
-                   new Business(1, "Small Business", "Retail", "Image", 1)
+                   new Business(1, "Bertha and Bubba's Seafood Palace", "Restaurant", "Image", 1)
                    );
 
             modelBuilder.Entity<Category>().HasData(

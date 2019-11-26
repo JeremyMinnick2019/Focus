@@ -8,8 +8,6 @@ import Navbar from "./components/navbar"
 import displayHome from "./components/home"
 
 
-
-
 export default () => {
     pageBuild();
 }
@@ -42,24 +40,26 @@ function footer(){
 }
 
 function home(){
-    const sign = document.querySelector("#sign")
     const landing = document.querySelector("#app");
-    sign.innerHTML = ``
+    const sign = document.querySelector("#sign")
     landing.innerHTML = displayHome()
+    sign.innerHTML = ``
 }
 
 function homeAction(){
     const homeBTN = document.querySelector("#homeButton");
     const sign = document.querySelector("#sign")
+    const head = document.querySelector("#header");
     const landing = document.querySelector("#app");
     homeBTN.addEventListener("click", function(){
-    sign.innerHTML = ``
-    landing.innerHTML = displayHome();    
+        head.innerHTML = Header();
+        landing.innerHTML = displayHome();    
+        sign.innerHTML = ``
     })
 }
 
 function profileAction(){
-    displayProfile()
+    displayProfile();
 }
 
 function successAction(){

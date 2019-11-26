@@ -1,10 +1,20 @@
 import Category from "./components/categories"
 import categoryEdit from "./components/categoriesEdit"
 import CategoryActivity from "./components/categoryActivity"
+import HeaderCat from "./components/headerCat"
 import apiActions from "./api/apiActions"
 
 export default () =>{
-    displayCategory()
+    displayCategory();
+    displayHeader();
+}
+
+function displayHeader(){
+    const categoryBTN = document.querySelector("#categoryButton");
+    const head = document.querySelector("#header");
+    categoryBTN.addEventListener("click", function(){
+            head.innerHTML = HeaderCat();
+        })
 }
 
 function displayCategory(){

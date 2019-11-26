@@ -2,11 +2,21 @@ import User from "./components/user"
 import UserEdit from "./components/userEdit"
 import Business from "./components/business"
 import businessEdit from "./components/businessEdit"
+import HeaderPro from "./components/headerPro"
 import apiActions from "./api/apiActions"
 
 export default () =>{
-    displayUser()
-    displayBusiness()
+    displayUser();
+    displayHeader();
+    displayBusiness();
+}
+
+function displayHeader(){
+    const userBTN = document.querySelector("#profileButton");
+    const head = document.querySelector("#header");
+    userBTN.addEventListener("click", function(){
+            head.innerHTML = HeaderPro();
+        })
 }
 
 function displayUser(){
