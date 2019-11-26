@@ -4,6 +4,7 @@ export default function User(users) {
         .map(user => {
             return `
             <section class="user" id="gridItemA">
+            <h2>User Profile</h2>
             <h3 class="userName">${user.name}</h3>
             <h5>${user.email}</h5>
             <h5>${user.phone}</h5>
