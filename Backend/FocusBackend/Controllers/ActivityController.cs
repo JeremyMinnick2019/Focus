@@ -66,6 +66,14 @@ namespace FocusBackend.Controllers
             return activityRepo.GetAll();
         }
 
+        // POST api/activities/notdone
+        [HttpPost("notdone")]
+        public IEnumerable<Activity> PostNotDone([FromBody] Activity Activity)
+        {
+            activityRepo.Create(Activity);
+            return activityRepo.GetByNotDone();
+        }
+
         // PUT api/Activitys/5
         [HttpPut("{id}")]
         public IEnumerable<Activity> Put([FromBody] Activity Activity)

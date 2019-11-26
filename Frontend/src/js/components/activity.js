@@ -1,6 +1,7 @@
 import moment from "moment";
 
 export default function Activity(activities) {
+    var newTimeCreated = moment().format('MMMM Do YYYY, h:mm a');
     return `
     <section class="gridAct">
         <section class="activityAdd" id="grid-Item">
@@ -15,7 +16,6 @@ export default function Activity(activities) {
                 <option value="7">Operations</option>
                 <option value="8">Small Tasks</option>
             </select>
-            <input class="add-activity_creation" type="datetime-local"> 
             <input class="add-activity_importance" id="input" type="text" placeholder="Add an Activity Importance 1-10">
             <input class="add-activity_urgency" id="input" type="text" placeholder="Add an Activity Urgency 1-10">
             <textarea rows="5" cols="20" class="add-activity_description" id="input" placeholder="Add an Activity Description"></textarea>
@@ -41,19 +41,19 @@ export default function Activity(activities) {
 
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
-                <section class="complete-activity">
-                    <input class="complete-activity_name" type="hidden" value="${activity.name}">
-                    <input class="complete-activity_importance" type="hidden" value="${activity.importance}">
-                    <input class="complete-activity_urgency" type="hidden" value="${activity.urgency}">
-                    <input class="complete-activity_creation" type="hidden" value="${activity.creation}">
-                    
-                    <p class="activity_completion">Time Completed: ${timeCompleted}</p>
-                    <input class="complete-activity_categoryId" type="hidden" value="${activity.categoryID}">
-                    <input class="complete-activity_description" type="hidden" value="${activity.description}">
-                    <input class="complete-activity" type="checkbox" <p>Mark Complete</p>
-                    <input class="complete-activity_id" type="hidden" value="${activity.id}">
-                    <input class="complete-activity_done" type="hidden" value="${activity.done}">
-                </section>
+                    <section class="complete-activity">
+                        <input class="complete-activity_name" type="hidden" value="${activity.name}">
+                        <input class="complete-activity_importance" type="hidden" value="${activity.importance}">
+                        <input class="complete-activity_urgency" type="hidden" value="${activity.urgency}">
+                        <input class="complete-activity_creation" type="hidden" value="${activity.creation}">
+                        
+                        <p class="activity_completion">Time Completed: ${timeCompleted}</p>
+                        <input class="complete-activity_categoryId" type="hidden" value="${activity.categoryID}">
+                        <input class="complete-activity_description" type="hidden" value="${activity.description}">
+                        <input class="complete-activity checkBox" type="checkbox" <p>Mark Complete</p>
+                        <input class="complete-activity_id" type="hidden" value="${activity.id}">
+                        <input class="complete-activity_done" type="hidden" value="${activity.done}">
+                    </section>
                 <button class="edit-activity" id="mainbutton">Edit</button>
                 <button class="delete-activity" id="mainbutton">Delete</button>
                 
