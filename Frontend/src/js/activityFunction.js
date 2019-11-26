@@ -2,9 +2,19 @@ import Activity from "./components/activity"
 import ActivityEdit from "./components/activityEdit"
 import apiActions from "./api/apiActions"
 import ActivityComplete from "./components/activityComplete"
+import HeaderAct from "./components/headerAct"
 
 export default () =>{
-    displayActivity()
+    displayActivity();
+    displayHeader();
+}
+
+function displayHeader(){
+    const activityBTN = document.querySelector("#activityButton");
+    const head = document.querySelector("#header");
+    activityBTN.addEventListener("click", function(){
+            head.innerHTML = HeaderAct();
+        })
 }
 
 function displayActivity(){

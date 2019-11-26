@@ -8,8 +8,6 @@ import Navbar from "./components/navbar"
 import displayHome from "./components/home"
 
 
-
-
 export default () => {
     pageBuild();
 }
@@ -51,15 +49,17 @@ function home(){
 function homeAction(){
     const homeBTN = document.querySelector("#homeButton");
     const sign = document.querySelector("#sign")
+    const head = document.querySelector("#header");
     const landing = document.querySelector("#app");
     homeBTN.addEventListener("click", function(){
+        head.innerHTML = Header();
         landing.innerHTML = displayHome();    
-    sign.innerHTML = ``
+        sign.innerHTML = ``
     })
 }
 
 function profileAction(){
-    displayProfile()
+    displayProfile();
 }
 
 function successAction(){
