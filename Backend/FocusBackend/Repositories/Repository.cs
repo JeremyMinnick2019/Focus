@@ -49,7 +49,7 @@ namespace FocusBackend.Repositories
             throw new NotImplementedException();
         }
 
-        public virtual IEnumerable<T> GetUserPoints()
+        public virtual int GetUserPoints()
         {
             throw new NotImplementedException();
         }

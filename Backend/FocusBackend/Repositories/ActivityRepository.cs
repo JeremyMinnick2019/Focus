@@ -43,9 +43,10 @@ namespace FocusBackend.Repositories
             return activities.OrderBy(activity => activity.Rank);
         }
 
-        public override IEnumerable<Activity> GetUserPoints()
+        public override int GetUserPoints()
         {
-            var total = db.Set<Activity>().Where(t => t.Points > 0);
+            var completed = db.Set<Activity>().Where(d => d.Done == true);
+            int total = completed.Sum(r => r.Rank);
             return total;
         }
     }

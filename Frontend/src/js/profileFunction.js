@@ -9,6 +9,7 @@ export default () =>{
     displayUser();
     displayHeader();
     displayBusiness();
+    userPoints();
 }
 
 function displayHeader(){
@@ -18,6 +19,16 @@ function displayHeader(){
             head.innerHTML = HeaderPro();
         })
 }
+
+// function userPoints(){
+//     const userBTN = document.querySelector("#profileButton");
+//     const app = document.querySelector("#app");
+//     userBTN.addEventListener("click", function(){
+//         apiActions.getRequest("https://localhost:44306/api/activities/totalPoints", users =>{
+//             app.innerHTML = User(users);
+//         })
+//     });
+// }
 
 function displayUser(){
     const userBTN = document.querySelector("#profileButton");

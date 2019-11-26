@@ -15,7 +15,7 @@ namespace FocusBackend.Repositories
 
         IEnumerable<T> GetByRank();
 
-        IEnumerable<T> GetUserPoints();
+        int GetUserPoints();
 
         void Create(T entity);
         void Delete(T entity);

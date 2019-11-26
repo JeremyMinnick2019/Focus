@@ -63,7 +63,7 @@ namespace FocusBackend.Controllers
         [HttpGet("totalPoints")]
         public int GetPoints()
         {
-            return 23;
+            return activityRepo.GetUserPoints();
         }
 
         // POST api/Activitys
