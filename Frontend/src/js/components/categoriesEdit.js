@@ -5,7 +5,7 @@ export default function categoryEdit(editCategory) {
             <p>${editCategory.description}</p>
         </section>
 
-        <secction class="update-category">
+        <section class="update-category">
             <input class="update-category_name" type"text" value="${editCategory.name}">
             <textarea rows="10" cols="30" class="update-category_description" value="${editCategory.description}"></textarea>
             <select class="update-category_business" name="User">
