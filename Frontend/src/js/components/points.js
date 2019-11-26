@@ -1,5 +1,5 @@
 export default function Point(points) {
     return `
-        ${points}
-        `
-    }
+        <span id="totalP">Total Points: ${points}</span>
+    `
+}

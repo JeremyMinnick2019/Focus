@@ -20,9 +20,11 @@ function displayHeader(){
 function displayActivity(){
     const activityBTN = document.querySelector("#activityButton");
     const app = document.querySelector("#app");
+    const sign = document.querySelector("#sign")
+    const total = document.querySelector("#points")
     activityBTN.addEventListener("click", function(){
-        const sign = document.querySelector("#sign")
         sign.innerHTML = ``
+        total.innerHTML = ``
         apiActions.getRequest(`https://localhost:44306/api/activities/notdone`, activities =>{
             app.innerHTML = Activity(activities);
         });
@@ -84,6 +86,7 @@ app.addEventListener("click", function(){
         const activityid = event.target.parentElement.querySelector(".activity_id").value;
         console.log("edit"  + activityid);
         sign.innerHTML = ``
+        total.innerHTML = ``
         apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, 
         editActivity => {
             app.innerHTML = ActivityEdit(editActivity)
@@ -118,6 +121,7 @@ app.addEventListener("click", function() {
             done: updateDone
         }
         sign.innerHTML = ``
+        total.innerHTML = ``
         apiActions.putRequest(`https://localhost:44306/api/activities/${activityid}`,
             activityData,
             activities => {
