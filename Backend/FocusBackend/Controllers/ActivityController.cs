@@ -43,7 +43,9 @@ namespace FocusBackend.Controllers
         {
             return activityRepo.GetByDone();
         }
-        [HttpGet("suggested")]
+       
+        //Get api/activities/suggested
+        [HttpGet("suggest")]
         public  IEnumerable<Activity> GetRank()
         {
             return activityRepo.GetByRank();

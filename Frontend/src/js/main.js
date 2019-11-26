@@ -42,10 +42,10 @@ function footer(){
 }
 
 function home(){
-    const sign = document.querySelector("#sign")
     const landing = document.querySelector("#app");
-    sign.innerHTML = ``
+    const sign = document.querySelector("#sign")
     landing.innerHTML = displayHome()
+    sign.innerHTML = ``
 }
 
 function homeAction(){
@@ -53,8 +53,8 @@ function homeAction(){
     const sign = document.querySelector("#sign")
     const landing = document.querySelector("#app");
     homeBTN.addEventListener("click", function(){
+        landing.innerHTML = displayHome();    
     sign.innerHTML = ``
-    landing.innerHTML = displayHome();    
     })
 }
 

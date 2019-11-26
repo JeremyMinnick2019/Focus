@@ -43,8 +43,8 @@ namespace FocusBackend.Repositories
         {
           throw new NotImplementedException();
         }
-        public virtual IEnumerable<T> GetByRank()
 
+        public virtual IEnumerable<T> GetByRank()
         {
             throw new NotImplementedException();
         }

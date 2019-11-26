@@ -36,11 +36,11 @@ namespace FocusBackend.Repositories
         {
             return db.Set<Activity>().Where(d => d.Done == false).Include("Category");
         }
-        public override IEnumerable<Activity> GetByRank()
-        {   var activities = db.Set<Activity>().Where(p => p.Rank >= 11);
-            return activities.OrderBy(activity => activity.Rank);
-            //return db.Set<Activity>().Where(d => d.Done == true).Include("Category");
 
+        public override IEnumerable<Activity> GetByRank()
+        {
+            var activities = db.Set<Activity>().Where(p => p.Rank >= 11);
+            return activities.OrderBy(activity => activity.Rank);
         }
     }
 }
