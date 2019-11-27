@@ -150,6 +150,7 @@ app.addEventListener("click", function(){
         const completeCompletion = new Date();
         const completeImportance = event.target.parentElement.querySelector(".complete-activity_importance").value
         const completeUrgency = event.target.parentElement.querySelector(".complete-activity_urgency").value
+        const completeRank = parseInt(completeImportance) + parseInt(completeUrgency)
         const completeCategoryid = event.target.parentElement.querySelector(".complete-activity_categoryId").value
         const completeDone = true
         console.log(completeName, completeImportance, completeCategoryid)
@@ -162,6 +163,7 @@ app.addEventListener("click", function(){
             completion: completeCompletion,
             importance: completeImportance,
             urgency: completeUrgency,
+            rank: completeRank,
             categoryID: completeCategoryid,
             done: completeDone
         }
