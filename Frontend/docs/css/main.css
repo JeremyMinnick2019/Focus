@@ -206,7 +206,9 @@ footer{
   padding-right: 50px;
   padding-left: 20px;
 }
-
+#handCursor{
+  
+}
 #gridItem h3,h5,.edit-user,.delete-user
 {
   display: flex;
