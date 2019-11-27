@@ -9,6 +9,7 @@ function User(users) {
         .map(user => {
             return `
             <section class="user" id="gridItemA">
+            <img src=${user.image} class="userIcon"></img>
             <h2>User Profile</h2>
             <h3 class="userName">${user.name}</div>
             <h5>${user.email}</h5>

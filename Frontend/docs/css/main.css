@@ -213,10 +213,17 @@ footer{
   justify-content: center;
 }
 
-#gridItemA h2,h3,h5,.edit-user,.delete-user
+#gridItemA h2,h3,h5,.edit-user,.delete-user, .userIcon
 {
   display: flex;
   justify-content: center;
+}
+
+.userIcon {
+ width: 8rem;
+ height: 8rem;
+ margin: auto;
+ margin-top: 1rem; 
 }
 
 .activity
