@@ -58,7 +58,7 @@ color: var(--navText);
 h1 {
   font-weight: bolder;
   letter-spacing: 6px;
-  font-size: 5em;
+  font-size: 3.5em;
   color: white;
   text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
 }
@@ -284,6 +284,8 @@ footer{
   text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
   width: 125px;
   height:50px;
+  margin-left: 10px;
+  margin-top: 10px;
 
 }
 
@@ -311,7 +313,7 @@ footer{
   padding: 20px;
   background: #fff;
   border-radius: 5px;
-  max-width: 30%;
+  max-width: 350px;
   min-width: 350px;
   position: relative;
   transition: all 5s ease-in-out;
@@ -350,4 +352,36 @@ footer{
 .popup .content {
   max-height: 30%;
   overflow: auto;
+}
+
+.popupButton {
+  background-color: #5c80BC; 
+  border: .125rem solid var(--navText);
+  border-radius: .5rem;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  padding:10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 42%;
+  margin-right: 42%;
+  cursor: pointer;
+
+}
+
+#input1{
+  border-radius: .5rem;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, 33rem);
+  grid-template-rows: repeat(1, 33rem);
+  padding:11px;
+  margin:10px;
+  cursor: pointer;
+}
+
+.content {
+  margin: 1px;
 }
