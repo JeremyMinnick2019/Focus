@@ -22,9 +22,11 @@ function displayActivity(){
     const app = document.querySelector("#app");
     const sign = document.querySelector("#sign")
     const total = document.querySelector("#points")
+    const belts = document.querySelector("#belt");
     activityBTN.addEventListener("click", function(){
         sign.innerHTML = ``
         total.innerHTML = ``
+        belts.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/activities/notdone`, activities =>{
             app.innerHTML = Activity(activities);
         });
@@ -99,6 +101,7 @@ app.addEventListener("click", function(){
         console.log("edit"  + activityid);
         sign.innerHTML = ``
         total.innerHTML = ``
+        belts.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, 
         editActivity => {
             app.innerHTML = ActivityEdit(editActivity)
@@ -134,6 +137,7 @@ app.addEventListener("click", function() {
         }
         sign.innerHTML = ``
         total.innerHTML = ``
+        belts.innerHTML = ``;
         apiActions.putRequest(`https://localhost:44306/api/activities/${activityid}`,
             activityData,
             activities => {

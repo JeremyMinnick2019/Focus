@@ -5,7 +5,9 @@ import displaySuccess from "./successFunction"
 import Header from "./components/header"
 import Footer from "./components/footer"
 import Navbar from "./components/navbar"
+import Belt from "./components/belt"
 import displayHome from "./components/home"
+import belt from "./components/belt"
 
 
 export default () => {
@@ -18,7 +20,7 @@ function pageBuild(){
     footer();
     home();
     homeAction();
-    // userPoints();
+    displayBelt();
     profileAction();
     successAction();
     categoryAction();
@@ -42,10 +44,12 @@ function footer(){
 
 function home(){
     const landing = document.querySelector("#app");
-    const total = document.querySelector("#points")
+    const total = document.querySelector("#points");
+    const belts = document.querySelector("#belt");
     landing.innerHTML = displayHome()
     sign.innerHTML = ``
     total.innerHTML = ``
+    belts.innerHTML = ``;
 }
 
 function homeAction(){
@@ -54,11 +58,13 @@ function homeAction(){
     const head = document.querySelector("#header");
     const landing = document.querySelector("#app");
     const total = document.querySelector("#points")
+    const belts = document.querySelector("#belt");
     homeBTN.addEventListener("click", function(){
         head.innerHTML = Header();
         landing.innerHTML = displayHome();    
         sign.innerHTML = ``
         total.innerHTML = ``
+        belts.innerHTML = ``;
     })
 }
 
@@ -78,9 +84,6 @@ function activityAction(){
     displayActivity()
 }
 
-// function userPoints(){
-//     const total = document.querySelector("#points");
-//         apiActions.getRequest("https://localhost:44306/api/activities/totalPoints", points =>{
-//             total.innerHTML = Point(points);
-//         })
-// }
+function displayBelt(){
+    Belt()
+}

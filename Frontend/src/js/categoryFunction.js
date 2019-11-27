@@ -22,9 +22,11 @@ function displayCategory(){
     const app = document.querySelector("#app");
     const sign = document.querySelector("#sign")
     const total = document.querySelector("#points")
+    const belts = document.querySelector("#belt");
     categoryBTN.addEventListener("click", function(){
         sign.innerHTML = ``
         total.innerHTML = ``
+        belts.innerHTML = ``;
         apiActions.getRequest("https://localhost:44306/api/categories", categories =>{
             app.innerHTML = Category(categories);
         })
@@ -57,6 +59,7 @@ app.addEventListener("click", function(){
     console.log(addName)
     sign.innerHTML = ``
     total.innerHTML = ``
+    belts.innerHTML = ``;
     apiActions.postRequest
     ( 
         "https://localhost:44306/api/categories",{  
@@ -77,6 +80,7 @@ app.addEventListener("click", function(){
         console.log("delete" + categoryId);
         sign.innerHTML = ``
         total.innerHTML = ``
+        belts.innerHTML = ``;
         apiActions.deleteRequest(`https://localhost:44306/api/categories/${categoryId}`,
         categories => {
             app.innerHTML = Category(categories)
@@ -90,6 +94,7 @@ app.addEventListener("click", function(){
         console.log("edit"  + categoryId);
         sign.innerHTML = ``
         total.innerHTML = ``
+        belts.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/categories/${categoryId}` , editCategories => {
             app.innerHTML = categoryEdit(editCategories)
         })
@@ -110,6 +115,7 @@ app.addEventListener("click", function() {
         }
         sign.innerHTML = ``
         total.innerHTML = ``
+        belts.innerHTML = ``;
         apiActions.putRequest(
             `https://localhost:44306/api/categories/${categoryId}`,
             categoryData,

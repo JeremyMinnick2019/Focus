@@ -261,7 +261,7 @@ footer{
 }
 
 #totalP{
-  border: .125rem solid goldenrod;
+  border: .125rem solid var(--navComp);
   border-radius: .5rem;
   font-size: large;
 }
@@ -269,10 +269,6 @@ footer{
 .checkBox {
   min-width: 15px;
   min-height: 15px;
-}
-
-.far{
-  size: 20rem;
 }
 
 #Logo

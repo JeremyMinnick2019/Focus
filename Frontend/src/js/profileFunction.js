@@ -26,7 +26,7 @@ function userPoints(){
     const userBTN = document.querySelector("#profileButton");
     const total = document.querySelector("#points");
     userBTN.addEventListener("click", function(){
-        apiActions.getRequest("https://localhost:44306/api/activities/totalPoints", points =>{
+        apiActions.getRequest("https://localhost:44306/api/activities/points", points =>{
             total.innerHTML = Point(points);
         })
     })
