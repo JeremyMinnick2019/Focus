@@ -4,7 +4,7 @@ export default function Category(categories) {
         .map(category => {
             return `
             <section class="category" id="grid-Item">
-            <h3 class ="categoryName">${category.name}</h3>
+            <h3 class ="categoryName" id="catName">${category.name}</h3>
             <p>${category.description}</p>
             <input class="category_id" type="hidden" value="${category.id}">
             </section>
