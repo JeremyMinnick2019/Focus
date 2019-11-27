@@ -3,6 +3,8 @@ import ActivityEdit from "./components/activityEdit"
 import apiActions from "./api/apiActions"
 import ActivityComplete from "./components/activityComplete"
 import HeaderAct from "./components/headerAct"
+import Belt from "./components/belt"
+import profile from "./profile"
 
 export default () =>{
     displayActivity();
@@ -183,12 +185,6 @@ app.addEventListener("click", function(){
             categoryID: completeCategoryid,
             done: completeDone
         }
-        // apiActions.putRequest(`https://localhost:44306/api/activities/totalPoints`,
-        // activityData,
-        // apiActions.getRequest("https://localhost:44306/api/activities/totalPoints", points =>{
-        //     total.innerHTML = Point(points);
-        // })       
-        // )
         apiActions.putRequest(`https://localhost:44306/api/activities/${completeActivityid}`,
             activityData,
             activities => {

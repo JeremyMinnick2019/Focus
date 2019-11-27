@@ -25,8 +25,9 @@ function Belt() {
                 belts.innerHTML = `Orange Belt Level`;
                 break;
             //If points range 0-50
-            default:                   
-                belts.innerHTML = `White Belt Level`;         
+            case points >= 0:                   
+                belts.innerHTML = `White Belt Level`;
+                break;      
             }
     })
 }
