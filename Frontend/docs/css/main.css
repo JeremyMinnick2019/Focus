@@ -172,6 +172,11 @@ footer{
   transition: 0.5s;
 }
 
+/* Makes cursor into hand pointer when hovering on Category name grid area in Categories */
+#catName{
+  cursor: pointer;
+}
+
 #gridItem:hover,
 #gridItemA:hover,
 #grid-Item:hover,
@@ -211,6 +216,7 @@ footer{
 {
   display: flex;
   justify-content: center;
+  
 }
 
 #gridItemA h2,h3,h5,.edit-user,.delete-user
