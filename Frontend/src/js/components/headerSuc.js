@@ -1,5 +1,5 @@
 export default function headerSuc() {
     return `
-            <h1>$UCCE$$</h1>
+            <h1>SUCCESS</h1>
         `
 }
