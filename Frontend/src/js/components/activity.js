@@ -5,6 +5,11 @@ export default function Activity(activities) {
     return `
     <section class="gridAct">
         <section class="activityAdd" id="grid-Item">
+        <a href="#popup1"><button>ClickMe</button></a>
+        <div id="popup1" class="overlay">
+                    <div class="popup">
+                    <a class="close" href="#">&times;</a>
+		                <div class="content">
             <input class="add-activity_name" id="input" type="text" placeholder="Add an Activity Name">
             <select class="add-activity_categoryId" id="input" name="Category">
                 <option value="1">Marketing</option>
@@ -21,6 +26,9 @@ export default function Activity(activities) {
             <textarea rows="5" cols="20" class="add-activity_description" id="input" placeholder="Add an Activity Description"></textarea>
             <input class="add-activity_done" type="hidden">
             <button class='add-activity' id="mainbutton">Add</button>
+            </div>
+	                </div>
+                </div>
         </section>
         
     ${activities
