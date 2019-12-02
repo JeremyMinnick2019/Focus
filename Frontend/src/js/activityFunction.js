@@ -6,6 +6,7 @@ import HeaderAct from "./components/headerAct"
 import Success from "./components/success"
 import Belt from "./components/belt"
 import profile from "./profile"
+import ActivityDetails from "./components/activityDetails"
 
 export default () =>{
     displayActivity();
@@ -160,6 +161,20 @@ app.addEventListener("click", function(){
         })
     }
 });
+app.addEventListener("click", function(){
+    if(event.target.classList.contains("activity-details")) {
+        const activityid = event.target.parentElement.querySelector(".activity_id").value;
+        console.log(activityid);
+        sign.innerHTML = ``
+        total.innerHTML = ``
+        belts.innerHTML = ``;
+        apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, 
+        activities => {
+            app.innerHTML = Activity(activities)
+        })
+    }
+});
+
 app.addEventListener("click", function(){
     if(event.target.classList.contains("complete-activity")) {
         const completeActivityid = event.target.parentElement.querySelector(".complete-activity_id").value
