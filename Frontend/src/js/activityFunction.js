@@ -26,8 +26,8 @@ function displayActivity(){
     const total = document.querySelector("#points")
     const belts = document.querySelector("#belt");
     activityBTN.addEventListener("click", function(){
-        sign.innerHTML = ``
-        total.innerHTML = ``
+        sign.innerHTML = ``;
+        total.innerHTML = ``;
         belts.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/activities/notdone`, activities =>{
             app.innerHTML = Activity(activities);

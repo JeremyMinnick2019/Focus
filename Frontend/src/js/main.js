@@ -43,13 +43,16 @@ function footer(){
 }
 
 function home(){
+    const sign = document.querySelector("#sign");
+    const head = document.querySelector("#header");
     const landing = document.querySelector("#app");
     const total = document.querySelector("#points");
     const belts = document.querySelector("#belt");
-    landing.innerHTML = displayHome()
+    head.innerHTML = Header();
     sign.innerHTML = ``;
     total.innerHTML = ``;
     belts.innerHTML = ``;
+    landing.innerHTML = displayHome()
 }
 
 function homeAction(){
@@ -61,10 +64,10 @@ function homeAction(){
     const belts = document.querySelector("#belt");
     homeBTN.addEventListener("click", function(){
         head.innerHTML = Header();
-        landing.innerHTML = displayHome();    
         sign.innerHTML = ``;
         total.innerHTML = ``;
         belts.innerHTML = ``;
+        landing.innerHTML = displayHome();    
     })
 }
 
