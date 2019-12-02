@@ -7,21 +7,21 @@ namespace FocusBackend.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Activities_Users_UserID",
-                table: "Activities");
+            //migrationBuilder.DropForeignKey(
+            //    name: "FK_Activities_Users_UserID",
+            //    table: "Activities");
 
-            migrationBuilder.DropIndex(
-                name: "IX_Activities_UserID",
-                table: "Activities");
+            //migrationBuilder.DropIndex(
+            //    name: "IX_Activities_UserID",
+            //    table: "Activities");
 
-            migrationBuilder.DropColumn(
-                name: "Points",
-                table: "Activities");
+            //migrationBuilder.DropColumn(
+            //    name: "Points",
+            //    table: "Activities");
 
-            migrationBuilder.DropColumn(
-                name: "UserID",
-                table: "Activities");
+            //migrationBuilder.DropColumn(
+            //    name: "UserID",
+            //    table: "Activities");
 
             migrationBuilder.UpdateData(
                 table: "Activities",

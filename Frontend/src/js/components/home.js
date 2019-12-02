@@ -11,7 +11,7 @@ function displayHome(){
     const belts = document.querySelector("#belt");
     apiActions.getRequest(`https://localhost:44306/api/activities/suggest`, activities =>{
         app.innerHTML = ActivityRank(activities);
-        belts.innerHTML = ``;
         sign.innerHTML = ``;
+        belts.innerHTML = ``;
     });
 }

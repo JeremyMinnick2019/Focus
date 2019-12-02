@@ -5,7 +5,6 @@ export default function User(users) {
     return `
     ${users
         .map(user => {
-            
             return `
             <section class="userGrid">
             <section class="user" id="gridItemA">
@@ -32,4 +31,3 @@ export default function User(users) {
     //         <input class="add-user_phone" id="input" type="text" placeholder="Add your phone number">
     //         <button class='add-user' id="mainbutton">Submit</button>
     //     </section>
-}

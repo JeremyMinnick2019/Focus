@@ -233,7 +233,7 @@ footer{
 }
 
 .userIcon {
- width: 8rem;
+ width: 5rem;
  height: 8rem;
  margin: auto;
  margin-top: 1rem; 
@@ -280,12 +280,6 @@ footer{
   border-radius: .5rem;
 }
 
-#totalP{
-  border: .125rem solid var(--navComp);
-  border-radius: .5rem;
-  font-size: large;
-}
-
 .checkBox {
   min-width: 15px;
   min-height: 15px;
@@ -302,12 +296,12 @@ footer{
   height:50px;
   margin-left: 10px;
   margin-top: 10px;
-
+  
 }
 
- /*Image PopUp*/
-    
- .overlay {
+/*Image PopUp*/
+
+.overlay {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -384,7 +378,7 @@ footer{
   margin-left: 42%;
   margin-right: 42%;
   cursor: pointer;
-
+  
 }
 
 #input1{
@@ -405,4 +399,11 @@ footer{
 .beltIMG{
   width: 5rem;
   height: 5rem;
+}
+
+#totalP{
+  color: var(--colorDark);
+  border: .125rem solid var(--navComp);
+  border-radius: .5rem;
+  font-size: large;
 }

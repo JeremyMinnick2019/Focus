@@ -46,7 +46,11 @@ namespace FocusBackend.Data
             modelBuilder.Entity<Activity>().HasData(
                    new Activity(1, "Pay Workers", "Outsourced From Temp Agency", DateTime.Now, DateTime.Now, 9, 9, false, 2),
                    new Activity(2, "Sales Planning", "Follow Up With Prospects", DateTime.Now, DateTime.Now, 10, 3, false, 6),
-                   new Activity(3, "Buy Stamps", "Get More Stamps For Pay Checks", DateTime.Now, DateTime.Now, 4, 6, false, 8)
+                   new Activity(3, "Buy Stamps", "Get More Stamps For Pay Checks", DateTime.Now, DateTime.Now, 4, 6, false, 8),
+                   new Activity(4, "Clean Store", "Make The Restaurant Presentable", DateTime.Now, DateTime.Now,5, 5, false, 7),
+                   new Activity(5, "Pay Bills", "Keep The Lights On", DateTime.Now, DateTime.Now, 8, 8, false, 5),
+                   new Activity(6, "Order Food", "St Up Deliveries For Stock", DateTime.Now, DateTime.Now, 7, 5, false, 7),
+                   new Activity(7, "Advertising", "Turn In Newspaper Add", DateTime.Now, DateTime.Now, 5, 9, false, 1)
                    );
         }
     }
