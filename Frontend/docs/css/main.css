@@ -141,9 +141,16 @@ footer{
 .gridCat{
   display: grid;
   justify-content: center;
-  grid-template-columns: repeat(4, 13rem);
-  grid-gap: 3rem 3rem;
+  grid-template-columns: repeat(2, 13rem);
+  grid-gap: 3rem 25rem;
   grid-template-rows: repeat(3, 13rem);
+}
+
+.userGrid {
+  display: grid;
+  justify-content: center;
+  grid-gap: 5rem 20rem;
+  grid-template-columns: repeat(1, 20rem);
 }
 
 .gridAct{
