@@ -1,5 +1,6 @@
 import apiActions from "../api/apiActions"
 import ActivityRank from "./activityRank"
+import ActivityDetails from "./activityDetails"
 
 export default () => {
     displayHome()
@@ -14,4 +15,5 @@ function displayHome(){
     apiActions.getRequest(`https://localhost:44306/api/activities/suggest`, activities =>{
     app.innerHTML = ActivityRank(activities);
     });
+    
 }

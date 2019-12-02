@@ -3,6 +3,7 @@ import ActivityEdit from "./components/activityEdit"
 import apiActions from "./api/apiActions"
 import ActivityComplete from "./components/activityComplete"
 import HeaderAct from "./components/headerAct"
+import Success from "./components/success"
 import Belt from "./components/belt"
 import profile from "./profile"
 
@@ -189,8 +190,8 @@ app.addEventListener("click", function(){
             activityData,
             activities => {
                 console.log(activities);
-                apiActions.getRequest(`https://localhost:44306/api/activities/notdone`, activities =>{
-                app.innerHTML = Activity(activities);
+                apiActions.getRequest(`https://localhost:44306/api/activities/done`, activities =>{
+                app.innerHTML = Success(activities);
             });
         }
         )}
