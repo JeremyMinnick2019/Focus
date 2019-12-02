@@ -25,11 +25,11 @@ namespace FocusBackend.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasData(
-                new User(1, "Bubba Gump", "BGump@MyEmail.com", "14404541980", "Image")
+                new User(1, "Bubba Gump", "BGump@MyEmail.com", "14404541980", "./images/blank-profile-picture.png")
                 );
                 
             modelBuilder.Entity<Business>().HasData(
-                   new Business(1, "Bertha and Bubba's Seafood Palace", "Restaurant", "Image", 1)
+                   new Business(1, "Bertha and Bubba's Seafood Palace", "Restaurant", "image", 1)
                    );
 
             modelBuilder.Entity<Category>().HasData(
