@@ -1,5 +1,5 @@
 export default function Header(){
   return `
-            <h1>PRIORITISE</h1>
+            <h1>PRIORITIZE</h1>
         `
 }

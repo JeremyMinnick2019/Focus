@@ -3,8 +3,6 @@ import ActivityEdit from "./components/activityEdit"
 import apiActions from "./api/apiActions"
 import ActivityComplete from "./components/activityComplete"
 import HeaderAct from "./components/headerAct"
-import Belt from "./components/belt"
-import profile from "./profile"
 
 export default () =>{
     displayActivity();
@@ -22,8 +20,8 @@ function displayHeader(){
 function displayActivity(){
     const activityBTN = document.querySelector("#activityButton");
     const app = document.querySelector("#app");
-    const sign = document.querySelector("#sign")
-    const total = document.querySelector("#points")
+    const sign = document.querySelector("#sign");
+    const total = document.querySelector("#points");
     const belts = document.querySelector("#belt");
     activityBTN.addEventListener("click", function(){
         sign.innerHTML = ``;
@@ -101,8 +99,8 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("edit-activity")) {
         const activityid = event.target.parentElement.querySelector(".activity_id").value;
         console.log("edit"  + activityid);
-        sign.innerHTML = ``
-        total.innerHTML = ``
+        sign.innerHTML = ``;
+        total.innerHTML = ``;
         belts.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, 
         editActivity => {

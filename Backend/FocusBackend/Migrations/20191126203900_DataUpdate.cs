@@ -7,21 +7,21 @@ namespace FocusBackend.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Activities_Users_UserID",
-                table: "Activities");
+            //migrationBuilder.DropForeignKey(
+            //    name: "FK_Activities_Users_UserID",
+            //    table: "Activities");
 
-            migrationBuilder.DropIndex(
-                name: "IX_Activities_UserID",
-                table: "Activities");
+            //migrationBuilder.DropIndex(
+            //    name: "IX_Activities_UserID",
+            //    table: "Activities");
 
-            migrationBuilder.DropColumn(
-                name: "Points",
-                table: "Activities");
+            //migrationBuilder.DropColumn(
+            //    name: "Points",
+            //    table: "Activities");
 
-            migrationBuilder.DropColumn(
-                name: "UserID",
-                table: "Activities");
+            //migrationBuilder.DropColumn(
+            //    name: "UserID",
+            //    table: "Activities");
 
             migrationBuilder.UpdateData(
                 table: "Activities",
@@ -47,16 +47,16 @@ namespace FocusBackend.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "Points",
-                table: "Activities",
-                nullable: false,
-                defaultValue: 0);
+            //migrationBuilder.AddColumn<int>(
+            //    name: "Points",
+            //    table: "Activities",
+            //    nullable: false,
+            //    defaultValue: 0);
 
-            migrationBuilder.AddColumn<int>(
-                name: "UserID",
-                table: "Activities",
-                nullable: true);
+            //migrationBuilder.AddColumn<int>(
+            //    name: "UserID",
+            //    table: "Activities",
+            //    nullable: true);
 
             migrationBuilder.UpdateData(
                 table: "Activities",
@@ -79,18 +79,18 @@ namespace FocusBackend.Migrations
                 columns: new[] { "Completion", "Creation", "Points" },
                 values: new object[] { new DateTime(2019, 11, 26, 10, 46, 5, 381, DateTimeKind.Local), new DateTime(2019, 11, 26, 10, 46, 5, 381, DateTimeKind.Local), 100 });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Activities_UserID",
-                table: "Activities",
-                column: "UserID");
+            //migrationBuilder.CreateIndex(
+            //    name: "IX_Activities_UserID",
+            //    table: "Activities",
+            //    column: "UserID");
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_Activities_Users_UserID",
-                table: "Activities",
-                column: "UserID",
-                principalTable: "Users",
-                principalColumn: "ID",
-                onDelete: ReferentialAction.Restrict);
+            //migrationBuilder.AddForeignKey(
+            //    name: "FK_Activities_Users_UserID",
+            //    table: "Activities",
+            //    column: "UserID",
+            //    principalTable: "Users",
+            //    principalColumn: "ID",
+            //    onDelete: ReferentialAction.Restrict);
         }
     }
 }

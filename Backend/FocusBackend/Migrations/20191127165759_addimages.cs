@@ -54,16 +54,16 @@ namespace FocusBackend.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "Points",
-                table: "Activities",
-                nullable: false,
-                defaultValue: 0);
+            //migrationBuilder.AddColumn<int>(
+            //    name: "Points",
+            //    table: "Activities",
+            //    nullable: false,
+            //    defaultValue: 0);
 
-            migrationBuilder.AddColumn<int>(
-                name: "UserID",
-                table: "Activities",
-                nullable: true);
+            //migrationBuilder.AddColumn<int>(
+            //    name: "UserID",
+            //    table: "Activities",
+            //    nullable: true);
 
             migrationBuilder.UpdateData(
                 table: "Activities",

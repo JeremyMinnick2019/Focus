@@ -5,8 +5,8 @@
 html{
   font-family: 'Poppins', sans-serif;
   color: var(--navText);
-  background-image: url("../images/check.jpg");
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.698),rgb(0, 0, 0, 0.698)) ,url("../images/check.jpg"); */
+  /* background-image: url("../images/check.jpg"); */
+  background-image: linear-gradient(rgba(238, 238, 238, 0.698),rgb(238, 238, 238, 0.698)) ,url("../images/check.jpg");
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -147,7 +147,7 @@ footer{
   grid-template-rows: repeat(3, 13rem);
 }
 
-.userGrid, .gameGrid {
+.userGrid {
   display: grid;
   justify-content: center;
   grid-gap: 5rem 20rem;
@@ -175,7 +175,7 @@ footer{
   /* border-radius: 100px; */
   box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.122);
   
-  background: linear-gradient( to bottom, var(--colorDark), var(--moneyBlue1));
+  background: linear-gradient( to bottom, var(--navColor), var(--colorDark));
   /* background: radial-gradient( var(--moneyBlue1), var(--colorDark)); */
   transition: 0.5s;
 }
@@ -195,12 +195,12 @@ footer{
 }
 
 .activity, .business, .category, .user, .activityAdd{
-  border: .125rem solid var(--navText);
+  border: .125rem solid var(--moneyBlue1);
 }
 
 .Success
 {
-  border: .125rem solid var(--navText);
+  border: .125rem solid var(--moneyBlue1);
   display: flex;
   justify-content: center;
 }
@@ -263,7 +263,7 @@ footer{
 
 #mainbutton{
   background-color: rgb(47, 105, 47); 
-  border: .125rem solid var(--navText);
+  border: .125rem solid var(--moneyBlue1);
   border-radius: .5rem;
   color: white;
   
@@ -393,29 +393,17 @@ footer{
   cursor: pointer;
 }
 
-.content {
+.content{
   margin: 1px;
 }
 
 .beltIMG{
   width: 3rem;
-  height: 3rem; 
-  position: relative;
-  align-self: center;
-  justify-content: center;
+  height: 3rem;
+  margin-top: 1rem;
+  margin-left: 8.25rem;
  }
 
-/* #points{
-  color: var(--navText);
-  border: .125rem solid var(--navComp);
-  border-radius: .5rem;
-  justify-content: center;
-  font-size: large;
-} */
-
-/* .gameGrid {
-  display: grid;
-  justify-content: center;
-  grid-gap: 5rem 5rem;
-  grid-template-columns: repeat(2, 5rem);
-}  */
+ .businessName{
+   text-align: center;
+ }

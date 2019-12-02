@@ -7,7 +7,6 @@ import Footer from "./components/footer"
 import Navbar from "./components/navbar"
 import Belt from "./components/belt"
 import displayHome from "./components/home"
-import belt from "./components/belt"
 
 
 export default () => {
@@ -49,10 +48,10 @@ function home(){
     const total = document.querySelector("#points");
     const belts = document.querySelector("#belt");
     head.innerHTML = Header();
+    landing.innerHTML = displayHome();
     sign.innerHTML = ``;
     total.innerHTML = ``;
     belts.innerHTML = ``;
-    landing.innerHTML = displayHome()
 }
 
 function homeAction(){
