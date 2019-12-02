@@ -12,29 +12,35 @@ function Belt() {
             case points >= 500:
                 belts.innerHTML = `<section class="userGrid">
                 <section class="user" id="gridItemA">
-                <img src="/images/black_belt.png" class=beltIMG>
-                <strong>Black Belt</strong></img></section></section>`;
+                <img src="/images/black_belt.png" class=beltIMG></img>
+                <h3>Level: Black Belt</h3>
+                </section>
+                </section>`;
                 break;
             //If points range 251-500
             case points >= 250:
                 belts.innerHTML = `<section class="userGrid">
                 <section class="user" id="gridItemA">
-                <img src="/images/brown_belt.png" class=beltIMG>
-                <strong>Brown Belt</strong></img></section></section>`;
+                <img src="/images/brown_belt.png" class=beltIMG></img>
+                <h3>Level: Brown Belt</h3>
+                </section>
+                </section>`;
                 break;
             //If points range 101-250
             case points >= 100:
                 belts.innerHTML = `<section class="userGrid">
                 <section class="user" id="gridItemA">
-                <img src="/images/green_belt.png" class=beltIMG>
-                <strong>Green Belt</strong></img></section></section>`;
+                <img src="/images/green_belt.png" class=beltIMG></img>
+                <h3>Level: Green Belt</h3>
+                </section>
+                </section>`;
                 break;
             //If points range 51-100
             case points >= 50:
                 belts.innerHTML = `<section class="userGrid">
                 <section class="user" id="gridItemA">
                 <img src="/images/orange_belt.png" class=beltIMG></img>
-                <h3>Orange Belt</h3>
+                <h3>Level: Orange Belt</h3>
                 </section>
                 </section>`;
                 break;
@@ -43,7 +49,7 @@ function Belt() {
                 belts.innerHTML = `<section class="userGrid">
                 <section class="user" id="gridItemA">
                 <img src="/images/white_belt.png" class=beltIMG></img>
-                <h3>White Belt</h3>
+                <h3>Level: White Belt</h3>
                 </section>
                 </section>`;
                 break;      

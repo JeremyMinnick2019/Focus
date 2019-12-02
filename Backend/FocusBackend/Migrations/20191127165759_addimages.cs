@@ -93,18 +93,18 @@ namespace FocusBackend.Migrations
                 column: "Image",
                 value: "Image");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Activities_UserID",
-                table: "Activities",
-                column: "UserID");
+            //migrationBuilder.CreateIndex(
+            //    name: "IX_Activities_UserID",
+            //    table: "Activities",
+            //    column: "UserID");
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_Activities_Users_UserID",
-                table: "Activities",
-                column: "UserID",
-                principalTable: "Users",
-                principalColumn: "ID",
-                onDelete: ReferentialAction.Restrict);
+            //migrationBuilder.AddForeignKey(
+            //    name: "FK_Activities_Users_UserID",
+            //    table: "Activities",
+            //    column: "UserID",
+            //    principalTable: "Users",
+            //    principalColumn: "ID",
+            //    onDelete: ReferentialAction.Restrict);
         }
     }
 }

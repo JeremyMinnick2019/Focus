@@ -123,11 +123,19 @@ header{
 }
 
 footer{
+  color: var(--colorDark);
   position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
   text-align: center; 
+}
+
+.gridCat{
+  display: grid;
+  justify-content: center;
+  grid-gap: 2rem 5rem;
+  grid-template-columns: repeat(1, 15rem);
 }
 
 .gridMain{
@@ -139,13 +147,6 @@ footer{
   grid-template-rows: repeat(1, 13rem);
 }
 
-.gridCat{
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(2, 13rem);
-  grid-gap: 3rem 25rem;
-  grid-template-rows: repeat(3, 13rem);
-}
 
 .userGrid {
   display: grid;
@@ -398,12 +399,17 @@ footer{
 }
 
 .beltIMG{
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   margin-top: 1rem;
-  margin-left: 8.25rem;
+  margin-left: 7.25rem;
  }
 
  .businessName{
+   text-align: center;
+ }
+
+ #cathead{
+   color: var(--colorDark);
    text-align: center;
  }

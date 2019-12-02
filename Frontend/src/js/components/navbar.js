@@ -7,8 +7,8 @@ export default function Navbar() {
             <li><a id="homeButton">Home</a></li>
             <li><a id="profileButton">Profile</a></li>
             <li><a id="categoryButton">Categories</a></li>
-            <li><a id="activityButton">Not Completed Activities</a></li>
-            <li><a id="successButton">Completed Activities</a></li>
+            <li><a id="activityButton">Not Completed Actions</a></li>
+            <li><a id="successButton">Completed Actions</a></li>
             
             
         </ul>

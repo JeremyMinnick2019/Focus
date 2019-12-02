@@ -42,16 +42,16 @@ function footer(){
 }
 
 function home(){
-    const sign = document.querySelector("#sign");
+    // const sign = document.querySelector("#sign");
     const head = document.querySelector("#header");
     const landing = document.querySelector("#app");
-    const total = document.querySelector("#points");
-    const belts = document.querySelector("#belt");
+    // const total = document.querySelector("#points");
+    // const belts = document.querySelector("#belt");
     head.innerHTML = Header();
     landing.innerHTML = displayHome();
-    sign.innerHTML = ``;
-    total.innerHTML = ``;
-    belts.innerHTML = ``;
+    // sign.innerHTML = ``;
+    // total.innerHTML = ``;
+    // belts.innerHTML = ``;
 }
 
 function homeAction(){
