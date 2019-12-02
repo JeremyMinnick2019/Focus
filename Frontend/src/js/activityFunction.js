@@ -3,6 +3,8 @@ import ActivityEdit from "./components/activityEdit"
 import apiActions from "./api/apiActions"
 import ActivityComplete from "./components/activityComplete"
 import HeaderAct from "./components/headerAct"
+import Belt from "./components/belt"
+import profile from "./profile"
 
 export default () =>{
     displayActivity();
@@ -22,9 +24,11 @@ function displayActivity(){
     const app = document.querySelector("#app");
     const sign = document.querySelector("#sign")
     const total = document.querySelector("#points")
+    const belts = document.querySelector("#belt");
     activityBTN.addEventListener("click", function(){
         sign.innerHTML = ``
         total.innerHTML = ``
+        belts.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/activities/notdone`, activities =>{
             app.innerHTML = Activity(activities);
         });
@@ -99,6 +103,7 @@ app.addEventListener("click", function(){
         console.log("edit"  + activityid);
         sign.innerHTML = ``
         total.innerHTML = ``
+        belts.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, 
         editActivity => {
             app.innerHTML = ActivityEdit(editActivity)
@@ -134,6 +139,7 @@ app.addEventListener("click", function() {
         }
         sign.innerHTML = ``
         total.innerHTML = ``
+        belts.innerHTML = ``;
         apiActions.putRequest(`https://localhost:44306/api/activities/${activityid}`,
             activityData,
             activities => {
@@ -179,12 +185,6 @@ app.addEventListener("click", function(){
             categoryID: completeCategoryid,
             done: completeDone
         }
-        // apiActions.putRequest(`https://localhost:44306/api/activities/totalPoints`,
-        // activityData,
-        // apiActions.getRequest("https://localhost:44306/api/activities/totalPoints", points =>{
-        //     total.innerHTML = Point(points);
-        // })       
-        // )
         apiActions.putRequest(`https://localhost:44306/api/activities/${completeActivityid}`,
             activityData,
             activities => {

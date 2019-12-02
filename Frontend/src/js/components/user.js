@@ -3,7 +3,6 @@ export default function User(users) {
     ${users
         .map(user => {
             return `
-            <i class="far fa-user"></i>
             <section class="user" id="gridItemA">
             <h2>User Profile</h2>
             <h3 class="userName">${user.name}</h3>
