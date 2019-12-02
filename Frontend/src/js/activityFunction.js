@@ -3,6 +3,7 @@ import ActivityEdit from "./components/activityEdit"
 import apiActions from "./api/apiActions"
 import ActivityComplete from "./components/activityComplete"
 import HeaderAct from "./components/headerAct"
+import activityDetails from "./components/activityDetails"
 
 export default () =>{
     displayActivity();
@@ -28,16 +29,15 @@ function displayActivity(){
         });
     });
     app.addEventListener("click", function(){
-        if(event.target.classList.contains("activityName")){
+        if(event.target.classList.contains("activity_name")){
         const activityid = event.target.parentElement.querySelector(".activity_id").value;
-        apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, activities => {
-            document.querySelector("#app").innerHTML = Activity(activities);
-            console.log(activities);
+        apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, activity => {
+            app.innerHTML = ActivityDetails(activity);
+            console.log(activity);
         })
 
     }
 })
-
 app.addEventListener("click", function(){
     if(event.target.classList.contains("activityName")){
     const activityid = event.target.parentElement.querySelector(".activity_id").value;
