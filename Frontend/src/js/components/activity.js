@@ -1,12 +1,17 @@
 import moment from "moment";
 
 export default function Activity(activities) {
-    var newTimeCreated = moment().format('MMMM Do YYYY, h:mm a');
+    // var newTimeCreated = moment().format('MMMM Do YYYY, h:mm a');
     return `
     <section class="gridAct">
         <section class="activityAdd" id="grid-Item">
-            <input class="add-activity_name" id="input" type="text" placeholder="Add an Activity Name">
-            <select class="add-activity_categoryId" id="input" name="Category">
+        <a href="#popup1"><button class="popupButton">Add A New Activity</button></a>
+        <div id="popup1" class="overlay">
+                    <div class="popup">
+                    <a class="close" href="#">&times;</a>
+		                <div class="content">
+            <input class="add-activity_name" id="input1" type="text" placeholder="Add an Activity Name" size="40px">
+            <select class="add-activity_categoryId" id="input1" name="Category">
                 <option value="1">Marketing</option>
                 <option value="2">Payroll</option>
                 <option value="3">Accounting/Auditing</option>
@@ -16,11 +21,14 @@ export default function Activity(activities) {
                 <option value="7">Operations</option>
                 <option value="8">Small Tasks</option>
             </select>
-            <input class="add-activity_importance" id="input" type="text" placeholder="Add an Activity Importance 1-10">
-            <input class="add-activity_urgency" id="input" type="text" placeholder="Add an Activity Urgency 1-10">
-            <textarea rows="5" cols="20" class="add-activity_description" id="input" placeholder="Add an Activity Description"></textarea>
+            <input class="add-activity_importance" id="input1" type="text" placeholder="Add an Activity Importance 1-10" size="40px">
+            <input class="add-activity_urgency" id="input1" type="text" placeholder="Add an Activity Urgency 1-10" size="40px">
+            <textarea rows="5" cols="37" class="add-activity_description" id="input1" placeholder="Add an Activity Description" size="40px"></textarea>
             <input class="add-activity_done" type="hidden">
             <button class='add-activity' id="mainbutton">Add</button>
+            </div>
+	                </div>
+                </div>
         </section>
         
     ${activities
@@ -34,6 +42,7 @@ export default function Activity(activities) {
             <section class="activity">
 
                 <h3 class="activity_name">${activity.name}</h3>
+                <p class="activity_category">Category: ${activity.category.name}</p>
                 <p class="activity_description">Description: ${activity.description}</p>
                 <p class="activity_importance">Importance: ${activity.importance}</p>
                 <p class="activity_urgency">Urgency: ${activity.urgency}</p>

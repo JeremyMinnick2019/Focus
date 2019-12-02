@@ -3,6 +3,7 @@ export default function Business(businesses) {
     ${businesses
         .map(business => {
             return `
+            <section class="userGrid">
             <section class="business"  id="gridItemA">
             <h2>Business Profile</h2>
             <h3 class = "businessName">${business.name}</h3>

@@ -1,17 +1,17 @@
 import Point from "./points"
-import apiActions from "../api/apiActions"
+import apiActions from "../api/apiActions";
 
-export default 
-
-function User(users) {
+export default function User(users) {
     return `
     ${users
         .map(user => {
+            
             return `
+            <section class="userGrid">
             <section class="user" id="gridItemA">
             <img src=${user.image} class="userIcon"></img>
             <h2>User Profile</h2>
-            <h3 class="userName">${user.name}</div>
+            <h3 class="userName">${user.name}</h3>
             <h5>${user.email}</h5>
             <div class="${user.phone}"</h5>
             <input class="user_id" type="hidden" value="${user.id}">
@@ -21,7 +21,8 @@ function User(users) {
         })
         .join("")}
         </section>
-        `
+    `
+}
         // <button class="delete-user" id="mainbutton">Delete</button>
 
     // <section class="gridMain">
@@ -32,6 +33,3 @@ function User(users) {
     //         <button class='add-user' id="mainbutton">Submit</button>
     //     </section>
 }
-
-
-

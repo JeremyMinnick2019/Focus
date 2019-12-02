@@ -3,6 +3,8 @@ import ActivityEdit from "./components/activityEdit"
 import apiActions from "./api/apiActions"
 import ActivityComplete from "./components/activityComplete"
 import HeaderAct from "./components/headerAct"
+import Belt from "./components/belt"
+import profile from "./profile"
 
 export default () =>{
     displayActivity();
@@ -22,9 +24,11 @@ function displayActivity(){
     const app = document.querySelector("#app");
     const sign = document.querySelector("#sign")
     const total = document.querySelector("#points")
+    const belts = document.querySelector("#belt");
     activityBTN.addEventListener("click", function(){
-        sign.innerHTML = ``
-        total.innerHTML = ``
+        sign.innerHTML = ``;
+        total.innerHTML = ``;
+        belts.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/activities/notdone`, activities =>{
             app.innerHTML = Activity(activities);
         });
@@ -39,6 +43,18 @@ function displayActivity(){
 
     }
 })
+
+app.addEventListener("click", function(){
+    if(event.target.classList.contains("activityName")){
+    const activityid = event.target.parentElement.querySelector(".activity_id").value;
+    apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, activities => {
+        document.querySelector("#app").innerHTML = Activity(activities);
+        console.log(activities);
+    })
+
+}
+})
+
 app.addEventListener("click", function(){
     if(event.target.classList.contains("add-activity")){
     const addName = event.target.parentElement.querySelector(".add-activity_name").value
@@ -87,6 +103,7 @@ app.addEventListener("click", function(){
         console.log("edit"  + activityid);
         sign.innerHTML = ``
         total.innerHTML = ``
+        belts.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, 
         editActivity => {
             app.innerHTML = ActivityEdit(editActivity)
@@ -122,6 +139,7 @@ app.addEventListener("click", function() {
         }
         sign.innerHTML = ``
         total.innerHTML = ``
+        belts.innerHTML = ``;
         apiActions.putRequest(`https://localhost:44306/api/activities/${activityid}`,
             activityData,
             activities => {
@@ -150,6 +168,7 @@ app.addEventListener("click", function(){
         const completeCompletion = new Date();
         const completeImportance = event.target.parentElement.querySelector(".complete-activity_importance").value
         const completeUrgency = event.target.parentElement.querySelector(".complete-activity_urgency").value
+        const completeRank = parseInt(completeImportance) + parseInt(completeUrgency)
         const completeCategoryid = event.target.parentElement.querySelector(".complete-activity_categoryId").value
         const completeDone = true
         console.log(completeName, completeImportance, completeCategoryid)
@@ -162,6 +181,7 @@ app.addEventListener("click", function(){
             completion: completeCompletion,
             importance: completeImportance,
             urgency: completeUrgency,
+            rank: completeRank,
             categoryID: completeCategoryid,
             done: completeDone
         }        
@@ -175,9 +195,9 @@ app.addEventListener("click", function(){
             activities => {
                 console.log(activities);
                 apiActions.getRequest(`https://localhost:44306/api/activities/notdone`, activities =>{
-                    app.innerHTML = Activity(activities);
-                });
-            }
+                app.innerHTML = Activity(activities);
+            });
+        }
         )}
-})
+    })
 }

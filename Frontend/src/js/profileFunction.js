@@ -5,12 +5,14 @@ import businessEdit from "./components/businessEdit"
 import HeaderPro from "./components/headerPro"
 import apiActions from "./api/apiActions"
 import Point from "./components/points"
+import Belt from "./components/belt"
 
 export default () =>{
     displayUser();
     displayHeader();
     displayBusiness();
     userPoints();
+    userLevel();
 }
 
 
@@ -26,10 +28,18 @@ function userPoints(){
     const userBTN = document.querySelector("#profileButton");
     const total = document.querySelector("#points");
     userBTN.addEventListener("click", function(){
-        apiActions.getRequest("https://localhost:44306/api/activities/totalPoints", points =>{
+        apiActions.getRequest("https://localhost:44306/api/activities/points", points =>{
             total.innerHTML = Point(points);
         })
     })
+}
+
+function userLevel(){
+    const userBTN = document.querySelector("#profileButton");
+    const belts = document.querySelector("#belt");
+    userBTN.addEventListener("click", function(){
+            belts.innerHTML = Belt();
+        })
 }
 
 function displayUser(){
