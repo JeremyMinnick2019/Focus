@@ -1,9 +1,9 @@
 export default function Category(categories) {
     return `
+        <section class="gridCat">
     ${categories
         .map(category => {
             return `
-            <section class="gridCat">
             <section class="category" id="grid-Item">
             <h3 class ="categoryName" id="catName">${category.name}</h3>
             <p>${category.description}</p>
