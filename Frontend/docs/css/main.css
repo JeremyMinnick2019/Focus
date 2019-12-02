@@ -394,3 +394,8 @@ footer{
 .content {
   margin: 1px;
 }
+
+.beltIMG{
+  width: 5rem;
+  height: 5rem;
+}

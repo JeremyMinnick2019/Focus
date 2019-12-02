@@ -25,8 +25,8 @@ function Belt() {
                 belts.innerHTML = `Orange Belt Level`;
                 break;
             //If points range 0-50
-            case points >= 0:                   
-                belts.innerHTML = `White Belt Level`;
+            case points >= 0:       
+                belts.innerHTML = `<img src="/images/check.jpg" class=beltIMG></img>`;
                 break;      
             }
     })

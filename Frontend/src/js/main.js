@@ -47,8 +47,8 @@ function home(){
     const total = document.querySelector("#points");
     const belts = document.querySelector("#belt");
     landing.innerHTML = displayHome()
-    sign.innerHTML = ``
-    total.innerHTML = ``
+    sign.innerHTML = ``;
+    total.innerHTML = ``;
     belts.innerHTML = ``;
 }
 
@@ -62,8 +62,8 @@ function homeAction(){
     homeBTN.addEventListener("click", function(){
         head.innerHTML = Header();
         landing.innerHTML = displayHome();    
-        sign.innerHTML = ``
-        total.innerHTML = ``
+        sign.innerHTML = ``;
+        total.innerHTML = ``;
         belts.innerHTML = ``;
     })
 }
