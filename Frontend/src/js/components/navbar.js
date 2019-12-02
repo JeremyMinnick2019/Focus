@@ -1,12 +1,16 @@
 export default function Navbar() {
     return `
     <nav class='navbar'>
+    <span id="Logo">FOCUS</span>
         <ul>
+            
             <li><a id="homeButton">Home</a></li>
-            <li><a id="profileButton">User Profile</a></li>
-            <li><a id="successButton">Success</a></li>
+            <li><a id="profileButton">Profile</a></li>
             <li><a id="categoryButton">Categories</a></li>
-            <li><a id="activityButton">Activities</a></li>
+            <li><a id="activityButton">Not Completed Activities</a></li>
+            <li><a id="successButton">Completed Activities</a></li>
+            
+            
         </ul>
             <div class="burger" onclick="myFunction(this)">
             <div class="line1"></div>
