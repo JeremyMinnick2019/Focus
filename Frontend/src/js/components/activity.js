@@ -1,7 +1,7 @@
 import moment from "moment";
 
 export default function Activity(activities) {
-    var newTimeCreated = moment().format('MMMM Do YYYY, h:mm a');
+    // var newTimeCreated = moment().format('MMMM Do YYYY, h:mm a');
     return `
     <section class="gridAct">
         <section class="activityAdd" id="grid-Item">

@@ -4,7 +4,8 @@ export default function ActivityRank(activities) {
     return `
     ${activities
         .map(activity => {
-
+            var timeCreated = moment(activity.creation).format('MMMM Do YYYY, h:mm a');
+            var timeCompleted = moment(activity.completion).format('MMMM Do YYYY, h:mm a');
             return `
             <section class="activity">
                 <h3 class="activity_name">${activity.name}</h3>
@@ -23,11 +24,11 @@ export default function ActivityRank(activities) {
                     <input class="complete-activity_creation" type="hidden" value="${activity.creation}">
                     <input class="complete-activity_categoryId" type="hidden" value="${activity.categoryID}">
                     <input class="complete-activity_description" type="hidden" value="${activity.description}">
-                    <input class="complete-activity" type="checkbox" <p>Mark Complete</p>
-                    <input class="complete-activity_id" type="hidden" value="${activity.id}">
+                    <p class="activity_completion">Time Completed: ${timeCompleted}</p>                    <input class="complete-activity_id" type="hidden" value="${activity.id}">
                     <input class="complete-activity_done" type="hidden" value="${activity.done}">
                 </section>
-                <button class="activity-details" id="mainbutton">View Details</button>
+                <button class="edit-activity" id="mainbutton">Edit</button>
+                <button class="delete-activity" id="mainbutton">Delete</button>
             </section>
                 `;
             })
