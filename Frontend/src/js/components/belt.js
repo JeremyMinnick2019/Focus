@@ -25,8 +25,11 @@ function Belt() {
                 belts.innerHTML = `Orange Belt Level`;
                 break;
             //If points range 0-50
-            case points >= 0:                   
-                belts.innerHTML = `White Belt Level`;
+            case points >= 0:
+                belts.innerHTML = `<section class="userGrid">
+                <section class="user" id="gridItemA">
+                <img src="/images/white_belt.png" class=beltIMG>
+                <strong>White Belt</strong></img></section></section>`;
                 break;      
             }
     })

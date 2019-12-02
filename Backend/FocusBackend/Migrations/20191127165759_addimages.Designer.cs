@@ -4,14 +4,16 @@ using FocusBackend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FocusBackend.Migrations
 {
     [DbContext(typeof(FocusContext))]
-    partial class FocusContextModelSnapshot : ModelSnapshot
+    [Migration("20191127165759_addimages")]
+    partial class addimages
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,13 +52,9 @@ namespace FocusBackend.Migrations
                     b.ToTable("Activities");
 
                     b.HasData(
-                        new { ID = 1, CategoryID = 2, Completion = new DateTime(2019, 12, 2, 11, 40, 51, 383, DateTimeKind.Local), Creation = new DateTime(2019, 12, 2, 11, 40, 51, 382, DateTimeKind.Local), Description = "Outsourced From Temp Agency", Done = false, Importance = 9, Name = "Pay Workers", Rank = 18, Urgency = 9 },
-                        new { ID = 2, CategoryID = 6, Completion = new DateTime(2019, 12, 2, 11, 40, 51, 383, DateTimeKind.Local), Creation = new DateTime(2019, 12, 2, 11, 40, 51, 383, DateTimeKind.Local), Description = "Follow Up With Prospects", Done = false, Importance = 10, Name = "Sales Planning", Rank = 13, Urgency = 3 },
-                        new { ID = 3, CategoryID = 8, Completion = new DateTime(2019, 12, 2, 11, 40, 51, 383, DateTimeKind.Local), Creation = new DateTime(2019, 12, 2, 11, 40, 51, 383, DateTimeKind.Local), Description = "Get More Stamps For Pay Checks", Done = false, Importance = 4, Name = "Buy Stamps", Rank = 10, Urgency = 6 },
-                        new { ID = 4, CategoryID = 7, Completion = new DateTime(2019, 12, 2, 11, 40, 51, 383, DateTimeKind.Local), Creation = new DateTime(2019, 12, 2, 11, 40, 51, 383, DateTimeKind.Local), Description = "Make The Restaurant Presentable", Done = false, Importance = 5, Name = "Clean Store", Rank = 10, Urgency = 5 },
-                        new { ID = 5, CategoryID = 5, Completion = new DateTime(2019, 12, 2, 11, 40, 51, 383, DateTimeKind.Local), Creation = new DateTime(2019, 12, 2, 11, 40, 51, 383, DateTimeKind.Local), Description = "Keep The Lights On", Done = false, Importance = 8, Name = "Pay Bills", Rank = 16, Urgency = 8 },
-                        new { ID = 6, CategoryID = 7, Completion = new DateTime(2019, 12, 2, 11, 40, 51, 383, DateTimeKind.Local), Creation = new DateTime(2019, 12, 2, 11, 40, 51, 383, DateTimeKind.Local), Description = "St Up Deliveries For Stock", Done = false, Importance = 7, Name = "Order Food", Rank = 12, Urgency = 5 },
-                        new { ID = 7, CategoryID = 1, Completion = new DateTime(2019, 12, 2, 11, 40, 51, 383, DateTimeKind.Local), Creation = new DateTime(2019, 12, 2, 11, 40, 51, 383, DateTimeKind.Local), Description = "Turn In Newspaper Add", Done = false, Importance = 5, Name = "Advertising", Rank = 14, Urgency = 9 }
+                        new { ID = 1, CategoryID = 2, Completion = new DateTime(2019, 11, 27, 11, 57, 58, 632, DateTimeKind.Local), Creation = new DateTime(2019, 11, 27, 11, 57, 58, 630, DateTimeKind.Local), Description = "Outsourced From Temp Agency", Done = false, Importance = 9, Name = "Pay Workers", Rank = 18, Urgency = 9 },
+                        new { ID = 2, CategoryID = 6, Completion = new DateTime(2019, 11, 27, 11, 57, 58, 633, DateTimeKind.Local), Creation = new DateTime(2019, 11, 27, 11, 57, 58, 633, DateTimeKind.Local), Description = "Follow Up With Prospects", Done = false, Importance = 10, Name = "Sales Planning", Rank = 13, Urgency = 3 },
+                        new { ID = 3, CategoryID = 8, Completion = new DateTime(2019, 11, 27, 11, 57, 58, 633, DateTimeKind.Local), Creation = new DateTime(2019, 11, 27, 11, 57, 58, 633, DateTimeKind.Local), Description = "Get More Stamps For Pay Checks", Done = false, Importance = 4, Name = "Buy Stamps", Rank = 10, Urgency = 6 }
                     );
                 });
 
@@ -81,7 +79,7 @@ namespace FocusBackend.Migrations
                     b.ToTable("Businesses");
 
                     b.HasData(
-                        new { ID = 1, Image = "image", Industry = "Restaurant", Name = "Bertha and Bubba's Seafood Palace", UserID = 1 }
+                        new { ID = 1, Image = "Image", Industry = "Restaurant", Name = "Bertha and Bubba's Seafood Palace", UserID = 1 }
                     );
                 });
 

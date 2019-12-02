@@ -5,7 +5,8 @@
 html{
   font-family: 'Poppins', sans-serif;
   color: var(--navText);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.698),rgb(0, 0, 0, 0.698)) ,url("../images/check.jpg");
+  background-image: url("../images/check.jpg");
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.698),rgb(0, 0, 0, 0.698)) ,url("../images/check.jpg"); */
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -146,7 +147,7 @@ footer{
   grid-template-rows: repeat(3, 13rem);
 }
 
-.userGrid {
+.userGrid, .gameGrid {
   display: grid;
   justify-content: center;
   grid-gap: 5rem 20rem;
@@ -168,7 +169,7 @@ footer{
   grid-template-columns: repeat(1, 50rem);
 }
 
-#gridItem, #gridItemA, #grid-Item, .activity, .Success
+#gridItem, #gridItemA, #grid-Item, .activity, .Success, .gameGrid
 {
   border-radius: 5px;
   /* border-radius: 100px; */
@@ -226,10 +227,17 @@ footer{
   
 }
 
-#gridItemA h2,h3,h5,.edit-user,.delete-user
+#gridItemA h2,h3,h5,.edit-user,.delete-user, .userIcon
 {
   display: flex;
   justify-content: center;
+}
+
+.userIcon {
+ width: 5rem;
+ height: 8rem;
+ margin: auto;
+ margin-top: 1rem; 
 }
 
 .activity
@@ -273,12 +281,6 @@ footer{
   border-radius: .5rem;
 }
 
-#totalP{
-  border: .125rem solid var(--navComp);
-  border-radius: .5rem;
-  font-size: large;
-}
-
 .checkBox {
   min-width: 15px;
   min-height: 15px;
@@ -295,12 +297,12 @@ footer{
   height:50px;
   margin-left: 10px;
   margin-top: 10px;
-
+  
 }
 
- /*Image PopUp*/
-    
- .overlay {
+/*Image PopUp*/
+
+.overlay {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -377,7 +379,7 @@ footer{
   margin-left: 42%;
   margin-right: 42%;
   cursor: pointer;
-
+  
 }
 
 #input1{
@@ -394,3 +396,26 @@ footer{
 .content {
   margin: 1px;
 }
+
+.beltIMG{
+  width: 3rem;
+  height: 3rem; 
+  position: relative;
+  align-self: center;
+  justify-content: center;
+ }
+
+/* #points{
+  color: var(--navText);
+  border: .125rem solid var(--navComp);
+  border-radius: .5rem;
+  justify-content: center;
+  font-size: large;
+} */
+
+/* .gameGrid {
+  display: grid;
+  justify-content: center;
+  grid-gap: 5rem 5rem;
+  grid-template-columns: repeat(2, 5rem);
+}  */

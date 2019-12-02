@@ -26,8 +26,8 @@ function displayActivity(){
     const total = document.querySelector("#points")
     const belts = document.querySelector("#belt");
     activityBTN.addEventListener("click", function(){
-        sign.innerHTML = ``
-        total.innerHTML = ``
+        sign.innerHTML = ``;
+        total.innerHTML = ``;
         belts.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/activities/notdone`, activities =>{
             app.innerHTML = Activity(activities);
@@ -184,7 +184,12 @@ app.addEventListener("click", function(){
             rank: completeRank,
             categoryID: completeCategoryid,
             done: completeDone
-        }
+        }        
+        apiActions.putRequest(`https://localhost:44306/api/activities/totalPoints`,
+        apiActions.getRequest("https://localhost:44306/api/activities/totalPoints", points =>{
+            total.innerHTML = Point(points);
+        })
+        )
         apiActions.putRequest(`https://localhost:44306/api/activities/${completeActivityid}`,
             activityData,
             activities => {
