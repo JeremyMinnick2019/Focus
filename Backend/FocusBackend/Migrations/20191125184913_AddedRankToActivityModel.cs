@@ -18,21 +18,21 @@ namespace FocusBackend.Migrations
                 keyColumn: "ID",
                 keyValue: 1,
                 columns: new[] { "Completion", "Creation", "Rank" },
-                values: new object[] { new DateTime(2019, 11, 25, 13, 49, 12, 842, DateTimeKind.Local), new DateTime(2019, 11, 25, 13, 49, 12, 841, DateTimeKind.Local), 18 });
+                values: new object[] { new DateTime(2019, 11, 25, 13, 49, 12, 842, DateTimeKind.Local), new DateTime(2019, 11, 25, 13, 49, 12, 841, DateTimeKind.Local)});
 
             migrationBuilder.UpdateData(
                 table: "Activities",
                 keyColumn: "ID",
                 keyValue: 2,
                 columns: new[] { "Completion", "Creation", "Rank" },
-                values: new object[] { new DateTime(2019, 11, 25, 13, 49, 12, 843, DateTimeKind.Local), new DateTime(2019, 11, 25, 13, 49, 12, 843, DateTimeKind.Local), 13 });
+                values: new object[] { new DateTime(2019, 11, 25, 13, 49, 12, 843, DateTimeKind.Local), new DateTime(2019, 11, 25, 13, 49, 12, 843, DateTimeKind.Local)});
 
             migrationBuilder.UpdateData(
                 table: "Activities",
                 keyColumn: "ID",
                 keyValue: 3,
                 columns: new[] { "Completion", "Creation", "Rank" },
-                values: new object[] { new DateTime(2019, 11, 25, 13, 49, 12, 843, DateTimeKind.Local), new DateTime(2019, 11, 25, 13, 49, 12, 843, DateTimeKind.Local), 10 });
+                values: new object[] { new DateTime(2019, 11, 25, 13, 49, 12, 843, DateTimeKind.Local), new DateTime(2019, 11, 25, 13, 49, 12, 843, DateTimeKind.Local)});
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

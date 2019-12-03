@@ -13,6 +13,7 @@
     "build": "webpack --mode production --content-base docs/ --output-path docs/"
   },
   "dependencies": {
+    "bootstrap": "^4.4.1",
     "moment": "^2.24.0"
   }
 }

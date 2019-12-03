@@ -69,22 +69,22 @@ namespace FocusBackend.Migrations
                 table: "Activities",
                 keyColumn: "ID",
                 keyValue: 1,
-                columns: new[] { "Completion", "Creation", "Points" },
-                values: new object[] { new DateTime(2019, 11, 26, 10, 46, 5, 380, DateTimeKind.Local), new DateTime(2019, 11, 26, 10, 46, 5, 379, DateTimeKind.Local), 180 });
+                columns: new[] { "Completion", "Creation" },
+                values: new object[] { new DateTime(2019, 11, 26, 10, 46, 5, 380, DateTimeKind.Local), new DateTime(2019, 11, 26, 10, 46, 5, 379, DateTimeKind.Local)});
 
             migrationBuilder.UpdateData(
                 table: "Activities",
                 keyColumn: "ID",
                 keyValue: 2,
-                columns: new[] { "Completion", "Creation", "Points" },
-                values: new object[] { new DateTime(2019, 11, 26, 10, 46, 5, 381, DateTimeKind.Local), new DateTime(2019, 11, 26, 10, 46, 5, 381, DateTimeKind.Local), 130 });
+                columns: new[] { "Completion", "Creation" },
+                values: new object[] { new DateTime(2019, 11, 26, 10, 46, 5, 381, DateTimeKind.Local), new DateTime(2019, 11, 26, 10, 46, 5, 381, DateTimeKind.Local)});
 
             migrationBuilder.UpdateData(
                 table: "Activities",
                 keyColumn: "ID",
                 keyValue: 3,
-                columns: new[] { "Completion", "Creation", "Points" },
-                values: new object[] { new DateTime(2019, 11, 26, 10, 46, 5, 381, DateTimeKind.Local), new DateTime(2019, 11, 26, 10, 46, 5, 381, DateTimeKind.Local), 100 });
+                columns: new[] { "Completion", "Creation" },
+                values: new object[] { new DateTime(2019, 11, 26, 10, 46, 5, 381, DateTimeKind.Local), new DateTime(2019, 11, 26, 10, 46, 5, 381, DateTimeKind.Local)});
 
             migrationBuilder.UpdateData(
                 table: "Users",

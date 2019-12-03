@@ -2,6 +2,11 @@
   padding: none;
 }
 
+body
+{
+  background-color: transparent;
+}
+
 html{
   font-family: 'Poppins', sans-serif;
   color: var(--navText);
@@ -96,6 +101,7 @@ header{
 }
 
 footer{
+
   color: var(--navText);
   position: relative;
   left: 0;
