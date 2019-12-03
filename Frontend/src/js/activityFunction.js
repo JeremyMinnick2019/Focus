@@ -7,6 +7,7 @@ import Success from "./components/success"
 import Belt from "./components/belt"
 import profile from "./profile"
 import ActivityDetails from "./components/activityDetails"
+import ConfettiGenerator from "confetti-js"
 
 
 export default () =>{
@@ -178,6 +179,11 @@ app.addEventListener("click", function(){
 
 app.addEventListener("click", function(){
     if(event.target.classList.contains("complete-activity")) {
+        alert("Nice Job! You Completed An Activitiy")
+        var confettiSettings = { target: "my-canvas" };
+        var confetti = new ConfettiGenerator( confettiSettings);
+        confetti.render();
+
         const completeActivityid = event.target.parentElement.querySelector(".complete-activity_id").value
         const completeName = event.target.parentElement.querySelector(".complete-activity_name").value
         const completeDescription = event.target.parentElement.querySelector(".complete-activity_description").value
@@ -217,4 +223,6 @@ app.addEventListener("click", function(){
         }
         )}
     })
+
+    
 }

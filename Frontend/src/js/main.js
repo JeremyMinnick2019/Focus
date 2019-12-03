@@ -8,6 +8,7 @@ import Navbar from "./components/navbar"
 import Belt from "./components/belt"
 import displayHome from "./components/home"
 import displayBar from "./components/progressbar"
+import ConfettiGenerator from "confetti-js"
 
 
 export default () => {
@@ -25,6 +26,7 @@ function pageBuild(){
     categoryAction();
     activityAction();
     barAction();
+    confetti();
 }
 
 function header(){
@@ -83,4 +85,15 @@ function categoryAction(){
 
 function activityAction(){
     displayActivity()
+}
+function confetti(){
+    const app = document.querySelector("#app");
+    app.addEventListener("click", function(){
+    if(event.target.classList.contains("complete-activity")) {
+        alert("Nice Job! You Completed An Activitiy")
+        var confettiSettings = { target: "my-canvas" };
+        var confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+    }
+    })
 }
