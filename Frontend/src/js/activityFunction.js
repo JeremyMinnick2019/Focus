@@ -4,8 +4,7 @@ import apiActions from "./api/apiActions"
 import ActivityComplete from "./components/activityComplete"
 import HeaderAct from "./components/headerAct"
 import Success from "./components/success"
-import Belt from "./components/belt"
-import profile from "./profile"
+import Point from "./components/points"
 import ActivityDetails from "./components/activityDetails"
 
 
@@ -202,8 +201,8 @@ app.addEventListener("click", function(){
             categoryID: completeCategoryid,
             done: completeDone
         }        
-        apiActions.putRequest(`https://localhost:44306/api/activities/totalPoints`,
-        apiActions.getRequest("https://localhost:44306/api/activities/totalPoints", points =>{
+        apiActions.putRequest(`https://localhost:44306/api/activities/points`,
+        apiActions.getRequest("https://localhost:44306/api/activities/points", points =>{
             total.innerHTML = Point(points);
         })
         )

@@ -3,7 +3,7 @@ import moment from "moment";
 export default function CategoryActivity(category){
     return `
     <section>
-    <h2 id="cathead">Category: ${category.name}</h2>
+    <h2 id="cathead">Department: ${category.name}</h2>
     </section>
 
     ${category.activities

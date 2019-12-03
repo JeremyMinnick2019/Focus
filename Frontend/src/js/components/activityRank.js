@@ -3,6 +3,7 @@ import moment from "moment";
 
 export default function ActivityRank(activities) {
     return `
+    <section class="gridRank">
     ${activities
         .map(activity => {
             
