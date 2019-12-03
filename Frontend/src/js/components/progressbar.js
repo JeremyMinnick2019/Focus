@@ -5,7 +5,7 @@ export default () =>{
 }
 
 function Bar() {
-    const bars = document.querySelector("#progressbar");
+    const bars = document.querySelector("#userProgressBar");
     apiActions.getRequest("https://localhost:44306/api/activities/points", bar =>{
         const points =  bar;
         switch (true){
@@ -38,15 +38,15 @@ function Bar() {
                 break;
             //If points range 51-100
             case points >= 50:
-                bars.innerHTML = `<div class="progress">
+                bars.innerHTML = `<section><div class="progress">
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-              </div>`;
+              </div></section>`;
                 break;
             //If points range 0-50
             case points >= 0:
-                bars.innerHTML = `<div class="progress">
+                bars.innerHTML = `<section class="progress"><div class="progress">
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-              </div>`;
+              </div></section>`;
                 break;      
             }
     })
