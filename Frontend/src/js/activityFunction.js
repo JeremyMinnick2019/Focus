@@ -169,8 +169,8 @@ app.addEventListener("click", function(){
         total.innerHTML = ``
         belts.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, 
-        activities => {
-            app.innerHTML = Activity(activities)
+        detailActivity => {
+            app.innerHTML = ActivityDetails(detailActivity)
         })
     }
 });
