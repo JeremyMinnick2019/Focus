@@ -39,14 +39,14 @@ function Bar() {
             //If points range 51-100
             case points >= 50:
                 bars.innerHTML = `<section><div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
               </div></section>`;
                 break;
             //If points range 0-50
             case points >= 0:
-                bars.innerHTML = `<section class="progress"><div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
-              </div></section>`;
+                bars.innerHTML = `<div class="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 20%"></div>
+              </div>`;
                 break;      
             }
     })
