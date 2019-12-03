@@ -43,8 +43,10 @@ function home(){
     const head = document.querySelector("#header");
     const landing = document.querySelector("#app");
     const belts = document.querySelector("#belt")
+    const available = document.querySelector("#available");
     head.innerHTML = Header();
     belts.innerHTML = ``;
+    available.innerHTML = ``;
     landing.innerHTML = displayHome();
 }
 
@@ -54,11 +56,13 @@ function homeAction(){
     const head = document.querySelector("#header");
     const landing = document.querySelector("#app");
     const total = document.querySelector("#points")
+    const available = document.querySelector("#available");
     const belts = document.querySelector("#belt");
     homeBTN.addEventListener("click", function(){
         head.innerHTML = Header();
         sign.innerHTML = ``;
         total.innerHTML = ``;
+        available.innerHTML = ``;
         belts.innerHTML = ``;
         landing.innerHTML = displayHome();    
     })

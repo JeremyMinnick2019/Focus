@@ -153,7 +153,7 @@ footer{
 
 #gridItem, #gridItemA, #grid-Item, .activity, .Success, .gameGrid
 {
-  border-radius: 5px;
+  border-radius: .25rem;
   /* border-radius: 100px; */
   box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.122);
   
