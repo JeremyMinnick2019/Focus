@@ -44,7 +44,7 @@ namespace FocusBackend.Repositories
 
         public override IEnumerable<Activity> GetByRank()
         {
-            var activities = db.Set<Activity>();
+            var activities = db.Set<Activity>().Where(d => d.Done == false);
             return activities.OrderByDescending(activity => activity.Rank).Take(3);
         }
 

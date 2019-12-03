@@ -1,5 +1,6 @@
 import apiActions from "../api/apiActions"
 import ActivityRank from "./activityRank"
+import ActivityDetails from "./activityDetails"
 
 export default () => {
     displayHome()
@@ -16,4 +17,5 @@ function displayHome(){
         total.innerHTML = ``;
         belts.innerHTML = ``;
     });
+    
 }

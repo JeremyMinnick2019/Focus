@@ -57,7 +57,7 @@ export default function Activity(activities) {
                         <p class="activity_completion">Time Completed: ${timeCompleted}</p>
                         <input class="complete-activity_categoryId" type="hidden" value="${activity.categoryID}">
                         <input class="complete-activity_description" type="hidden" value="${activity.description}">
-                        <input class="complete-activity checkBox" type="checkbox" <p>Mark Complete</p>
+                        <input class="complete-activity_checkBox" type="checkbox" <p>Mark Complete</p>
                         <input class="complete-activity_id" type="hidden" value="${activity.id}">
                         <input class="complete-activity_done" type="hidden" value="${activity.done}">
                     </section>
