@@ -5,7 +5,6 @@
 html{
   font-family: 'Poppins', sans-serif;
   color: var(--navText);
-  /* background-image: url("../images/cogs.jpg"); */
   background-image: linear-gradient(rgba(83, 82, 82, 0.698),rgba(83, 82, 82, 0.698)) ,url("../images/cogs.jpg");
   width: 100%;
   height: 100vh;
@@ -47,8 +46,7 @@ html{
 
 
 #navbar {
-/* border: .125rem solid var(--navText);  */
-/* border-radius: 1rem; */
+border-radius: 1rem;
 box-shadow: 7px 7px 20px black;
 justify-content: space-around;
 align-items: center;
@@ -69,33 +67,6 @@ h1 {
 
 /* NavBar*/
 
-/* .burger {
-  margin: 1em;
-  width: 40px;
-  display: inline-block;
-  cursor: pointer;
-}
-
-.line1, .line2, .line3 {
-  width: 35px;
-  height: 5px;
-  background-color: rgb(252, 253, 253);
-  margin: 6px 0;
-  transition: 0.4s;
-}
-
-.change .line1 {
-  transform: rotate(-45deg) translate(-9px, 6px);
-  transform: rotate(-45deg) translate(-9px, 6px);
-}
-      
-.change .line2 {opacity: 0;}
-      
-.change .line3 {
-  transform: rotate(45deg) translate(-8px, -8px);
-  transform: rotate(45deg) translate(-8px, -8px);
-} */
-
 ul {
   display: flex;
   justify-content: space-around;
@@ -113,9 +84,7 @@ ul a {
   justify-content: center;
 }
       
-
-/* body{
-} */
+/* body*/
 
 header{
   position: relative;
@@ -138,8 +107,8 @@ footer{
   display: grid;
   justify-content: center;
   grid-gap: 2rem 5rem;
-  grid-template-columns: repeat(2, 15rem);
-  grid-template-rows: repeat(4, 10rem);
+  grid-template-columns: repeat(3, 15rem);
+  grid-template-rows: repeat(3, 10rem);
 }
 
 .gridMain{
@@ -162,7 +131,7 @@ footer{
 .gridAct{
   display: grid;
   justify-content: center;
-  grid-gap: 5rem 20rem;
+  grid-gap: 2.5rem 20rem;
   grid-template-columns: repeat(1, 75rem);
 }
 
@@ -229,7 +198,6 @@ footer{
 {
   display: flex;
   justify-content: center;
-  
 }
 
 .categoryName{
@@ -420,4 +388,8 @@ footer{
  #cathead{
    color: var(--navText);
    text-align: center;
+ }
+
+ #catdep{
+   margin: 1rem;
  }

@@ -19,7 +19,6 @@ function pageBuild(){
     footer();
     home();
     homeAction();
-    displayBelt();
     profileAction();
     successAction();
     categoryAction();
@@ -80,8 +79,4 @@ function categoryAction(){
 
 function activityAction(){
     displayActivity()
-}
-
-function displayBelt(){
-    Belt()
 }

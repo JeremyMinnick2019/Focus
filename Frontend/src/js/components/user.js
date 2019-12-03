@@ -21,12 +21,3 @@ export default function User(users) {
         </section>
     `
 }
-        // <button class="delete-user" id="mainbutton">Delete</button>
-
-    // <section class="gridMain">
-    //     <section class="userAdd" id="gridItem">
-    //         <input class="add-user_name" id="input" type="text" placeholder="Add your name">
-    //         <input class="add-user_email" id="input" type="text" placeholder="Add your email">
-    //         <input class="add-user_phone" id="input" type="text" placeholder="Add your phone number">
-    //         <button class='add-user' id="mainbutton">Submit</button>
-    //     </section>
