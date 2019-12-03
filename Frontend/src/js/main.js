@@ -7,6 +7,7 @@ import Footer from "./components/footer"
 import Navbar from "./components/navbar"
 import Belt from "./components/belt"
 import displayHome from "./components/home"
+import displayBar from "./components/progressbar"
 
 
 export default () => {
@@ -23,6 +24,7 @@ function pageBuild(){
     successAction();
     categoryAction();
     activityAction();
+    barAction();
 }
 
 function header(){
@@ -64,7 +66,9 @@ function homeAction(){
         landing.innerHTML = displayHome();    
     })
 }
-
+function barAction(){
+    displayBar();
+}
 function profileAction(){
     displayProfile();
 }

@@ -6,6 +6,7 @@ import HeaderPro from "./components/headerPro"
 import apiActions from "./api/apiActions"
 import Point from "./components/points"
 import Belt from "./components/belt"
+import ProgressBar from "./components/progressbar"
 
 export default () =>{
     displayUser();
@@ -13,6 +14,7 @@ export default () =>{
     displayBusiness();
     userPoints();
     userLevel();
+    userProgress();
 }
 
 
@@ -41,7 +43,13 @@ function userLevel(){
             belts.innerHTML = Belt();
         })
 }
-
+function userProgress(){
+    const userBTN = document.querySelector("#profileButton");
+    const bars = document.querySelector("#progressbar");
+    userBTN.addEventListener("click", function(){
+            bars.innerHTML = ProgressBar();
+        })
+}
 function displayUser(){
     const userBTN = document.querySelector("#profileButton");
     const app = document.querySelector("#app");
