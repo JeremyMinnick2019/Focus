@@ -95,7 +95,7 @@ header{
 }
 
 footer{
-  color: var(--colorDark);
+  color: white;
   position: relative;
   left: 0;
   bottom: 0;
