@@ -1,5 +1,5 @@
 export default function headerSuc() {
     return `
-            <h1>SUCCESS</h1>
+            <h1>COMPLETED ACTIONS</h1>
         `
 }

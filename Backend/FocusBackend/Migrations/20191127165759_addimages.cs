@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FocusBackend.Migrations
 {
-    public partial class DataUpdate : Migration
+    public partial class addimages : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -28,21 +28,28 @@ namespace FocusBackend.Migrations
                 keyColumn: "ID",
                 keyValue: 1,
                 columns: new[] { "Completion", "Creation" },
-                values: new object[] { new DateTime(2019, 11, 26, 15, 39, 0, 92, DateTimeKind.Local), new DateTime(2019, 11, 26, 15, 39, 0, 91, DateTimeKind.Local) });
+                values: new object[] { new DateTime(2019, 11, 27, 11, 57, 58, 632, DateTimeKind.Local), new DateTime(2019, 11, 27, 11, 57, 58, 630, DateTimeKind.Local) });
 
             migrationBuilder.UpdateData(
                 table: "Activities",
                 keyColumn: "ID",
                 keyValue: 2,
                 columns: new[] { "Completion", "Creation" },
-                values: new object[] { new DateTime(2019, 11, 26, 15, 39, 0, 93, DateTimeKind.Local), new DateTime(2019, 11, 26, 15, 39, 0, 93, DateTimeKind.Local) });
+                values: new object[] { new DateTime(2019, 11, 27, 11, 57, 58, 633, DateTimeKind.Local), new DateTime(2019, 11, 27, 11, 57, 58, 633, DateTimeKind.Local) });
 
             migrationBuilder.UpdateData(
                 table: "Activities",
                 keyColumn: "ID",
                 keyValue: 3,
                 columns: new[] { "Completion", "Creation" },
-                values: new object[] { new DateTime(2019, 11, 26, 15, 39, 0, 93, DateTimeKind.Local), new DateTime(2019, 11, 26, 15, 39, 0, 93, DateTimeKind.Local) });
+                values: new object[] { new DateTime(2019, 11, 27, 11, 57, 58, 633, DateTimeKind.Local), new DateTime(2019, 11, 27, 11, 57, 58, 633, DateTimeKind.Local) });
+
+            migrationBuilder.UpdateData(
+                table: "Users",
+                keyColumn: "ID",
+                keyValue: 1,
+                column: "Image",
+                value: "./images/blank-profile-picture.png");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -78,6 +85,13 @@ namespace FocusBackend.Migrations
                 keyValue: 3,
                 columns: new[] { "Completion", "Creation", "Points" },
                 values: new object[] { new DateTime(2019, 11, 26, 10, 46, 5, 381, DateTimeKind.Local), new DateTime(2019, 11, 26, 10, 46, 5, 381, DateTimeKind.Local), 100 });
+
+            migrationBuilder.UpdateData(
+                table: "Users",
+                keyColumn: "ID",
+                keyValue: 1,
+                column: "Image",
+                value: "Image");
 
             //migrationBuilder.CreateIndex(
             //    name: "IX_Activities_UserID",

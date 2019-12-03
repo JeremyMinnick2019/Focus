@@ -24,8 +24,8 @@ function displayCategory(){
     const total = document.querySelector("#points")
     const belts = document.querySelector("#belt");
     categoryBTN.addEventListener("click", function(){
-        sign.innerHTML = ``
-        total.innerHTML = ``
+        sign.innerHTML = ``;
+        total.innerHTML = ``;
         belts.innerHTML = ``;
         apiActions.getRequest("https://localhost:44306/api/categories", categories =>{
             app.innerHTML = Category(categories);
@@ -57,8 +57,8 @@ app.addEventListener("click", function(){
     const addBusiness = event.target.parentElement.querySelector(".add-category_business").value;
 
     console.log(addName)
-    sign.innerHTML = ``
-    total.innerHTML = ``
+    sign.innerHTML = ``;
+    total.innerHTML = ``;
     belts.innerHTML = ``;
     apiActions.postRequest
     ( 
@@ -78,8 +78,8 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("delete-category")) {
         const categoryId = event.target.parentElement.querySelector(".category_id").value;
         console.log("delete" + categoryId);
-        sign.innerHTML = ``
-        total.innerHTML = ``
+        sign.innerHTML = ``;
+        total.innerHTML = ``;
         belts.innerHTML = ``;
         apiActions.deleteRequest(`https://localhost:44306/api/categories/${categoryId}`,
         categories => {
@@ -92,8 +92,8 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("edit-category")) {
         const categoryId = event.target.parentElement.querySelector(".category_id").value;
         console.log("edit"  + categoryId);
-        sign.innerHTML = ``
-        total.innerHTML = ``
+        sign.innerHTML = ``;
+        total.innerHTML = ``;
         belts.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/categories/${categoryId}` , editCategories => {
             app.innerHTML = categoryEdit(editCategories)
@@ -113,8 +113,8 @@ app.addEventListener("click", function() {
             id: categoryId,
             businessID: updateBusiness
         }
-        sign.innerHTML = ``
-        total.innerHTML = ``
+        sign.innerHTML = ``;
+        total.innerHTML = ``;
         belts.innerHTML = ``;
         apiActions.putRequest(
             `https://localhost:44306/api/categories/${categoryId}`,
