@@ -20,13 +20,15 @@ function displayHeader(){
 function displayCategory(){
     const categoryBTN = document.querySelector("#categoryButton");
     const app = document.querySelector("#app");
-    const sign = document.querySelector("#sign")
-    const total = document.querySelector("#points")
+    const sign = document.querySelector("#sign");
+    const total = document.querySelector("#points");
     const belts = document.querySelector("#belt");
+    const available = document.querySelector("#available");
     categoryBTN.addEventListener("click", function(){
         sign.innerHTML = ``;
         total.innerHTML = ``;
         belts.innerHTML = ``;
+        available.innerHTML = ``;
         apiActions.getRequest("https://localhost:44306/api/categories", categories =>{
             app.innerHTML = Category(categories);
         })
@@ -60,6 +62,7 @@ app.addEventListener("click", function(){
     sign.innerHTML = ``;
     total.innerHTML = ``;
     belts.innerHTML = ``;
+    available.innerHTML = ``;
     apiActions.postRequest
     ( 
         "https://localhost:44306/api/categories",{  
@@ -81,6 +84,7 @@ app.addEventListener("click", function(){
         sign.innerHTML = ``;
         total.innerHTML = ``;
         belts.innerHTML = ``;
+        available.innerHTML = ``;
         apiActions.deleteRequest(`https://localhost:44306/api/categories/${categoryId}`,
         categories => {
             app.innerHTML = Category(categories)
@@ -95,6 +99,7 @@ app.addEventListener("click", function(){
         sign.innerHTML = ``;
         total.innerHTML = ``;
         belts.innerHTML = ``;
+        available.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/categories/${categoryId}` , editCategories => {
             app.innerHTML = categoryEdit(editCategories)
         })
@@ -116,6 +121,7 @@ app.addEventListener("click", function() {
         sign.innerHTML = ``;
         total.innerHTML = ``;
         belts.innerHTML = ``;
+        available.innerHTML = ``;
         apiActions.putRequest(
             `https://localhost:44306/api/categories/${categoryId}`,
             categoryData,

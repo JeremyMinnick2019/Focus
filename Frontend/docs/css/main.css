@@ -23,6 +23,7 @@ html{
   --navAccent2: #cc264a;
   --navComp: #E00774;
   --moneyBlue1: #5c80BC;
+  --blue2: rgb(24, 98, 224);
   --navText: rgb(252, 253, 253);
   
 }
@@ -100,7 +101,8 @@ header{
 }
 
 footer{
-  color: white;
+
+  color: var(--navText);
   position: relative;
   left: 0;
   bottom: 0;
@@ -108,6 +110,13 @@ footer{
   text-align: center; 
 }
 
+.gridRank{
+  display: grid;
+  justify-content: center;
+  grid-gap: 2rem 5rem;
+  grid-template-columns: repeat(2, 40rem);
+  grid-template-rows: repeat(3, 10rem);
+}
 .gridCat{
   display: grid;
   justify-content: center;
@@ -150,7 +159,7 @@ footer{
 
 #gridItem, #gridItemA, #grid-Item, .activity, .Success, .gameGrid
 {
-  border-radius: 5px;
+  border-radius: .25rem;
   /* border-radius: 100px; */
   box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.122);
   
@@ -163,6 +172,7 @@ footer{
 #catName{
   cursor: pointer;
 }
+
 
 #gridItem:hover,
 #gridItemA:hover,
@@ -206,7 +216,7 @@ footer{
 }
 
 .categoryName{
-  color: rgb(40, 82, 153);
+  color: var(--blue2);
 }
 
 #gridItemA h2,h3,h5,.edit-user,.delete-user, .userIcon
@@ -244,8 +254,8 @@ footer{
 }
 
 #mainbutton{
-  background-color: rgb(47, 105, 47); 
-  border: .125rem solid var(--moneyBlue1);
+  background-color: var(--moneyBlue1); 
+  border: .125rem solid var(--navText);
   border-radius: .5rem;
   color: white;
   

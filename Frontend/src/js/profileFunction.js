@@ -5,6 +5,7 @@ import businessEdit from "./components/businessEdit"
 import HeaderPro from "./components/headerPro"
 import apiActions from "./api/apiActions"
 import Point from "./components/points"
+import Available from "./components/available"
 import Belt from "./components/belt"
 import ProgressBar from "./components/progressbar"
 
@@ -29,9 +30,13 @@ function displayHeader(){
 function userPoints(){
     const userBTN = document.querySelector("#profileButton");
     const total = document.querySelector("#points");
+    const available = document.querySelector("#available");
     userBTN.addEventListener("click", function(){
         apiActions.getRequest("https://localhost:44306/api/activities/points", points =>{
             total.innerHTML = Point(points);
+        })
+        apiActions.getRequest("https://localhost:44306/api/activities/available", availables =>{
+            available.innerHTML = Available(availables);
         })
     })
 }
@@ -53,6 +58,10 @@ function userProgress(){
 function displayUser(){
     const userBTN = document.querySelector("#profileButton");
     const app = document.querySelector("#app");
+    const sign = document.querySelector("#sign");
+    const total = document.querySelector("#points");
+    const belts = document.querySelector("#belt");
+    const available = document.querySelector("#available");
     userBTN.addEventListener("click", function(){
         apiActions.getRequest("https://localhost:44306/api/users", users =>{
             app.innerHTML = User(users);
@@ -99,7 +108,10 @@ function displayUser(){
     app.addEventListener("click", function(){
         if(event.target.classList.contains("edit-user")){
             const userid = event.target.parentElement.querySelector(".user_id").value;
-            sign.innerHTML = ``
+            sign.innerHTML = ``;
+            total.innerHTML = ``;
+            belts.innerHTML = ``;
+            available.innerHTML = ``;    
             apiActions.getRequest(`https://localhost:44306/api/users/${userid}`,
             editUser => {
                 app.innerHTML = UserEdit(editUser);
@@ -132,7 +144,11 @@ function displayUser(){
 
 function displayBusiness(){
     const businessBTN = document.querySelector("#profileButton");
-    const app = document.querySelector("#sign");
+    const app = document.querySelector("#app");
+    const sign = document.querySelector("#sign");
+    const total = document.querySelector("#points");
+    const belts = document.querySelector("#belt");
+    const available = document.querySelector("#available");
     businessBTN.addEventListener("click", function(){
         apiActions.getRequest("https://localhost:44306/api/businesses", businesses =>{
             sign.innerHTML = Business(businesses);
@@ -184,7 +200,10 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("edit-business")) {
         const businessId = event.target.parentElement.querySelector(".business_id").value;
         console.log("edit"  + businessId);
-        sign.innerHTML = ``
+        sign.innerHTML = ``;
+        total.innerHTML = ``;
+        belts.innerHTML = ``;
+        available.innerHTML = ``;    
         apiActions.getRequest(`https://localhost:44306/api/businesses/${businessId}` , editBusiness => {
             app.innerHTML = businessEdit(editBusiness)
         })

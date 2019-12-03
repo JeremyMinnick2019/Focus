@@ -54,5 +54,12 @@ namespace FocusBackend.Repositories
             int total = completed.Sum(r => r.Rank);
             return total;
         }
+
+        public override int GetAvailablePoints()
+        {
+            var completed = db.Set<Activity>();
+            int total = completed.Sum(r => r.Rank);
+            return total;
+        }
     }
 }

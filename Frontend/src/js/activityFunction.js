@@ -4,8 +4,7 @@ import apiActions from "./api/apiActions"
 import ActivityComplete from "./components/activityComplete"
 import HeaderAct from "./components/headerAct"
 import Success from "./components/success"
-import Belt from "./components/belt"
-import profile from "./profile"
+import Point from "./components/points"
 import ActivityDetails from "./components/activityDetails"
 
 
@@ -28,10 +27,12 @@ function displayActivity(){
     const sign = document.querySelector("#sign");
     const total = document.querySelector("#points");
     const belts = document.querySelector("#belt");
+    const available = document.querySelector("#available");
     activityBTN.addEventListener("click", function(){
         sign.innerHTML = ``;
         total.innerHTML = ``;
         belts.innerHTML = ``;
+        available.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/activities/notdone`, activities =>{
             app.innerHTML = Activity(activities);
         });
@@ -107,6 +108,7 @@ app.addEventListener("click", function(){
         sign.innerHTML = ``;
         total.innerHTML = ``;
         belts.innerHTML = ``;
+        available.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, 
         editActivity => {
             app.innerHTML = ActivityEdit(editActivity)
@@ -140,9 +142,10 @@ app.addEventListener("click", function() {
             categoryID: updateCategoryid,
             done: updateDone
         }
-        sign.innerHTML = ``
-        total.innerHTML = ``
+        sign.innerHTML = ``;
+        total.innerHTML = ``;
         belts.innerHTML = ``;
+        available.innerHTML = ``;
         apiActions.putRequest(`https://localhost:44306/api/activities/${activityid}`,
             activityData,
             activities => {
@@ -166,9 +169,10 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("activity-details")) {
         const activityid = event.target.parentElement.querySelector(".activity_id").value;
         console.log(activityid);
-        sign.innerHTML = ``
-        total.innerHTML = ``
+        sign.innerHTML = ``;
+        total.innerHTML = ``;
         belts.innerHTML = ``;
+        available.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, 
         detailActivity => {
             app.innerHTML = ActivityDetails(detailActivity)
@@ -202,8 +206,8 @@ app.addEventListener("click", function(){
             categoryID: completeCategoryid,
             done: completeDone
         }        
-        apiActions.putRequest(`https://localhost:44306/api/activities/totalPoints`,
-        apiActions.getRequest("https://localhost:44306/api/activities/totalPoints", points =>{
+        apiActions.putRequest(`https://localhost:44306/api/activities/points`,
+        apiActions.getRequest("https://localhost:44306/api/activities/points", points =>{
             total.innerHTML = Point(points);
         })
         )
