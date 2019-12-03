@@ -7,7 +7,6 @@ import Footer from "./components/footer"
 import Navbar from "./components/navbar"
 import Belt from "./components/belt"
 import displayHome from "./components/home"
-import belt from "./components/belt"
 
 
 export default () => {
@@ -20,7 +19,6 @@ function pageBuild(){
     footer();
     home();
     homeAction();
-    displayBelt();
     profileAction();
     successAction();
     categoryAction();
@@ -43,16 +41,12 @@ function footer(){
 }
 
 function home(){
-    const sign = document.querySelector("#sign");
     const head = document.querySelector("#header");
     const landing = document.querySelector("#app");
-    const total = document.querySelector("#points");
-    const belts = document.querySelector("#belt");
+    const belts = document.querySelector("#belt")
     head.innerHTML = Header();
-    sign.innerHTML = ``;
-    total.innerHTML = ``;
     belts.innerHTML = ``;
-    landing.innerHTML = displayHome()
+    landing.innerHTML = displayHome();
 }
 
 function homeAction(){
@@ -85,8 +79,4 @@ function categoryAction(){
 
 function activityAction(){
     displayActivity()
-}
-
-function displayBelt(){
-    Belt()
 }

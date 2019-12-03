@@ -1,4 +1,5 @@
 import apiActions from "../api/apiActions"
+
 export default () =>{
     Belt();
 }
@@ -10,26 +11,48 @@ function Belt() {
         switch (true){
             //If points range 501-1000
             case points >= 500:
-                belts.innerHTML = `Black Belt Level`;
+                belts.innerHTML = `<section class="userGrid">
+                <section class="user" id="gridItemA">
+                <img src="/images/black_belt.png" class=beltIMG></img>
+                <h3>Level: Black Belt</h3>
+                </section>
+                </section>`;
                 break;
             //If points range 251-500
             case points >= 250:
-                belts.innerHTML = `Brown Belt Level`;
+                belts.innerHTML = `<section class="userGrid">
+                <section class="user" id="gridItemA">
+                <img src="/images/brown_belt.png" class=beltIMG></img>
+                <h3>Level: Brown Belt</h3>
+                </section>
+                </section>`;
                 break;
             //If points range 101-250
             case points >= 100:
-                belts.innerHTML = `Green Belt Level`;
+                belts.innerHTML = `<section class="userGrid">
+                <section class="user" id="gridItemA">
+                <img src="/images/green_belt.png" class=beltIMG></img>
+                <h3>Level: Green Belt</h3>
+                </section>
+                </section>`;
                 break;
             //If points range 51-100
             case points >= 50:
-                belts.innerHTML = `Orange Belt Level`;
+                belts.innerHTML = `<section class="userGrid">
+                <section class="user" id="gridItemA">
+                <img src="/images/orange_belt.png" class=beltIMG></img>
+                <h3>Level: Orange Belt</h3>
+                </section>
+                </section>`;
                 break;
             //If points range 0-50
             case points >= 0:
                 belts.innerHTML = `<section class="userGrid">
                 <section class="user" id="gridItemA">
-                <img src="/images/white_belt.png" class=beltIMG>
-                <strong>White Belt</strong></img></section></section>`;
+                <img src="/images/white_belt.png" class=beltIMG></img>
+                <h3>Level: White Belt</h3>
+                </section>
+                </section>`;
                 break;      
             }
     })

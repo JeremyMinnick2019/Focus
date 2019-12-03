@@ -54,16 +54,16 @@ namespace FocusBackend.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<int>(
-                name: "Points",
-                table: "Activities",
-                nullable: false,
-                defaultValue: 0);
+            //migrationBuilder.AddColumn<int>(
+            //    name: "Points",
+            //    table: "Activities",
+            //    nullable: false,
+            //    defaultValue: 0);
 
-            migrationBuilder.AddColumn<int>(
-                name: "UserID",
-                table: "Activities",
-                nullable: true);
+            //migrationBuilder.AddColumn<int>(
+            //    name: "UserID",
+            //    table: "Activities",
+            //    nullable: true);
 
             migrationBuilder.UpdateData(
                 table: "Activities",
@@ -93,18 +93,18 @@ namespace FocusBackend.Migrations
                 column: "Image",
                 value: "Image");
 
-            migrationBuilder.CreateIndex(
-                name: "IX_Activities_UserID",
-                table: "Activities",
-                column: "UserID");
+            //migrationBuilder.CreateIndex(
+            //    name: "IX_Activities_UserID",
+            //    table: "Activities",
+            //    column: "UserID");
 
-            migrationBuilder.AddForeignKey(
-                name: "FK_Activities_Users_UserID",
-                table: "Activities",
-                column: "UserID",
-                principalTable: "Users",
-                principalColumn: "ID",
-                onDelete: ReferentialAction.Restrict);
+            //migrationBuilder.AddForeignKey(
+            //    name: "FK_Activities_Users_UserID",
+            //    table: "Activities",
+            //    column: "UserID",
+            //    principalTable: "Users",
+            //    principalColumn: "ID",
+            //    onDelete: ReferentialAction.Restrict);
         }
     }
 }

@@ -2,8 +2,8 @@ import moment from "moment";
 
 export default function CategoryActivity(category){
     return `
-    <section class="category">
-    <h3>Category ${category.name}</h3>
+    <section>
+    <h2 id="cathead">Category: ${category.name}</h2>
     </section>
 
     ${category.activities
