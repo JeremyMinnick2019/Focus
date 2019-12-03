@@ -5,6 +5,7 @@ import businessEdit from "./components/businessEdit"
 import HeaderPro from "./components/headerPro"
 import apiActions from "./api/apiActions"
 import Point from "./components/points"
+import Available from "./components/available"
 import Belt from "./components/belt"
 
 export default () =>{
@@ -27,9 +28,13 @@ function displayHeader(){
 function userPoints(){
     const userBTN = document.querySelector("#profileButton");
     const total = document.querySelector("#points");
+    const avalaible = document.querySelector("#available");
     userBTN.addEventListener("click", function(){
         apiActions.getRequest("https://localhost:44306/api/activities/points", points =>{
             total.innerHTML = Point(points);
+        })
+        apiActions.getRequest("https://localhost:44306/api/activities/available", availables =>{
+            available.innerHTML = Available(availables);
         })
     })
 }

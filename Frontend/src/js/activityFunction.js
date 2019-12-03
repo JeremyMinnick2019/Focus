@@ -4,6 +4,7 @@ import apiActions from "./api/apiActions"
 import ActivityComplete from "./components/activityComplete"
 import HeaderAct from "./components/headerAct"
 import Success from "./components/success"
+import Point from "./components/points"
 import ActivityDetails from "./components/activityDetails"
 
 
