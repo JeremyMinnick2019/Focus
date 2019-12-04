@@ -7,6 +7,7 @@ import Footer from "./components/footer"
 import Navbar from "./components/navbar"
 import displayHome from "./components/home"
 import displayBar from "./components/progressbar"
+import ConfettiGenerator from "confetti-js"
 
 
 export default () => {
@@ -24,6 +25,7 @@ function pageBuild(){
     categoryAction();
     activityAction();
     barAction();
+    confetti();
 }
 
 function header(){

@@ -6,11 +6,13 @@ import HeaderAct from "./components/headerAct"
 import Success from "./components/success"
 import headerSuc from "./components/headerSuc"
 import ActivityDetails from "./components/activityDetails"
+import ConfettiGenerator from "confetti-js"
 
 
 export default () =>{
     displayActivity();
     displayHeader();
+    confetti();
 }
 
 function displayHeader(){
@@ -188,6 +190,8 @@ app.addEventListener("click", function(){
 app.addEventListener("click", function(){
     var newTime = new Date();
     if(event.target.classList.contains("complete-activity")) {
+      
+
         const completeActivityid = event.target.parentElement.querySelector(".complete-activity_id").value
         const completeName = event.target.parentElement.querySelector(".complete-activity_name").value
         const completeDescription = event.target.parentElement.querySelector(".complete-activity_description").value
@@ -228,4 +232,21 @@ app.addEventListener("click", function(){
         }
         )}
     })
+
+    
 }
+
+function confetti()
+{   const app = document.querySelector("#app");
+    app.addEventListener("click", function(){
+    if(event.target.classList.contains("complete-activity")) {
+    // setTimeout(confetti, 0000)
+     alert("Nice Job! You Completed An Activitiy"); 
+    var confettiSettings = { target: "my-canvas" , max: "100"};
+    var confetti = new ConfettiGenerator( confettiSettings);
+    confetti.render();
+    //confetti.clear();
+    // clearTimeout(time);
+}})
+
+};
