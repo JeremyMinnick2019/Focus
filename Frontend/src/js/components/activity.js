@@ -38,8 +38,7 @@ export default function Activity(activities) {
             <section class="activity">
 
                 <h3 class="activity_name">${activity.name}</h3>
-                <p class="activity_category">Department: ${activity.category.name}</p>
-                <p class="activity_description">Description: ${activity.description}</p>
+                <h5 class="activity_description">${activity.description}</h5>
                 <p class="activity_importance">Importance: ${activity.importance}</p>
                 <p class="activity_urgency">Urgency: ${activity.urgency}</p>
                 <p class="activity_creation">Started: <br>${timeCreated}</p>
@@ -64,6 +63,7 @@ export default function Activity(activities) {
                 `;
             })
             .join("")}
-    </section>
-    `
+            </section>
+            `
+            // <p class="activity_category">Department: ${activity.category.name}</p>
 }

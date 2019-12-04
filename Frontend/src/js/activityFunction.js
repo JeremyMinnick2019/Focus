@@ -4,6 +4,7 @@ import apiActions from "./api/apiActions"
 import ActivityComplete from "./components/activityComplete"
 import HeaderAct from "./components/headerAct"
 import Success from "./components/success"
+import headerSuc from "./components/headerSuc"
 import Point from "./components/points"
 import ActivityDetails from "./components/activityDetails"
 
@@ -23,6 +24,7 @@ function displayHeader(){
 
 function displayActivity(){
     const activityBTN = document.querySelector("#activityButton");
+    const head = document.querySelector("#header");
     const app = document.querySelector("#app");
     const sign = document.querySelector("#sign");
     const total = document.querySelector("#points");
@@ -95,7 +97,7 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("delete-activity")) {
         const activityId = event.target.parentElement.querySelector(".activity_id").value;
         console.log("delete" + activityId);
-        apiActions.deleteRequest(`https://localhost:44306/api/activities/${activityId}`,
+        apiActions.deleteRequest(`https://localhost:44306/api/activities/${activityId}`, 
         activities => {
             app.innerHTML = Activity(activities)
         })
@@ -170,6 +172,7 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("activity-details")) {
         const activityid = event.target.parentElement.querySelector(".activity_id").value;
         console.log(activityid);
+        head.innerHTML = `<h1>DETAILS</h1>`;
         sign.innerHTML = ``;
         total.innerHTML = ``;
         belts.innerHTML = ``;
@@ -210,7 +213,7 @@ app.addEventListener("click", function(){
         }        
         apiActions.putRequest(`https://localhost:44306/api/activities/points`,
         apiActions.getRequest("https://localhost:44306/api/activities/points", points =>{
-            total.innerHTML = Point(points);
+            total.innerHTML = ``;
         })
         )
         apiActions.putRequest(`https://localhost:44306/api/activities/${completeActivityid}`,
@@ -218,6 +221,7 @@ app.addEventListener("click", function(){
             activities => {
                 console.log(activities);
                 apiActions.getRequest(`https://localhost:44306/api/activities/done`, activities =>{
+                head.innerHTML = headerSuc();
                 app.innerHTML = Success(activities);
             });
         }

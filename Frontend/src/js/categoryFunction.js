@@ -20,6 +20,7 @@ function displayHeader(){
 function displayCategory(){
     const categoryBTN = document.querySelector("#categoryButton");
     const app = document.querySelector("#app");
+    const head = document.querySelector("#header");
     const sign = document.querySelector("#sign");
     const total = document.querySelector("#points");
     const belts = document.querySelector("#belt");
@@ -37,6 +38,7 @@ function displayCategory(){
         if(event.target.classList.contains("categoryName")){
             const categoryId = event.target.parentElement.querySelector(".category_id").value;
             apiActions.getRequest(`https://localhost:44306/api/categories/${categoryId}`, category =>{
+                head.innerHTML =`<h1></h1>`;
                 app.innerHTML = CategoryActivity(category);
                 console.log(category);
             })

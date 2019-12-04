@@ -1,5 +1,5 @@
 export default function HeaderAct() {
     return `
-            <h1>NOT COMPLETED ACTIONS</h1>
+            <h1>PENDING ACTIONS</h1>
         `
 }
