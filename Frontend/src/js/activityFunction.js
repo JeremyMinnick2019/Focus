@@ -13,6 +13,7 @@ import ConfettiGenerator from "confetti-js"
 export default () =>{
     displayActivity();
     displayHeader();
+    confetti();
 }
 
 function displayHeader(){
@@ -179,10 +180,7 @@ app.addEventListener("click", function(){
 
 app.addEventListener("click", function(){
     if(event.target.classList.contains("complete-activity")) {
-        alert("Nice Job! You Completed An Activitiy")
-        var confettiSettings = { target: "my-canvas" };
-        var confetti = new ConfettiGenerator( confettiSettings);
-        confetti.render();
+      
 
         const completeActivityid = event.target.parentElement.querySelector(".complete-activity_id").value
         const completeName = event.target.parentElement.querySelector(".complete-activity_name").value
@@ -226,3 +224,18 @@ app.addEventListener("click", function(){
 
     
 }
+
+function confetti()
+{   const app = document.querySelector("#app");
+    app.addEventListener("click", function(){
+    if(event.target.classList.contains("complete-activity")) {
+    // setTimeout(confetti, 0000)
+     alert("Nice Job! You Completed An Activitiy"); 
+    var confettiSettings = { target: "my-canvas" , max: "100"};
+    var confetti = new ConfettiGenerator( confettiSettings);
+    confetti.render();
+    //confetti.clear();
+    // clearTimeout(time);
+}})
+
+};

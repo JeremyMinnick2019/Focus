@@ -86,14 +86,3 @@ function categoryAction(){
 function activityAction(){
     displayActivity()
 }
-function confetti(){
-    const app = document.querySelector("#app");
-    app.addEventListener("click", function(){
-    if(event.target.classList.contains("complete-activity")) {
-        alert("Nice Job! You Completed An Activitiy")
-        var confettiSettings = { target: "my-canvas" };
-        var confetti = new ConfettiGenerator(confettiSettings);
-        confetti.render();
-    }
-    })
-}
