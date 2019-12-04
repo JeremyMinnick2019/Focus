@@ -171,7 +171,7 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("activity-details")) {
         const activityid = event.target.parentElement.querySelector(".activity_id").value;
         console.log(activityid);
-        head.innerHTML = `<h1></h1>`;
+        head.innerHTML = `<h1>DETAILS</h1>`;
         sign.innerHTML = ``;
         total.innerHTML = ``;
         belts.innerHTML = ``;

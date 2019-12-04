@@ -38,7 +38,7 @@ function displayCategory(){
         if(event.target.classList.contains("categoryName")){
             const categoryId = event.target.parentElement.querySelector(".category_id").value;
             apiActions.getRequest(`https://localhost:44306/api/categories/${categoryId}`, category =>{
-                head.innerHTML =`<h1>DEPARTMENT ACTIONS</h1>`;
+                head.innerHTML =`<h1></h1>`;
                 app.innerHTML = CategoryActivity(category);
                 console.log(category);
             })

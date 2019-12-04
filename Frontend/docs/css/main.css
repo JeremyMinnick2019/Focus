@@ -365,8 +365,8 @@ footer{
 }
 
 .popupButton {
-  background-color: #5c80BC; 
-  border: .125rem solid var(--navText);
+  background-color: var(--colorDark); 
+  border: .125rem solid var(--navText2);
   border-radius: .5rem;
   color: white;
   text-align: center;
@@ -375,7 +375,7 @@ footer{
   padding:10px;
   margin-top: 10px;
   margin-bottom: 10px;
-  margin-left: 42%;
+  margin-left: 45%;
   margin-right: 42%;
   cursor: pointer;
   
