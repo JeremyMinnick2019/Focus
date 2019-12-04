@@ -24,8 +24,8 @@ html{
   --navComp: #E00774;
   --moneyBlue1: #5c80BC;
   --blue2: rgb(24, 98, 224);
-  --navText: rgb(252, 253, 253);
-  
+  --navText: rgb(53, 53, 53);
+  --navText2: rgb(221, 216, 216);
 }
 
 /* NavBar*/ 
@@ -102,7 +102,7 @@ header{
 
 footer{
 
-  color: var(--navText);
+  color: var(--navText2);
   position: relative;
   left: 0;
   bottom: 0;
@@ -114,7 +114,7 @@ footer{
   display: grid;
   justify-content: center;
   grid-gap: 2rem 5rem;
-  grid-template-columns: repeat(2, 40rem);
+  grid-template-columns: repeat(1, 40rem);
   grid-template-rows: repeat(3, 10rem);
 }
 .gridCat{
@@ -173,7 +173,6 @@ footer{
   cursor: pointer;
 }
 
-
 #gridItem:hover,
 #gridItemA:hover,
 #grid-Item:hover,
@@ -209,7 +208,7 @@ footer{
   padding-left: 20px;
 }
 
-#gridItem h3,h5,.edit-user,.delete-user
+#gridItem h3,h4,.edit-user,.delete-user
 {
   display: flex;
   justify-content: center;
@@ -219,7 +218,7 @@ footer{
   color: var(--blue2);
 }
 
-#gridItemA h2,h3,h5,.edit-user,.delete-user, .userIcon
+#gridItemA h2,h3,h4,.edit-user,.delete-user, .userIcon
 {
   display: flex;
   justify-content: center;
@@ -243,7 +242,7 @@ footer{
   padding-right: 20px;
 }
 
-.activity h3
+.activity h3, .category h3
 {
   font-weight: bolder;
   letter-spacing: 6px;
@@ -397,14 +396,38 @@ footer{
  }
 
  .businessName{
-   text-align: center;
+  font-weight: bolder;
+  letter-spacing: 6px;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
+  text-align: center;
  }
 
  #cathead{
-   color: var(--navText);
+   color: var(--navText2);
    text-align: center;
  }
 
  #catdep{
    margin: 1rem;
+ }
+
+ #white{
+   color: var(--navText2);
+}
+
+ #name{
+  font-weight: bolder;
+  letter-spacing: 6px;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
+  padding-left: 4rem;
+ }
+
+ #number{
+  font-weight: bolder;
+  letter-spacing: 6px;
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
+  padding-left: 1rem;
  }
