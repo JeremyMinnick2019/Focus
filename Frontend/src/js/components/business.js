@@ -14,5 +14,4 @@ export default function Business(businesses) {
         .join("")}
         </section>
         `
-        // <button class="edit-business" id="mainbutton">Edit</button>
 }

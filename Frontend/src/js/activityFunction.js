@@ -5,7 +5,6 @@ import ActivityComplete from "./components/activityComplete"
 import HeaderAct from "./components/headerAct"
 import Success from "./components/success"
 import headerSuc from "./components/headerSuc"
-import Point from "./components/points"
 import ActivityDetails from "./components/activityDetails"
 
 
@@ -25,6 +24,7 @@ function displayHeader(){
 function displayActivity(){
     const activityBTN = document.querySelector("#activityButton");
     const head = document.querySelector("#header");
+    const footer = document.querySelector("#footer");
     const app = document.querySelector("#app");
     const sign = document.querySelector("#sign");
     const total = document.querySelector("#points");
@@ -54,6 +54,7 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("activityName")){
     const activityid = event.target.parentElement.querySelector(".activity_id").value;
     apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, activities => {
+        footer.innerHTML = ``;
         document.querySelector("#app").innerHTML = Activity(activities);
         console.log(activities);
     })

@@ -50,13 +50,11 @@ function Belt() {
                 belts.innerHTML = `<section class="userGrid">
                 <section class="user" id="gridItemA">
                 <img src="/images/white_belt.png" class=beltIMG></img>
-                <h3>Level: <span id="number">White Belt</span></h3>
+                <h2><span class="color">Level:</span><span id="number">White Belt</span></h2>
                 </section>
                 </section>`;
                 break;      
             }
     })
 }
-    // })
-
  
