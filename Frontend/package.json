@@ -13,7 +13,6 @@
     "build": "webpack --mode production --content-base docs/ --output-path docs/"
   },
   "dependencies": {
-    "bootstrap": "^4.4.1",
     "confetti-js": "^0.0.16",
     "moment": "^2.24.0",
     "save": "^2.4.0"
