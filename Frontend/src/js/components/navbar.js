@@ -4,7 +4,7 @@ export default function Navbar() {
     <span id="Logo">FOCUS</span>
         <ul>
             
-            <li><a id="homeButton">Home</a></li>
+            <li><a id="homeButton">Priorities</a></li>
             <li><a id="profileButton">Profile</a></li>
             <li><a id="categoryButton">Department</a></li>
             <li><a id="activityButton">Actions</a></li>

@@ -49,6 +49,17 @@ html{
     cursor: pointer;
 }
 
+#homeButton {
+  font-size: 1.4rem;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgba(252, 240, 83, 0.79), 0 0 5px rgb(252, 136, 3);
+  color: rgb(250, 218, 74)
+}
+
+#profileButton, #categoryButton, #activityButton, #successButton {
+  font-size: 1.2rem;
+  color: var(--navText);
+}
+
 
 
 #navbar {
@@ -125,6 +136,8 @@ footer{
   grid-template-rows: repeat(3, 10rem);
 }
 
+
+
 .gridMain{
   display: grid;
   justify-content: center;
@@ -187,6 +200,8 @@ footer{
   border: .125rem solid var(--moneyBlue1);
 }
 
+
+
 .Success
 {
   border: .125rem solid var(--moneyBlue1);
@@ -216,7 +231,10 @@ footer{
 }
 
 .categoryName{
-  color: var(--blue2);
+  color: var (--navText);
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 2px black;
+  letter-spacing: 2px;
 }
 
 #gridItemA h2,h3,h5,.edit-user,.delete-user, .userIcon
@@ -282,7 +300,7 @@ footer{
 {
   font-weight: bolder;
   letter-spacing: 6px;
-  font-size: 2em;
+  font-size: 3em;
   color: white;
   text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
   width: 125px;
