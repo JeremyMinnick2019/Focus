@@ -262,7 +262,7 @@ footer{
 
 #mainbutton{
   background-color: var(--colorDark); 
-  border: .125rem solid var(--navText);
+  border: .125rem solid var(--navText2);
   border-radius: .5rem;
   color: white;
   
