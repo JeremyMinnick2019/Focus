@@ -16,5 +16,4 @@ export default function User(users) {
         .join("")}
         </section>
         `
-        // <button class="edit-user" id="mainbutton">Edit</button>
 }

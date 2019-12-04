@@ -1,5 +1,6 @@
 * {
   padding: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 body
@@ -8,7 +9,6 @@ body
 }
 
 html{
-  font-family: 'Poppins', sans-serif;
   color: var(--navText2);
   background-image: linear-gradient(rgba(83, 82, 82, 0.698),rgba(83, 82, 82, 0.698)) ,url("../images/cogs.jpg");
   width: 100%;
@@ -59,7 +59,6 @@ justify-content: space-around;
 align-items: center;
 min-height: 8vh;
 background-color: var(--colorDark);
-font-family: 'Poppins', sans-serif;
 font-weight: bold;
 color: var(--navText2);
 }
@@ -140,7 +139,7 @@ footer{
   display: grid;
   justify-content: center;
   grid-gap: 5rem 20rem;
-  grid-template-columns: repeat(1, 20rem);
+  grid-template-columns: repeat(1, 30rem);
 }
 
 .gridAct{
@@ -161,11 +160,9 @@ footer{
 #gridItem, #gridItemA, #grid-Item, .activity, .Success, .gameGrid
 {
   border-radius: .25rem;
-  /* border-radius: 100px; */
   box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.122);
   
   background: linear-gradient( to bottom, var(--moneyBlue1), var(--moneyBlue1));
-  /* background: radial-gradient( var(--moneyBlue1), var(--colorDark)); */
   transition: 0.5s;
 }
 
@@ -204,7 +201,7 @@ footer{
   font-weight: bolder;
   letter-spacing: 6px;
   color: var(--navText2);
-  text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
+  text-shadow: 1px 1px 2px black;
   padding-right: 50px;
   padding-left: 20px;
 }
@@ -243,19 +240,12 @@ footer{
   padding-right: 20px;
 }
 
-.activity_description, .activity_importance, .activity_urgency, .activity_creation, .activity_completion{
-    /* font-weight: bolder; */
-    /* letter-spacing: 6px; */
-    color: var(--navText2);
-    text-shadow: 1px 1px 2px black;
-}
-
 .activity h3, .category h3
 {
   font-weight: bolder;
   letter-spacing: 6px;
   color: var(--navText2);
-  text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
+  text-shadow: 1px 1px 2px black;
   padding-right: 50px;
   padding-left: 20px;
 }
@@ -289,7 +279,7 @@ footer{
 {
   font-weight: bolder;
   letter-spacing: 6px;
-  font-size: 2em;
+  font-size: 2.5em;
   color: white;
   text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
   width: 125px;
@@ -332,14 +322,12 @@ footer{
 .popup h2 {
   margin-top: 0;
   color: #333;
-  font-family: Tahoma, Arial, sans-serif;
   
 }
 
 .popup h3 {
   margin-top: 0;
   color: #333;
-  font-family: Tahoma, Arial, sans-serif;
   text-align: center;
 }
 
@@ -407,7 +395,7 @@ footer{
   font-weight: bolder;
   letter-spacing: 6px;
   color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
+  text-shadow: 1px 1px 2px black;
   text-align: center;
  }
 
@@ -428,15 +416,13 @@ footer{
   font-weight: bolder;
   letter-spacing: 6px;
   color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
-  padding-left: 4rem;
+  text-shadow: 1px 1px 2px black;
+  padding-left: 2rem;
  }
 
  #number{
-  font-weight: bolder;
-  letter-spacing: 6px;
   color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
+  text-shadow: 1px 1px 2px black;
   padding-left: 1rem;
  }
 
@@ -444,5 +430,15 @@ footer{
   font-weight: bolder;
   letter-spacing: 6px;
   color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
+  text-shadow: 1px 1px 2px black;
  }
+
+.beltIMG{
+  margin-right: 30rem;
+  width: 15rem;
+  height: 15rem;
+}
+
+.color{
+  color: var(--gold)
+}
