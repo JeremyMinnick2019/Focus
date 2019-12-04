@@ -280,7 +280,7 @@ footer{
   border-radius: .5rem;
 }
 
-.checkBox {
+.complete-activity {
   min-width: 15px;
   min-height: 15px;
 }
@@ -446,3 +446,235 @@ footer{
   color: white;
   text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
  }
+
+ #myProgressW {
+  width: 100%;
+  background-color: rgb(71, 71, 71);
+  border-radius: 5px;
+}
+
+#myProgressG {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+/* white bar */
+
+#myBarW0 {
+  width: 0%;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+#myBarW10 {
+  width: 20%;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+#myBarW20 {
+  width: 40%;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+#myBarW30 {
+  width: 60%;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+#myBarW40 {
+  width: 80%;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+#myBarW50 {
+  width: 100%;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+/* orange belt */
+
+#myBarOr0 {
+  width: 0%;
+  height: 30px;
+  background-color: rgb(218, 126, 7);
+  border-radius: 5px;
+}
+
+#myBarOr10 {
+  width: 20%;
+  height: 30px;
+  background-color: rgb(218, 126, 7);
+  border-radius: 5px;
+}
+
+#myBarOr20 {
+  width: 40%;
+  height: 30px;
+  background-color: rgb(218, 126, 7);
+  border-radius: 5px;
+}
+
+#myBarOr30 {
+  width: 60%;
+  height: 30px;
+  background-color: rgb(218, 126, 7);
+  border-radius: 5px;
+}
+
+#myBarOr40 {
+  width: 80%;
+  height: 30px;
+  background-color: rgb(218, 126, 7);
+  border-radius: 5px;
+}
+
+#myBarOr50 {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(218, 126, 7);
+  border-radius: 5px;
+}
+
+/* green belt */
+
+#myBarG0 {
+  width: 0%;
+  height: 30px;
+  background-color: rgb(0, 202, 78);
+  border-radius: 5px;
+}
+
+#myBarG10 {
+  width: 20%;
+  height: 30px;
+  background-color: rgb(0, 202, 78);
+  border-radius: 5px;
+}
+
+#myBarG20 {
+  width: 40%;
+  height: 30px;
+  background-color: rgb(0, 202, 78);
+  border-radius: 5px;
+}
+
+#myBarG30 {
+  width: 60%;
+  height: 30px;
+  background-color: rgb(0, 202, 78);
+  border-radius: 5px;
+}
+
+#myBarG40 {
+  width: 80%;
+  height: 30px;
+  background-color: rgb(0, 202, 78);
+  border-radius: 5px;
+}
+
+#myBarG50 {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(0, 202, 78);
+  border-radius: 5px;
+}
+
+/* brown belt */
+
+#myBarB0 {
+  width: 0%;
+  height: 30px;
+  background-color: rgb(109, 34, 0);
+  border-radius: 5px;
+}
+
+#myBarB10 {
+  width: 20%;
+  height: 30px;
+  background-color: rgb(109, 34, 0);
+  border-radius: 5px;
+}
+
+#myBarB20 {
+  width: 40%;
+  height: 30px;
+  background-color: rgb(109, 34, 0);
+  border-radius: 5px;
+}
+
+#myBarB30 {
+  width: 60;
+  height: 30px;
+  background-color: rgb(109, 34, 0);
+  border-radius: 5px;
+}
+
+#myBarB40 {
+  width: 80%;
+  height: 30px;
+  background-color: rgb(109, 34, 0);
+  border-radius: 5px;
+}
+
+#myBarB50 {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(109, 34, 0);
+  border-radius: 5px;
+}
+
+/* black belt */
+
+#myBarBlack0 {
+  width: 0%;
+  height: 30px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+#myBarBlack10 {
+  width: 20%;
+  height: 30px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+#myBarBlack20 {
+  width: 40%;
+  height: 30px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+#myBarBlack30 {
+  width: 60%;
+  height: 30px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+#myBarBlack40 {
+  width: 80%;
+  height: 30px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+}
+
+#myBarBlack50 {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+}

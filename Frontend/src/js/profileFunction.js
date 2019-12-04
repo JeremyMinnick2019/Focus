@@ -15,7 +15,7 @@ export default () =>{
     displayBusiness();
     userPoints();
     userLevel();
-    userProgress();
+    // userProgress();
 }
 
 
@@ -48,13 +48,13 @@ function userLevel(){
             belts.innerHTML = Belt();
         })
 }
-function userProgress(){
-    const userBTN = document.querySelector("#profileButton");
-    const bars = document.querySelector("#progressbar");
-    userBTN.addEventListener("click", function(){
-            bars.innerHTML = ProgressBar();
-        })
-}
+// function userProgress(){
+//     const userBTN = document.querySelector(".complete-activity");
+//     const bars = document.querySelector("#progressbar");
+//     userBTN.addEventListener("click", function(){
+//             bars.innerHTML = ProgressBar();
+//         })
+// }
 function displayUser(){
     const userBTN = document.querySelector("#profileButton");
     const app = document.querySelector("#app");
