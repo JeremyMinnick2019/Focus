@@ -20,13 +20,16 @@ function displayHeader(){
 function displayCategory(){
     const categoryBTN = document.querySelector("#categoryButton");
     const app = document.querySelector("#app");
-    const sign = document.querySelector("#sign")
-    const total = document.querySelector("#points")
+    const head = document.querySelector("#header");
+    const sign = document.querySelector("#sign");
+    const total = document.querySelector("#points");
     const belts = document.querySelector("#belt");
+    const available = document.querySelector("#available");
     categoryBTN.addEventListener("click", function(){
         sign.innerHTML = ``;
         total.innerHTML = ``;
         belts.innerHTML = ``;
+        available.innerHTML = ``;
         apiActions.getRequest("https://localhost:44306/api/categories", categories =>{
             app.innerHTML = Category(categories);
         })
@@ -35,6 +38,7 @@ function displayCategory(){
         if(event.target.classList.contains("categoryName")){
             const categoryId = event.target.parentElement.querySelector(".category_id").value;
             apiActions.getRequest(`https://localhost:44306/api/categories/${categoryId}`, category =>{
+                head.innerHTML =`<h1></h1>`;
                 app.innerHTML = CategoryActivity(category);
                 console.log(category);
             })
@@ -60,6 +64,7 @@ app.addEventListener("click", function(){
     sign.innerHTML = ``;
     total.innerHTML = ``;
     belts.innerHTML = ``;
+    available.innerHTML = ``;
     apiActions.postRequest
     ( 
         "https://localhost:44306/api/categories",{  
@@ -81,6 +86,7 @@ app.addEventListener("click", function(){
         sign.innerHTML = ``;
         total.innerHTML = ``;
         belts.innerHTML = ``;
+        available.innerHTML = ``;
         apiActions.deleteRequest(`https://localhost:44306/api/categories/${categoryId}`,
         categories => {
             app.innerHTML = Category(categories)
@@ -95,6 +101,7 @@ app.addEventListener("click", function(){
         sign.innerHTML = ``;
         total.innerHTML = ``;
         belts.innerHTML = ``;
+        available.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/categories/${categoryId}` , editCategories => {
             app.innerHTML = categoryEdit(editCategories)
         })
@@ -116,6 +123,7 @@ app.addEventListener("click", function() {
         sign.innerHTML = ``;
         total.innerHTML = ``;
         belts.innerHTML = ``;
+        available.innerHTML = ``;
         apiActions.putRequest(
             `https://localhost:44306/api/categories/${categoryId}`,
             categoryData,

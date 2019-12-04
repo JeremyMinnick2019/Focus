@@ -4,8 +4,8 @@ import apiActions from "./api/apiActions"
 import ActivityComplete from "./components/activityComplete"
 import HeaderAct from "./components/headerAct"
 import Success from "./components/success"
-import Belt from "./components/belt"
-import profile from "./profile"
+import headerSuc from "./components/headerSuc"
+import Point from "./components/points"
 import ActivityDetails from "./components/activityDetails"
 import ConfettiGenerator from "confetti-js"
 
@@ -26,14 +26,17 @@ function displayHeader(){
 
 function displayActivity(){
     const activityBTN = document.querySelector("#activityButton");
+    const head = document.querySelector("#header");
     const app = document.querySelector("#app");
     const sign = document.querySelector("#sign");
     const total = document.querySelector("#points");
     const belts = document.querySelector("#belt");
+    const available = document.querySelector("#available");
     activityBTN.addEventListener("click", function(){
         sign.innerHTML = ``;
         total.innerHTML = ``;
         belts.innerHTML = ``;
+        available.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/activities/notdone`, activities =>{
             app.innerHTML = Activity(activities);
         });
@@ -61,16 +64,17 @@ app.addEventListener("click", function(){
 })
 
 app.addEventListener("click", function(){
+    var newTime = new Date();
     if(event.target.classList.contains("add-activity")){
     const addName = event.target.parentElement.querySelector(".add-activity_name").value
     const addDescription = event.target.parentElement.querySelector(".add-activity_description").value
-    const addCreation = new Date();
-    const addCompletion = new Date();
+    const addCreation = newTime.toUTCString();
+    const addCompletion = newTime.toUTCString();
     const addImportance = event.target.parentElement.querySelector(".add-activity_importance").value
     const addUrgency = event.target.parentElement.querySelector(".add-activity_urgency").value
     const addRank = parseInt(addImportance) + parseInt(addUrgency)
     const addCategoryid = event.target.parentElement.querySelector(".add-activity_categoryId").value
-    console.log(addName, addDescription, addImportance, addUrgency, addCategoryid)
+    console.log(`Name: ${addName} \nDescription: ${addDescription} \nImportance: ${addImportance} \nUrgency: ${addUrgency} \nCategoryid: ${addCategoryid} \nStarted: ${addCreation} \nCompleted: ${addCompletion}`)
     apiActions.postRequest
     (
         "https://localhost:44306/api/activities/notdone",{
@@ -95,7 +99,7 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("delete-activity")) {
         const activityId = event.target.parentElement.querySelector(".activity_id").value;
         console.log("delete" + activityId);
-        apiActions.deleteRequest(`https://localhost:44306/api/activities/${activityId}`,
+        apiActions.deleteRequest(`https://localhost:44306/api/activities/${activityId}`, 
         activities => {
             app.innerHTML = Activity(activities)
         })
@@ -109,6 +113,7 @@ app.addEventListener("click", function(){
         sign.innerHTML = ``;
         total.innerHTML = ``;
         belts.innerHTML = ``;
+        available.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, 
         editActivity => {
             app.innerHTML = ActivityEdit(editActivity)
@@ -142,9 +147,10 @@ app.addEventListener("click", function() {
             categoryID: updateCategoryid,
             done: updateDone
         }
-        sign.innerHTML = ``
-        total.innerHTML = ``
+        sign.innerHTML = ``;
+        total.innerHTML = ``;
         belts.innerHTML = ``;
+        available.innerHTML = ``;
         apiActions.putRequest(`https://localhost:44306/api/activities/${activityid}`,
             activityData,
             activities => {
@@ -168,9 +174,11 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("activity-details")) {
         const activityid = event.target.parentElement.querySelector(".activity_id").value;
         console.log(activityid);
-        sign.innerHTML = ``
-        total.innerHTML = ``
+        head.innerHTML = `<h1>DETAILS</h1>`;
+        sign.innerHTML = ``;
+        total.innerHTML = ``;
         belts.innerHTML = ``;
+        available.innerHTML = ``;
         apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, 
         detailActivity => {
             app.innerHTML = ActivityDetails(detailActivity)
@@ -179,6 +187,7 @@ app.addEventListener("click", function(){
 });
 
 app.addEventListener("click", function(){
+    var newTime = new Date();
     if(event.target.classList.contains("complete-activity")) {
       
 
@@ -186,7 +195,7 @@ app.addEventListener("click", function(){
         const completeName = event.target.parentElement.querySelector(".complete-activity_name").value
         const completeDescription = event.target.parentElement.querySelector(".complete-activity_description").value
         const completeCreation = event.target.parentElement.querySelector(".complete-activity_creation").value
-        const completeCompletion = new Date();
+        const completeCompletion = newTime.toUTCString();
         const completeImportance = event.target.parentElement.querySelector(".complete-activity_importance").value
         const completeUrgency = event.target.parentElement.querySelector(".complete-activity_urgency").value
         const completeRank = parseInt(completeImportance) + parseInt(completeUrgency)
@@ -206,9 +215,9 @@ app.addEventListener("click", function(){
             categoryID: completeCategoryid,
             done: completeDone
         }        
-        apiActions.putRequest(`https://localhost:44306/api/activities/totalPoints`,
-        apiActions.getRequest("https://localhost:44306/api/activities/totalPoints", points =>{
-            total.innerHTML = Point(points);
+        apiActions.putRequest(`https://localhost:44306/api/activities/points`,
+        apiActions.getRequest("https://localhost:44306/api/activities/points", points =>{
+            total.innerHTML = ``;
         })
         )
         apiActions.putRequest(`https://localhost:44306/api/activities/${completeActivityid}`,
@@ -216,6 +225,7 @@ app.addEventListener("click", function(){
             activities => {
                 console.log(activities);
                 apiActions.getRequest(`https://localhost:44306/api/activities/done`, activities =>{
+                head.innerHTML = headerSuc();
                 app.innerHTML = Success(activities);
             });
         }
