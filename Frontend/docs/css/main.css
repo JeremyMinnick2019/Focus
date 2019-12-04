@@ -280,9 +280,9 @@ footer{
   border-radius: .5rem;
 }
 
-.checkBox {
-  min-width: 15px;
-  min-height: 15px;
+.complete-activity {
+  min-width: 30px;
+  min-height: 30px;
 }
 
 #Logo
