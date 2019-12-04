@@ -60,16 +60,17 @@ app.addEventListener("click", function(){
 })
 
 app.addEventListener("click", function(){
+    var newTime = new Date();
     if(event.target.classList.contains("add-activity")){
     const addName = event.target.parentElement.querySelector(".add-activity_name").value
     const addDescription = event.target.parentElement.querySelector(".add-activity_description").value
-    const addCreation = new Date();
-    const addCompletion = new Date();
+    const addCreation = newTime.toUTCString();
+    const addCompletion = newTime.toUTCString();
     const addImportance = event.target.parentElement.querySelector(".add-activity_importance").value
     const addUrgency = event.target.parentElement.querySelector(".add-activity_urgency").value
     const addRank = parseInt(addImportance) + parseInt(addUrgency)
     const addCategoryid = event.target.parentElement.querySelector(".add-activity_categoryId").value
-    console.log(addName, addDescription, addImportance, addUrgency, addCategoryid)
+    console.log(`Name: ${addName} \nDescription: ${addDescription} \nImportance: ${addImportance} \nUrgency: ${addUrgency} \nCategoryid: ${addCategoryid} \nStarted: ${addCreation} \nCompleted: ${addCompletion}`)
     apiActions.postRequest
     (
         "https://localhost:44306/api/activities/notdone",{
@@ -181,12 +182,13 @@ app.addEventListener("click", function(){
 });
 
 app.addEventListener("click", function(){
+    var newTime = new Date();
     if(event.target.classList.contains("complete-activity")) {
         const completeActivityid = event.target.parentElement.querySelector(".complete-activity_id").value
         const completeName = event.target.parentElement.querySelector(".complete-activity_name").value
         const completeDescription = event.target.parentElement.querySelector(".complete-activity_description").value
         const completeCreation = event.target.parentElement.querySelector(".complete-activity_creation").value
-        const completeCompletion = new Date();
+        const completeCompletion = newTime.toUTCString();
         const completeImportance = event.target.parentElement.querySelector(".complete-activity_importance").value
         const completeUrgency = event.target.parentElement.querySelector(".complete-activity_urgency").value
         const completeRank = parseInt(completeImportance) + parseInt(completeUrgency)
