@@ -29,7 +29,7 @@ namespace FocusBackend.Data
                 );
                 
             modelBuilder.Entity<Business>().HasData(
-                   new Business(1, "Jane's Seafood Palace", "Restaurant", "image", 1)
+                   new Business(1, "Jane's Dojo", "School", "image", 1)
                    );
 
             modelBuilder.Entity<Category>().HasData(
@@ -50,8 +50,19 @@ namespace FocusBackend.Data
                    new Activity(4, "Clean Store", "Make The Restaurant Presentable", DateTime.Now, DateTime.Now,5, 5, false, 7),
                    new Activity(5, "Pay Bills", "Keep The Lights On", DateTime.Now, DateTime.Now, 8, 8, false, 5),
                    new Activity(6, "Order Food", "Set Up Deliveries For Stock", DateTime.Now, DateTime.Now, 7, 5, false, 7),
-                   new Activity(7, "Advertising", "Turn In Newspaper Ad", DateTime.Now, DateTime.Now, 5, 9, false, 1)
+                   new Activity(7, "Advertising", "Turn In Newspaper Ad", DateTime.Now, DateTime.Now, 5, 9, false, 1),
+                   new Activity(8, "Paperwork", "Go Through Invoices", DateTime.Now, DateTime.Now, 5, 9, false, 3),
+                   new Activity(9, "Client Concern", "Respond To Complaint", DateTime.Now, DateTime.Now, 5, 9, false, 4),
+                   new Activity(10, "Paycheck Error", "Check Employee Pay", DateTime.Now, DateTime.Now, 5, 9, false, 2),
+                   new Activity(11, "New Member Outreach", "Plan Presentation", DateTime.Now, DateTime.Now, 5, 9, false, 6),
+                   new Activity(12, "Building Maintenance", "Fix Front Steps", DateTime.Now, DateTime.Now, 5, 9, false, 8),
+                   new Activity(13, "Allocation", "Next Quarter Cleaning Funds", DateTime.Now, DateTime.Now, 5, 9, false, 5),
+                   new Activity(14, "Online Ad", "FB and Google Ads", DateTime.Now, DateTime.Now, 5, 9, false, 1),
+                   new Activity(15, "Tax Paperwork", "Organize receipts", DateTime.Now, DateTime.Now, 5, 9, false, 3),
+                   new Activity(16, "Accolade", "Thank User For Nice Online Review", DateTime.Now, DateTime.Now, 5, 9, false, 4)
+
                    );
         }
     }
 }
+,
