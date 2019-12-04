@@ -14,7 +14,7 @@ function Belt() {
                 belts.innerHTML = `<section class="userGrid">
                 <section class="user" id="gridItemA">
                 <img src="/images/black_belt.png" class=beltIMG></img>
-                <h3>Level: Black Belt</h3>
+                <h3>Level: <span id="number">Black Belt</span></h3>
                 </section>
                 </section>`;
                 break;
@@ -23,7 +23,7 @@ function Belt() {
                 belts.innerHTML = `<section class="userGrid">
                 <section class="user" id="gridItemA">
                 <img src="/images/brown_belt.png" class=beltIMG></img>
-                <h3>Level: Brown Belt</h3>
+                <h3>Level: <span id="number">Brown Belt</span></h3>
                 </section>
                 </section>`;
                 break;
@@ -32,7 +32,7 @@ function Belt() {
                 belts.innerHTML = `<section class="userGrid">
                 <section class="user" id="gridItemA">
                 <img src="/images/green_belt.png" class=beltIMG></img>
-                <h3>Level: Green Belt</h3>
+                <h3>Level: <span id="number">Green Belt</span></h3>
                 </section>
                 </section>`;
                 break;
@@ -41,7 +41,7 @@ function Belt() {
                 belts.innerHTML = `<section class="userGrid">
                 <section class="user" id="gridItemA">
                 <img src="/images/orange_belt.png" class=beltIMG></img>
-                <h3>Level: Orange Belt</h3>
+                <h3>Level: <span id="number">Orange Belt</span></h3>
                 </section>
                 </section>`;
                 break;
@@ -50,13 +50,11 @@ function Belt() {
                 belts.innerHTML = `<section class="userGrid">
                 <section class="user" id="gridItemA">
                 <img src="/images/white_belt.png" class=beltIMG></img>
-                <h3>Level: White Belt</h3>
+                <h2><span class="color">Level:</span><span id="number">White Belt</span></h2>
                 </section>
                 </section>`;
                 break;      
             }
     })
 }
-    // })
-
  

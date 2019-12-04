@@ -4,13 +4,15 @@ import apiActions from "./api/apiActions"
 import ActivityComplete from "./components/activityComplete"
 import HeaderAct from "./components/headerAct"
 import Success from "./components/success"
-import Point from "./components/points"
+import headerSuc from "./components/headerSuc"
 import ActivityDetails from "./components/activityDetails"
+import ConfettiGenerator from "confetti-js"
 
 
 export default () =>{
     displayActivity();
     displayHeader();
+    confetti();
 }
 
 function displayHeader(){
@@ -23,6 +25,8 @@ function displayHeader(){
 
 function displayActivity(){
     const activityBTN = document.querySelector("#activityButton");
+    const head = document.querySelector("#header");
+    const footer = document.querySelector("#footer");
     const app = document.querySelector("#app");
     const sign = document.querySelector("#sign");
     const total = document.querySelector("#points");
@@ -52,6 +56,7 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("activityName")){
     const activityid = event.target.parentElement.querySelector(".activity_id").value;
     apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, activities => {
+        footer.innerHTML = ``;
         document.querySelector("#app").innerHTML = Activity(activities);
         console.log(activities);
     })
@@ -60,16 +65,17 @@ app.addEventListener("click", function(){
 })
 
 app.addEventListener("click", function(){
+    var newTime = new Date();
     if(event.target.classList.contains("add-activity")){
     const addName = event.target.parentElement.querySelector(".add-activity_name").value
     const addDescription = event.target.parentElement.querySelector(".add-activity_description").value
-    const addCreation = new Date();
-    const addCompletion = new Date();
+    const addCreation = newTime.toUTCString();
+    const addCompletion = newTime.toUTCString();
     const addImportance = event.target.parentElement.querySelector(".add-activity_importance").value
     const addUrgency = event.target.parentElement.querySelector(".add-activity_urgency").value
     const addRank = parseInt(addImportance) + parseInt(addUrgency)
     const addCategoryid = event.target.parentElement.querySelector(".add-activity_categoryId").value
-    console.log(addName, addDescription, addImportance, addUrgency, addCategoryid)
+    console.log(`Name: ${addName} \nDescription: ${addDescription} \nImportance: ${addImportance} \nUrgency: ${addUrgency} \nCategoryid: ${addCategoryid} \nStarted: ${addCreation} \nCompleted: ${addCompletion}`)
     apiActions.postRequest
     (
         "https://localhost:44306/api/activities/notdone",{
@@ -94,7 +100,7 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("delete-activity")) {
         const activityId = event.target.parentElement.querySelector(".activity_id").value;
         console.log("delete" + activityId);
-        apiActions.deleteRequest(`https://localhost:44306/api/activities/${activityId}`,
+        apiActions.deleteRequest(`https://localhost:44306/api/activities/${activityId}`, 
         activities => {
             app.innerHTML = Activity(activities)
         })
@@ -169,6 +175,7 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("activity-details")) {
         const activityid = event.target.parentElement.querySelector(".activity_id").value;
         console.log(activityid);
+        head.innerHTML = `<h1>DETAILS</h1>`;
         sign.innerHTML = ``;
         total.innerHTML = ``;
         belts.innerHTML = ``;
@@ -181,12 +188,15 @@ app.addEventListener("click", function(){
 });
 
 app.addEventListener("click", function(){
+    var newTime = new Date();
     if(event.target.classList.contains("complete-activity")) {
+      
+
         const completeActivityid = event.target.parentElement.querySelector(".complete-activity_id").value
         const completeName = event.target.parentElement.querySelector(".complete-activity_name").value
         const completeDescription = event.target.parentElement.querySelector(".complete-activity_description").value
         const completeCreation = event.target.parentElement.querySelector(".complete-activity_creation").value
-        const completeCompletion = new Date();
+        const completeCompletion = newTime.toUTCString();
         const completeImportance = event.target.parentElement.querySelector(".complete-activity_importance").value
         const completeUrgency = event.target.parentElement.querySelector(".complete-activity_urgency").value
         const completeRank = parseInt(completeImportance) + parseInt(completeUrgency)
@@ -208,7 +218,7 @@ app.addEventListener("click", function(){
         }        
         apiActions.putRequest(`https://localhost:44306/api/activities/points`,
         apiActions.getRequest("https://localhost:44306/api/activities/points", points =>{
-            total.innerHTML = Point(points);
+            total.innerHTML = ``;
         })
         )
         apiActions.putRequest(`https://localhost:44306/api/activities/${completeActivityid}`,
@@ -216,9 +226,27 @@ app.addEventListener("click", function(){
             activities => {
                 console.log(activities);
                 apiActions.getRequest(`https://localhost:44306/api/activities/done`, activities =>{
+                head.innerHTML = headerSuc();
                 app.innerHTML = Success(activities);
             });
         }
         )}
     })
+
+    
 }
+
+function confetti()
+{   const app = document.querySelector("#app");
+    app.addEventListener("click", function(){
+    if(event.target.classList.contains("complete-activity")) {
+    // setTimeout(confetti, 0000)
+     alert("Nice Job! You Completed An Activitiy"); 
+    var confettiSettings = { target: "my-canvas" , max: "100"};
+    var confetti = new ConfettiGenerator( confettiSettings);
+    confetti.render();
+    //confetti.clear();
+    // clearTimeout(time);
+}})
+
+};

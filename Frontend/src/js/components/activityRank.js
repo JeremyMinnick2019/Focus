@@ -9,9 +9,10 @@ export default function ActivityRank(activities) {
             
             return `
             <section class="activity">
-                <h3 class="activity_name">${activity.name}</h3>
-                <p class="activity_description">Description: ${activity.description}</p>
-                <p class="activity_rank">Point Value: ${activity.rank}
+                <button class="activity-details" id="mainbutton"><h3 class="activity_name">
+                ${activity.name}</h3></button>
+                
+                <p class="activity_point">Point Value: ${activity.rank}
 
 
                 <input class="activity_id" type="hidden" value="${activity.id}">
@@ -24,11 +25,10 @@ export default function ActivityRank(activities) {
                     <input class="complete-activity_categoryId" type="hidden" value="${activity.categoryID}">
                     <input class="complete-activity_description" type="hidden" value="${activity.description}">
                     
-                    <input class="complete-activity" type="checkbox" <p>Mark Complete</p>
+                    <input class="complete-activity" type="checkbox">
                     <input class="complete-activity_id" type="hidden" value="${activity.id}">
                     <input class="complete-activity_done" type="hidden" value="${activity.done}">
                 </section>
-                <button class="activity-details" id="mainbutton">View Details</button>
             </section>
                 `;
             })

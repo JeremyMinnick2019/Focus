@@ -57,7 +57,7 @@ namespace FocusBackend.Repositories
 
         public override int GetAvailablePoints()
         {
-            var completed = db.Set<Activity>();
+            var completed = db.Set<Activity>().Where(d =>d.Done == false);
             int total = completed.Sum(r => r.Rank);
             return total;
         }

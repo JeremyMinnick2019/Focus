@@ -1,5 +1,6 @@
 * {
   padding: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 body
@@ -8,8 +9,7 @@ body
 }
 
 html{
-  font-family: 'Poppins', sans-serif;
-  color: var(--navText);
+  color: var(--navText2);
   background-image: linear-gradient(rgba(83, 82, 82, 0.698),rgba(83, 82, 82, 0.698)) ,url("../images/cogs.jpg");
   width: 100%;
   height: 100vh;
@@ -23,9 +23,10 @@ html{
   --navAccent2: #cc264a;
   --navComp: #E00774;
   --moneyBlue1: #5c80BC;
+  --gold: rgb(250, 218, 74);
   --blue2: rgb(24, 98, 224);
-  --navText: rgb(252, 253, 253);
-  
+  --navText: rgb(27, 61, 212);
+  --navText2: rgb(252, 253, 253);
 }
 
 /* NavBar*/ 
@@ -68,10 +69,9 @@ box-shadow: 7px 7px 20px black;
 justify-content: space-around;
 align-items: center;
 min-height: 8vh;
-background-color: var(--moneyBlue1);
-font-family: 'Poppins', sans-serif;
+background-color: var(--colorDark);
 font-weight: bold;
-color: var(--navText);
+color: var(--navText2);
 }
 
 h1 {
@@ -113,7 +113,7 @@ header{
 
 footer{
 
-  color: var(--navText);
+  color: var(--navText2);
   position: relative;
   left: 0;
   bottom: 0;
@@ -125,7 +125,7 @@ footer{
   display: grid;
   justify-content: center;
   grid-gap: 2rem 5rem;
-  grid-template-columns: repeat(2, 40rem);
+  grid-template-columns: repeat(1, 40rem);
   grid-template-rows: repeat(3, 10rem);
 }
 .gridCat{
@@ -152,7 +152,7 @@ footer{
   display: grid;
   justify-content: center;
   grid-gap: 5rem 20rem;
-  grid-template-columns: repeat(1, 20rem);
+  grid-template-columns: repeat(1, 30rem);
 }
 
 .gridAct{
@@ -173,11 +173,9 @@ footer{
 #gridItem, #gridItemA, #grid-Item, .activity, .Success, .gameGrid
 {
   border-radius: .25rem;
-  /* border-radius: 100px; */
   box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.122);
   
-  background: linear-gradient( to bottom, var(--colorDark), var(--colorDark));
-  /* background: radial-gradient( var(--moneyBlue1), var(--colorDark)); */
+  background: linear-gradient( to bottom, var(--moneyBlue1), var(--moneyBlue1));
   transition: 0.5s;
 }
 
@@ -185,7 +183,6 @@ footer{
 #catName{
   cursor: pointer;
 }
-
 
 #gridItem:hover,
 #gridItemA:hover,
@@ -197,14 +194,14 @@ footer{
 }
 
 .activity, .business, .category, .user, .activityAdd{
-  border: .125rem solid var(--moneyBlue1);
+  border: .125rem solid var(--navText2);
 }
 
 
 
 .Success
 {
-  border: .125rem solid var(--moneyBlue1);
+  border: .125rem solid var(--navText2);
   display: flex;
   justify-content: center;
 }
@@ -218,13 +215,13 @@ footer{
 {
   font-weight: bolder;
   letter-spacing: 6px;
-  color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
+  color: var(--navText2);
+  text-shadow: 1px 1px 2px black;
   padding-right: 50px;
   padding-left: 20px;
 }
 
-#gridItem h3,h5,.edit-user,.delete-user
+#gridItem h3,h4,.edit-user,.delete-user
 {
   display: flex;
   justify-content: center;
@@ -237,7 +234,7 @@ footer{
   letter-spacing: 2px;
 }
 
-#gridItemA h2,h3,h5,.edit-user,.delete-user, .userIcon
+#gridItemA h2,h3,h4,.edit-user,.delete-user, .userIcon
 {
   display: flex;
   justify-content: center;
@@ -261,19 +258,19 @@ footer{
   padding-right: 20px;
 }
 
-.activity h3
+.activity h3, .category h3
 {
   font-weight: bolder;
   letter-spacing: 6px;
-  color: white;
-  text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
+  color: var(--navText2);
+  text-shadow: 1px 1px 2px black;
   padding-right: 50px;
   padding-left: 20px;
 }
 
 #mainbutton{
-  background-color: var(--moneyBlue1); 
-  border: .125rem solid var(--navText);
+  background-color: var(--colorDark); 
+  border: .125rem solid var(--navText2);
   border-radius: .5rem;
   color: white;
   
@@ -291,15 +288,16 @@ footer{
   border-radius: .5rem;
 }
 
-.checkBox {
-  min-width: 15px;
-  min-height: 15px;
+.complete-activity {
+  min-width: 30px;
+  min-height: 30px;
 }
 
 #Logo
 {
   font-weight: bolder;
   letter-spacing: 6px;
+
   font-size: 3em;
   color: white;
   text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
@@ -343,14 +341,12 @@ footer{
 .popup h2 {
   margin-top: 0;
   color: #333;
-  font-family: Tahoma, Arial, sans-serif;
   
 }
 
 .popup h3 {
   margin-top: 0;
   color: #333;
-  font-family: Tahoma, Arial, sans-serif;
   text-align: center;
 }
 
@@ -376,8 +372,8 @@ footer{
 }
 
 .popupButton {
-  background-color: #5c80BC; 
-  border: .125rem solid var(--navText);
+  background-color: var(--colorDark); 
+  border: .125rem solid var(--navText2);
   border-radius: .5rem;
   color: white;
   text-align: center;
@@ -386,7 +382,7 @@ footer{
   padding:10px;
   margin-top: 10px;
   margin-bottom: 10px;
-  margin-left: 42%;
+  margin-left: 45%;
   margin-right: 42%;
   cursor: pointer;
   
@@ -415,14 +411,53 @@ footer{
  }
 
  .businessName{
-   text-align: center;
+  font-weight: bolder;
+  letter-spacing: 6px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  text-align: center;
  }
 
  #cathead{
-   color: var(--navText);
+   color: var(--navText2);
    text-align: center;
  }
 
  #catdep{
    margin: 1rem;
  }
+
+ #white{
+   color: var(--navText2);
+}
+
+ #name{
+  font-weight: bolder;
+  letter-spacing: 6px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  padding-left: 2rem;
+ }
+
+ #number{
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  padding-left: 1rem;
+ }
+
+ #title{
+  font-weight: bolder;
+  letter-spacing: 6px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+ }
+
+.beltIMG{
+  margin-right: 30rem;
+  width: 15rem;
+  height: 15rem;
+}
+
+.color{
+  color: var(--gold)
+}

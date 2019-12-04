@@ -6,7 +6,7 @@ export default function ActivityDetails(detailActivity) {
     return `
         <section class="userGrid">
             <section class="user" id="gridItemA">
-                <h3 class="userName">${detailActivity.name}</h3>
+                <h3 class="userName" id="title">${detailActivity.name}</h3>
                 <h3 id="cathead">${detailActivity.description}</p>
                 <h3>Importance: ${detailActivity.importance}</h3>
                 <h3>Urgency: ${detailActivity.urgency}</h3>

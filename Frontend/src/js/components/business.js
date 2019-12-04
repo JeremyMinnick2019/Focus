@@ -5,8 +5,8 @@ export default function Business(businesses) {
         .map(business => {
             return `
             <section class="business" id="gridItemA">
-            <h3 class="businessName">Business Name: ${business.name}</h3>
-            <h5>Industry: ${business.industry}</h5>
+            <h3 class="businessName">${business.name}</h3>
+            <h4>Industry: ${business.industry}</h4>
             <input class="business_id" type="hidden" value="${business.id}">
             </section>
             `;
@@ -14,5 +14,4 @@ export default function Business(businesses) {
         .join("")}
         </section>
         `
-        // <button class="edit-business" id="mainbutton">Edit</button>
 }
