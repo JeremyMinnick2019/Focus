@@ -195,6 +195,7 @@ function Bar() {
                 </div>`;
                 break;
             }
+            
     })
 }
 
