@@ -25,7 +25,7 @@ namespace FocusBackend.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<User>().HasData(
-                new User(1, "Jane Smith", "JSmith@MyEmail.com", "440-454-1980", "./images/blank-profile-picture.png")
+                new User(1, "Jane Smith", "JSmith@MyEmail.com", "(440) 454-1980", "./images/blank-profile-picture.png")
                 );
                 
             modelBuilder.Entity<Business>().HasData(
