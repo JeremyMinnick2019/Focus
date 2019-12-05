@@ -14,6 +14,11 @@ export default function ActivityEdit(editActivity) {
         
         <section class="userGrid">
         <section class="update-activity" id="gridItemA">
+        <a href="#popup1"><button class="popupButton">Add A New Action</button></a>
+        <div id="popup1" class="overlay">
+        <div class="popup">
+        <a class="close" href="#">&times;</a>
+        <div class="content">
             <input class="update-activity_name" type"text" value="${editActivity.name}">
             <input class="update-activity_creation" type="hidden" value="${editActivity.creation}">
             <input class="update-activity_completion" type="hidden" value="${editActivity.completion}">
@@ -33,6 +38,9 @@ export default function ActivityEdit(editActivity) {
             <textarea rows="10" cols="30" class="update-activity_description" value="${editActivity.description}"></textarea>
             <button class='update-activity' id="mainbutton">Update</button>
             <input class="update-activity_id" type="hidden" value="${editActivity.id}">
+            </div>
+        </div>
+        </div>
         </section>
         </section>
     `
