@@ -43,10 +43,34 @@ namespace FocusBackend.Controllers
         {
             return activityRepo.GetByDone();
         }
-        [HttpGet("suggested")]
+       
+        //Get api/activities/suggested
+        [HttpGet("suggest")]
         public  IEnumerable<Activity> GetRank()
         {
             return activityRepo.GetByRank();
+        }
+
+        //Get api/activities/notdone
+        [HttpGet("notdone")]
+        public IEnumerable<Activity> GetNotDone()
+        {
+            return activityRepo.GetByNotDone();
+        }
+
+
+        //Get api/activities/points
+        [HttpGet("points")]
+        public int GetPoints()
+        {
+            return activityRepo.GetUserPoints();
+        }
+
+        //Get api/activities/available
+        [HttpGet("available")]
+        public int GetAvailable()
+        {
+            return activityRepo.GetAvailablePoints();
         }
 
         // POST api/Activitys
@@ -55,6 +79,14 @@ namespace FocusBackend.Controllers
         {
             activityRepo.Create(Activity);
             return activityRepo.GetAll();
+        }
+
+        // POST api/activities/notdone
+        [HttpPost("notdone")]
+        public IEnumerable<Activity> PostNotDone([FromBody] Activity Activity)
+        {
+            activityRepo.Create(Activity);
+            return activityRepo.GetByNotDone();
         }
 
         // PUT api/Activitys/5

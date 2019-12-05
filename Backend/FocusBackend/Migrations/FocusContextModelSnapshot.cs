@@ -15,7 +15,7 @@ namespace FocusBackend.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.8-servicing-32085")
+                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -50,9 +50,12 @@ namespace FocusBackend.Migrations
                     b.ToTable("Activities");
 
                     b.HasData(
-                        new { ID = 1, CategoryID = 2, Completion = new DateTime(2019, 11, 25, 13, 49, 12, 842, DateTimeKind.Local), Creation = new DateTime(2019, 11, 25, 13, 49, 12, 841, DateTimeKind.Local), Description = "Outsourced From Temp Agency", Done = false, Importance = 9, Name = "Pay Workers", Rank = 18, Urgency = 9 },
-                        new { ID = 2, CategoryID = 6, Completion = new DateTime(2019, 11, 25, 13, 49, 12, 843, DateTimeKind.Local), Creation = new DateTime(2019, 11, 25, 13, 49, 12, 843, DateTimeKind.Local), Description = "Follow Up With Prospects", Done = false, Importance = 10, Name = "Sales Planning", Rank = 13, Urgency = 3 },
-                        new { ID = 3, CategoryID = 8, Completion = new DateTime(2019, 11, 25, 13, 49, 12, 843, DateTimeKind.Local), Creation = new DateTime(2019, 11, 25, 13, 49, 12, 843, DateTimeKind.Local), Description = "Get More Stamps For Pay Checks", Done = false, Importance = 4, Name = "Buy Stamps", Rank = 10, Urgency = 6 }
+                        new { ID = 1, CategoryID = 2, Completion = new DateTime(2019, 12, 5, 15, 24, 59, 824, DateTimeKind.Local), Creation = new DateTime(2019, 12, 5, 15, 24, 59, 823, DateTimeKind.Local), Description = "Outsourced From Temp Agency", Done = false, Importance = 9, Name = "Pay Workers", Rank = 18, Urgency = 9 },
+                        new { ID = 2, CategoryID = 1, Completion = new DateTime(2019, 12, 5, 15, 24, 59, 825, DateTimeKind.Local), Creation = new DateTime(2019, 12, 5, 15, 24, 59, 825, DateTimeKind.Local), Description = "Plan Booth and Outreach", Done = false, Importance = 24, Name = "Charity Event", Rank = 49, Urgency = 25 },
+                        new { ID = 8, CategoryID = 1, Completion = new DateTime(2019, 12, 5, 15, 24, 59, 825, DateTimeKind.Local), Creation = new DateTime(2019, 12, 5, 15, 24, 59, 825, DateTimeKind.Local), Description = "Turn In Newspaper Ad", Done = false, Importance = 5, Name = "Advertising", Rank = 14, Urgency = 9 },
+                        new { ID = 9, CategoryID = 3, Completion = new DateTime(2019, 12, 5, 15, 24, 59, 825, DateTimeKind.Local), Creation = new DateTime(2019, 12, 5, 15, 24, 59, 825, DateTimeKind.Local), Description = "Go Through Invoices", Done = false, Importance = 5, Name = "Paperwork", Rank = 14, Urgency = 9 },
+                        new { ID = 11, CategoryID = 2, Completion = new DateTime(2019, 12, 5, 15, 24, 59, 825, DateTimeKind.Local), Creation = new DateTime(2019, 12, 5, 15, 24, 59, 825, DateTimeKind.Local), Description = "Check Employee Pay", Done = false, Importance = 5, Name = "Paycheck Error", Rank = 14, Urgency = 9 },
+                        new { ID = 16, CategoryID = 3, Completion = new DateTime(2019, 12, 5, 15, 24, 59, 825, DateTimeKind.Local), Creation = new DateTime(2019, 12, 5, 15, 24, 59, 825, DateTimeKind.Local), Description = "Organize receipts", Done = false, Importance = 5, Name = "Tax Paperwork", Rank = 14, Urgency = 9 }
                     );
                 });
 
@@ -77,7 +80,7 @@ namespace FocusBackend.Migrations
                     b.ToTable("Businesses");
 
                     b.HasData(
-                        new { ID = 1, Image = "Image", Industry = "Retail", Name = "Small Business", UserID = 1 }
+                        new { ID = 1, Image = "image", Industry = "School", Name = "Jane's Dojo", UserID = 1 }
                     );
                 });
 
@@ -100,14 +103,15 @@ namespace FocusBackend.Migrations
                     b.ToTable("Categories");
 
                     b.HasData(
-                        new { ID = 1, BusinessID = 1, Description = "Marketing And Promotion Activities", Name = "Marketing" },
-                        new { ID = 2, BusinessID = 1, Description = "Payroll Activities", Name = "Payroll" },
-                        new { ID = 3, BusinessID = 1, Description = "Accounting and Auditing Activities", Name = "Accounting/Auditing" },
+                        new { ID = 1, BusinessID = 1, Description = "Marketing And Promotion Actions", Name = "Marketing" },
+                        new { ID = 2, BusinessID = 1, Description = "Payroll Actions", Name = "Payroll" },
+                        new { ID = 3, BusinessID = 1, Description = "Accounting and Auditing Actions", Name = "Accounting" },
                         new { ID = 4, BusinessID = 1, Description = "How You Help Your Customers", Name = "Customer Service" },
                         new { ID = 5, BusinessID = 1, Description = "Managing Your Budget And Looking To The Future", Name = "Budgeting" },
                         new { ID = 6, BusinessID = 1, Description = "Give Your Sales A Boost", Name = "Sales" },
-                        new { ID = 7, BusinessID = 1, Description = "Operational Activities", Name = "Operations" },
-                        new { ID = 8, BusinessID = 1, Description = "Small Activities That Must Be Done", Name = "Small Tasks" }
+                        new { ID = 7, BusinessID = 1, Description = "Operational Actions", Name = "Operations" },
+                        new { ID = 8, BusinessID = 1, Description = "Small Actions That Must Be Done", Name = "Small Tasks" },
+                        new { ID = 9, BusinessID = 1, Description = "Other Actions To Do", Name = "Miscellaneous" }
                     );
                 });
 
@@ -130,7 +134,7 @@ namespace FocusBackend.Migrations
                     b.ToTable("Users");
 
                     b.HasData(
-                        new { ID = 1, Email = "JSmith@MyEmail.com", Image = "Image", Name = "John Smith", Phone = "14404541980" }
+                        new { ID = 1, Email = "JSmith@MyEmail.com", Image = "./images/blank-profile-picture.png", Name = "Jane Smith", Phone = "(440) 454-1980" }
                     );
                 });
 

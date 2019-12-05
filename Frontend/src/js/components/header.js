@@ -1,5 +1,5 @@
-export default function Header() {
-    return `
-            <h1>FOCU$</h1>
+export default function Header(){
+  return `
+            <h1>PRIORITY ACTIONS</h1>
         `
 }

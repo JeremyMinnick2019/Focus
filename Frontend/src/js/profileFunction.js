@@ -2,18 +2,83 @@ import User from "./components/user"
 import UserEdit from "./components/userEdit"
 import Business from "./components/business"
 import businessEdit from "./components/businessEdit"
+import HeaderPro from "./components/headerPro"
 import apiActions from "./api/apiActions"
+import Point from "./components/points"
+import Available from "./components/available"
+import Belt from "./components/belt"
+import ProgressBar from "./components/progressbar"
 
 export default () =>{
-    displayUser()
-    displayBusiness()
+    displayUser();
+    displayHeader();
+    displayBusiness();
+    userPoints();
+    userLevel();
+    // userProgress();
 }
 
-function displayUser(){
+
+function displayHeader(){
     const userBTN = document.querySelector("#profileButton");
+    const head = document.querySelector("#header");
+    userBTN.addEventListener("click", function(){
+        head.innerHTML = HeaderPro();
+    })
+}
+
+function userPoints(){
+    const userBTN = document.querySelector("#profileButton");
+    const total = document.querySelector("#points");
+    const available = document.querySelector("#available");
     const app = document.querySelector("#app");
+    const sign = document.querySelector("#sign");
+    userBTN.addEventListener("click", function(){
+        apiActions.getRequest("https://localhost:44306/api/activities/points", points =>{
+            app.innerHTML = ``;
+            sign.innerHTML = ``;
+            total.innerHTML = Point(points);
+        })
+        apiActions.getRequest("https://localhost:44306/api/activities/available", availables =>{
+            app.innerHTML = ``;
+            sign.innerHTML = ``;
+            available.innerHTML = Available(availables);
+        })
+    })
+}
+
+function userLevel(){
+    const userBTN = document.querySelector("#profileButton");
+    const belts = document.querySelector("#belt");
+    const app = document.querySelector("#app");
+    const sign = document.querySelector("#sign");
+    userBTN.addEventListener("click", function(){
+            app.innerHTML = ``;
+            sign.innerHTML = ``;
+            belts.innerHTML = Belt();
+        })
+}
+// function userProgress(){
+//     const userBTN = document.querySelector("#profileButton");
+//     const bars = document.querySelector("#progressbar");
+//     userBTN.addEventListener("click", function(){
+//             bars.innerHTML = ProgressBar();
+//         })
+// }
+function displayUser(){
+    const userBTN = document.querySelector("#Logo");
+    const app = document.querySelector("#app");
+    const sign = document.querySelector("#sign");
+    const total = document.querySelector("#points");
+    const belts = document.querySelector("#belt");
+    const available = document.querySelector("#available");
+    const head = document.querySelector("#header");
     userBTN.addEventListener("click", function(){
         apiActions.getRequest("https://localhost:44306/api/users", users =>{
+            head.innerHTML = `<h1>PROFILE</h1>`;
+            total.innerHTML = ``;
+            belts.innerHTML = ``;
+            available.innerHTML = ``;    
             app.innerHTML = User(users);
         })
     });
@@ -58,7 +123,10 @@ function displayUser(){
     app.addEventListener("click", function(){
         if(event.target.classList.contains("edit-user")){
             const userid = event.target.parentElement.querySelector(".user_id").value;
-            sign.innerHTML = ``
+            sign.innerHTML = ``;
+            total.innerHTML = ``;
+            belts.innerHTML = ``;
+            available.innerHTML = ``;    
             apiActions.getRequest(`https://localhost:44306/api/users/${userid}`,
             editUser => {
                 app.innerHTML = UserEdit(editUser);
@@ -90,10 +158,17 @@ function displayUser(){
 }
 
 function displayBusiness(){
-    const businessBTN = document.querySelector("#profileButton");
-    const app = document.querySelector("#sign");
+    const businessBTN = document.querySelector("#Logo");
+    const app = document.querySelector("#app");
+    const sign = document.querySelector("#sign");
+    const total = document.querySelector("#points");
+    const belts = document.querySelector("#belt");
+    const available = document.querySelector("#available");
     businessBTN.addEventListener("click", function(){
         apiActions.getRequest("https://localhost:44306/api/businesses", businesses =>{
+            total.innerHTML = ``;
+            belts.innerHTML = ``;
+            available.innerHTML = ``;    
             sign.innerHTML = Business(businesses);
         })
     })
@@ -143,7 +218,10 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("edit-business")) {
         const businessId = event.target.parentElement.querySelector(".business_id").value;
         console.log("edit"  + businessId);
-        sign.innerHTML = ``
+        sign.innerHTML = ``;
+        total.innerHTML = ``;
+        belts.innerHTML = ``;
+        available.innerHTML = ``;    
         apiActions.getRequest(`https://localhost:44306/api/businesses/${businessId}` , editBusiness => {
             app.innerHTML = businessEdit(editBusiness)
         })

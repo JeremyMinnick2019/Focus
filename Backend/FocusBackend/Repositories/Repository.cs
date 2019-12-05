@@ -38,11 +38,26 @@ namespace FocusBackend.Repositories
             throw new NotImplementedException();
         }
 
+
+        public virtual IEnumerable<T> GetByNotDone()
+        {
+          throw new NotImplementedException();
+        }
+
         public virtual IEnumerable<T> GetByRank()
         {
             throw new NotImplementedException();
         }
 
+        public virtual int GetUserPoints()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual int GetAvailablePoints()
+        {
+            throw new NotImplementedException();
+        }
 
         public void Delete(T entity)
         {
@@ -58,7 +73,7 @@ namespace FocusBackend.Repositories
             db.SaveChanges();
         }
 
-        public IEnumerable<T> GetAll()
+        public virtual IEnumerable<T> GetAll()
         {
             return db.Set<T>().ToList();
         }

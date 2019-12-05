@@ -1,4 +1,3 @@
-import displayBusiness from "./profileFunction"
 import displayUser from "./profileFunction"
 
 export default () =>{
@@ -7,5 +6,4 @@ export default () =>{
 
 function displayProfile(){
     displayUser()
-    displayBusiness()
 }
