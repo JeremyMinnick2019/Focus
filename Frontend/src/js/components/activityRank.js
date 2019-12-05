@@ -6,15 +6,11 @@ export default function ActivityRank(activities) {
     <section class="gridRank">
     ${activities
         .map(activity => {
-            
             return `
             <section class="activity">
-                <button class="activity-details" id="mainbutton"><h3 class="activity_name">
-                ${activity.name}</h3></button>
-                
+                <h3 class="activity_name" id="mainbutton">
+                ${activity.name}</h3>
                 <p class="activity_point">Point Value: ${activity.rank}
-
-
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
                 <section class="complete-activity">

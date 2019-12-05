@@ -17,7 +17,7 @@ namespace FocusBackend.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=FocusDB;Trusted_Connection=True;";
+            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=FocusDB2;Trusted_Connection=True;";
             optionsBuilder.UseSqlServer(connectionString);
             //.UseLazyLoadingProxies();
             base.OnConfiguring(optionsBuilder);

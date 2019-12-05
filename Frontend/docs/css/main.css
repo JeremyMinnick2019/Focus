@@ -45,7 +45,7 @@ html{
 .navbar li a:hover,
 .navbar li a:active
 {
-    border-bottom: 2px solid #00EEC0;
+    border-bottom: 2px solid rgb(2, 230, 184);
     transition: 0.2s;
     cursor: pointer;
 }
@@ -136,8 +136,6 @@ footer{
   grid-template-rows: repeat(3, 10rem);
 }
 
-
-
 .gridMain{
   display: grid;
   justify-content: center;
@@ -193,11 +191,9 @@ footer{
   box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.918);
 }
 
-.activity, .business, .category, .user, .activityAdd{
+.activity, .business, .category, .user, .activityAdd, .update-activity{
   border: .125rem solid var(--navText2);
 }
-
-
 
 .Success
 {
@@ -273,14 +269,12 @@ footer{
   border: .125rem solid var(--navText2);
   border-radius: .5rem;
   color: white;
-  
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   display:grid;
   align-items: end;
-
   margin: 10px;
 }
 
@@ -297,7 +291,6 @@ footer{
 {
   font-weight: bolder;
   letter-spacing: 6px;
-
   font-size: 3em;
   color: white;
   text-shadow: 1px 1px 2px black, 0 0 25px rgba(35, 248, 7, 0.79), 0 0 5px rgb(241, 186, 57);
@@ -460,4 +453,11 @@ footer{
 
 .color{
   color: var(--gold)
+}
+
+.update-activity{
+ display: grid;
+ grid-template-columns: repeat(1, 12rem);
+ /* grid-template-rows: repeat(7, 5rem); */
+ justify-content: center;
 }

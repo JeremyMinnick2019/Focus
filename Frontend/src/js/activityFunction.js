@@ -172,7 +172,7 @@ app.addEventListener("click", function(){
     }
 });
 app.addEventListener("click", function(){
-    if(event.target.classList.contains("activity-details")) {
+    if(event.target.classList.contains("activity_name")) {
         const activityid = event.target.parentElement.querySelector(".activity_id").value;
         console.log(activityid);
         head.innerHTML = `<h1>DETAILS</h1>`;
@@ -221,6 +221,7 @@ app.addEventListener("click", function(){
             total.innerHTML = ``;
         })
         )
+        
         apiActions.putRequest(`https://localhost:44306/api/activities/${completeActivityid}`,
             activityData,
             activities => {
@@ -232,21 +233,15 @@ app.addEventListener("click", function(){
         }
         )}
     })
-
-    
 }
 
 function confetti()
 {   const app = document.querySelector("#app");
     app.addEventListener("click", function(){
     if(event.target.classList.contains("complete-activity")) {
-    // setTimeout(confetti, 0000)
-     alert("Nice Job! You Completed An Activitiy"); 
-    var confettiSettings = { target: "my-canvas" , max: "100"};
-    var confetti = new ConfettiGenerator( confettiSettings);
+    alert("Nice Job! You Completed An Activitiy");
+    var confettiSettings = {target: "my-canvas" , max: "100"};
+    var confetti = new ConfettiGenerator(confettiSettings);
     confetti.render();
-    //confetti.clear();
-    // clearTimeout(time);
-}})
-
+    }})
 };
