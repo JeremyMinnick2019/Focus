@@ -458,6 +458,5 @@ footer{
 .update-activity{
  display: grid;
  grid-template-columns: repeat(1, 12rem);
- /* grid-template-rows: repeat(7, 5rem); */
  justify-content: center;
 }

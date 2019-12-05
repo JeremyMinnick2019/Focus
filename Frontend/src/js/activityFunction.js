@@ -90,9 +90,10 @@ app.addEventListener("click", function(){
         },
 
         activities => {
-            app.innerHTML = Activity(activities)
+            apiActions.getRequest(`https://localhost:44306/api/activities/notdone`, activities =>{
+                app.innerHTML = Activity(activities);
+            });
         }
-       
     )}
 });
 

@@ -13,15 +13,16 @@ export default function Success(activities) {
                 <section id="Success">
                 <section class="Success">
                     <h3 class="activity_name">${activity.name}</h3>
-                    <p class="activity_category">Category: ${activity.category.name}</p>
+                    <p class="activity_point">Point Value: ${activity.rank}
                     <p class="activity_description">${activity.description}</p>
                     <p class="activity_creation">Started: <br>${timeCreated}</p>
                     <p class="activity_completion">Completed: <br>${timeCompleted}</p>
                     <input class="activity_id" type="hidden" value="${activity.id}">
+                    </section>
+                    `;
+                })
+                .join("")}
                 </section>
-                `;
-            })
-            .join("")}
-            </section>
-            `
+                `
+                // <p class="activity_category">Category: ${activity.category.name}</p>
         }
