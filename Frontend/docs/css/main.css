@@ -460,3 +460,7 @@ footer{
  grid-template-columns: repeat(1, 12rem);
  justify-content: center;
 }
+
+#my-canvas {
+  position: absolute;
+}
