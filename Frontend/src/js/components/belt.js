@@ -23,7 +23,7 @@ function Belt() {
                 belts.innerHTML = `<section class="userGrid">
                 <section class="user" id="gridItemA">
                 <img src="/images/brown_belt.png" class=beltIMG></img>
-                <h3>Level: <span id="number">Brown Belt</span></h3>
+                <h3>Level: <span id="number">Purple Belt</span></h3>
                 </section>
                 </section>`;
                 break;

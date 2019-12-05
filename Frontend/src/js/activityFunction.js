@@ -66,6 +66,7 @@ app.addEventListener("click", function(){
 
 app.addEventListener("click", function(){
     var newTime = new Date();
+    footer.innerHTML = ``;
     if(event.target.classList.contains("add-activity")){
     const addName = event.target.parentElement.querySelector(".add-activity_name").value
     const addDescription = event.target.parentElement.querySelector(".add-activity_description").value
@@ -191,8 +192,6 @@ app.addEventListener("click", function(){
 app.addEventListener("click", function(){
     var newTime = new Date();
     if(event.target.classList.contains("complete-activity")) {
-      
-
         const completeActivityid = event.target.parentElement.querySelector(".complete-activity_id").value
         const completeName = event.target.parentElement.querySelector(".complete-activity_name").value
         const completeDescription = event.target.parentElement.querySelector(".complete-activity_description").value
