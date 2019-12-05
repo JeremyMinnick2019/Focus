@@ -383,12 +383,13 @@ footer{
 
 #input1{
   border-radius: .5rem;
-  display: grid;
+  width: 9rem;
+  /* display: grid;
   justify-content: center;
   grid-template-columns: repeat(1, 33rem);
   grid-template-rows: repeat(1, 33rem);
   padding:11px;
-  margin:10px;
+  margin:10px; */
   cursor: pointer;
 }
 
@@ -448,7 +449,7 @@ footer{
 .beltIMG{
   margin-right: 30rem;
   width: 15rem;
-  height: 15rem;
+  height: 12rem;
 }
 
 .color{
