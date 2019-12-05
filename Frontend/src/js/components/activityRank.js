@@ -1,16 +1,17 @@
 import moment from "moment";
 
-
 export default function ActivityRank(activities) {
     return `
     <section class="gridRank">
     ${activities
         .map(activity => {
+            var timeCreated = moment(activity.creation + 'Z').fromNow();
+
             return `
             <section class="activity">
-                <h3 class="activity_name" id="mainbutton">
-                ${activity.name}</h3>
-                <p class="activity_point">Point Value: ${activity.rank}
+                <h3 class="activity_name" id="mainbutton">${activity.name}</h3>
+                <p class="activity_point">Point Value: ${activity.rank}</p>
+                <p class="activity_point">Started: ${timeCreated}</p>
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
                 <section class="complete-activity">
