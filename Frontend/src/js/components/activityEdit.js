@@ -35,7 +35,7 @@ export default function ActivityEdit(editActivity) {
             <input class="update-activity_importance" id="input1" type="number" name="quantity" min="1" max="10" placeholder="Importance 1-10">
             <input class="update-activity_urgency" id="input1" type="number" name="quantity" min="1" max="10" placeholder="Urgency 1-10">
             <textarea rows="5" cols="30" class="update-activity_description" id="input1" value="${editActivity.description}"></textarea>
-            <button class='update-activity' id="mainbutton">Update</button>
+            <button class='update-activity' id="popupbutton">Update</button>
             <input class="update-activity_id" type="hidden" value="${editActivity.id}">
             </div>
         </div>

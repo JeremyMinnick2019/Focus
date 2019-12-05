@@ -39,16 +39,16 @@ function navbar(){
 }
 
 function footer(){
-    const footer = document.getElementById("footer")
-    footer.innerHTML = Footer()
 }
 
 function home(){
     const head = document.querySelector("#header");
+    const footer = document.getElementById("footer")
     const landing = document.querySelector("#app");
     const belts = document.querySelector("#belt")
     const available = document.querySelector("#available");
     head.innerHTML = Header();
+    footer.innerHTML = Footer()
     belts.innerHTML = ``;
     available.innerHTML = ``;
     landing.innerHTML = displayHome();

@@ -3,6 +3,7 @@ import ActivityEdit from "./components/activityEdit"
 import apiActions from "./api/apiActions"
 import ActivityComplete from "./components/activityComplete"
 import HeaderAct from "./components/headerAct"
+import Footer from "./components/footer"
 import Success from "./components/success"
 import headerSuc from "./components/headerSuc"
 import ActivityDetails from "./components/activityDetails"
@@ -56,7 +57,6 @@ app.addEventListener("click", function(){
     if(event.target.classList.contains("activityName")){
     const activityid = event.target.parentElement.querySelector(".activity_id").value;
     apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, activities => {
-        footer.innerHTML = ``;
         document.querySelector("#app").innerHTML = Activity(activities);
         console.log(activities);
     })
@@ -66,7 +66,6 @@ app.addEventListener("click", function(){
 
 app.addEventListener("click", function(){
     var newTime = new Date();
-    footer.innerHTML = ``;
     if(event.target.classList.contains("add-activity")){
     const addName = event.target.parentElement.querySelector(".add-activity_name").value
     const addDescription = event.target.parentElement.querySelector(".add-activity_description").value
@@ -169,6 +168,7 @@ app.addEventListener("click", function(){
         console.log("edit"  + activityid);
         apiActions.getRequest(`https://localhost:44306/api/activities/${activityid}`, 
         completedActivity => {
+            footer.innerHTML = Footer();
             app.innerHTML = ActivityComplete(completedActivity)
         })
     }
