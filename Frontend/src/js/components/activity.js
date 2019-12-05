@@ -19,11 +19,11 @@ export default function Activity(activities) {
         <option value="7">Operations</option>
         <option value="8">Small Tasks</option>
     </select>
-    <input class="update-activity_importance" id="input1" type="number" name="quantity" min="1" max="10" placeholder=" Importance 1-10" size="3px">
-    <input class="update-activity_urgency" id="input1" type="number" name="quantity" min="1" max="10" placeholder=" Urgency 1-10" size="40px">
-    <textarea rows="5" cols="37" class="add-activity_description" id="input1" placeholder="Add an Action Description" size="40px"></textarea>
+    <input class="add-activity_importance" id="input1" type="number" name="quantity" min="1" max="10" placeholder=" Importance 1-10" size="30px">
+    <input class="add-activity_urgency" id="input1" type="number" name="quantity" min="1" max="10" placeholder=" Urgency 1-10" size="40px">
+    <textarea rows="5" cols="30" class="add-activity_description" id="input1" placeholder="Add an Action Description"></textarea>
     <input class="add-activity_done" type="hidden">
-    <button class='add-activity' id="mainbutton">Add</button>
+    <button class='add-activity' id="popupbutton">Add</button>
     </div>
     </div>
     </div>

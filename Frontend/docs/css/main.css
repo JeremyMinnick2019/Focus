@@ -268,7 +268,21 @@ footer{
   background-color: var(--colorDark); 
   border: .125rem solid var(--navText2);
   border-radius: .5rem;
-  color: white;
+  color: var(--navText2);
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  display:grid;
+  align-items: end;
+  margin: 10px;
+}
+
+#popupbutton{
+  background-color: var(--colorDark); 
+  border: .125rem solid var(--moneyBlue1);
+  border-radius: .5rem;
+  color: var(--navText2);
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -383,12 +397,7 @@ footer{
 
 #input1{
   border-radius: .5rem;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(1, 33rem);
-  grid-template-rows: repeat(1, 33rem);
-  padding:11px;
-  margin:10px;
+  width: 9rem;
   cursor: pointer;
 }
 
@@ -448,7 +457,7 @@ footer{
 .beltIMG{
   margin-right: 30rem;
   width: 15rem;
-  height: 15rem;
+  height: 12rem;
 }
 
 .color{
