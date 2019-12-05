@@ -57,7 +57,7 @@ export default function Activity(activities) {
                         <input class="complete-activity_id" type="hidden" value="${activity.id}">
                         <input class="complete-activity_done" type="hidden" value="${activity.done}">
                         </section>
-                        <button class="edit-activity" id="mainbutton">Edit</button>
+                        <button class="edit-activity" id="mainbutton">Update</button>
                         <button class="delete-activity" id="mainbutton">Delete</button>
                         </section>
                         `;

@@ -191,7 +191,7 @@ footer{
   box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.918);
 }
 
-.activity, .business, .category, .user, .activityAdd{
+.activity, .business, .category, .user, .activityAdd, .update-activity{
   border: .125rem solid var(--navText2);
 }
 
@@ -453,4 +453,11 @@ footer{
 
 .color{
   color: var(--gold)
+}
+
+.update-activity{
+ display: grid;
+ grid-template-columns: repeat(1, 12rem);
+ /* grid-template-rows: repeat(7, 5rem); */
+ justify-content: center;
 }
