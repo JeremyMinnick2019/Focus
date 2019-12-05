@@ -13,11 +13,12 @@ export default function CategoryActivity(category){
         return `
         <section class="activity">
         <h3 class="activity_name">${activity.name}</h3>
+        <p class="activity_description">${activity.description}</p>
         <p class="activity_importance">Importance: ${activity.importance}</p>
         <p class="activity_urgency">Urgency: ${activity.urgency}</p>
-        <p class="activity_description">${activity.description}</p>
-        <p class="activity_creation">${timeCreated}</p>
-        <p class="activity_completion">${timeCompleted}</p>
+        <p class="activity_creation">Started: ${timeCreated}</p>
+        <p class="activity_completion">Completed: ${timeCompleted}</p>
+        <input class="complete-activity" type="checkbox">
         <input class="activity_id" type="hidden" value="${activity.id}">
         </section>
         `;

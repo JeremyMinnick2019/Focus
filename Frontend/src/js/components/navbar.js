@@ -5,7 +5,7 @@ export default function Navbar() {
         <ul>
             <li><a id="homeButton">Priorities</a></li>
             <li><a id="profileButton">Rewards</a></li>
-            <li><a id="categoryButton">Department</a></li>
+            <li><a id="categoryButton">Departments</a></li>
             <li><a id="activityButton">Actions</a></li>
             <li><a id="successButton">Completed</a></li>    
         </ul>

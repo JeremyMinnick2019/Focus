@@ -11,7 +11,7 @@ export default function ActivityRank(activities) {
             <section class="activity">
                 <h3 class="activity_name" id="mainbutton">${activity.name}</h3>
                 <p class="activity_point">Point Value: ${activity.rank}</p>
-                <p class="activity_point">Started: ${timeCreated}</p>
+                <p class="activity_point">Created: ${timeCreated}</p>
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
                 <section class="complete-activity">
