@@ -228,6 +228,7 @@ footer{
   font-size: 1.1rem;
   text-shadow: 1px 1px 2px black;
   letter-spacing: 2px;
+  text-align: center;
 }
 
 #gridItemA h2,h3,h4,.edit-user,.delete-user, .userIcon
