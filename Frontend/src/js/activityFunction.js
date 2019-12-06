@@ -9,7 +9,6 @@ import headerSuc from "./components/headerSuc"
 import ActivityDetails from "./components/activityDetails"
 import ConfettiGenerator from "confetti-js"
 
-
 export default () =>{
     displayActivity();
     displayHeader();
@@ -174,7 +173,7 @@ app.addEventListener("click", function(){
     }
 });
 app.addEventListener("click", function(){
-    if(event.target.classList.contains("priority_details")) {
+    if(event.target.classList.contains("priorityButton")) {
         const activityid = event.target.parentElement.querySelector(".activity_id").value;
         console.log(activityid);
         head.innerHTML = `<h1>DETAILS</h1>`;

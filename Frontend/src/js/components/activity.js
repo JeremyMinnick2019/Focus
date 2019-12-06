@@ -61,7 +61,7 @@ export default function Activity(activities) {
                 </section>
                         `;
                     })
-                    .join("")}
+        .join("")}
     </section>
     `
                     // <p class="activity_category">Department: ${activity.category.name}</p>

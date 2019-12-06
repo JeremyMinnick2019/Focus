@@ -9,7 +9,10 @@ export default function ActivityRank(activities) {
 
             return `
             <section class="activity-card-priority">
-                <h3 class="activity_name priority_name"><span id="priorityButton">${activity.name}</span></h3>
+                <h3 class="activity_name priority_name">
+                    <span id="priorityButton">${activity.name}</span>
+                    <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
+                </h3>
                 <p class="activity_point priority_creation1">Created:</p>
                 <p class="activity_point priority_creation2">${timeCreated}</p>
                 <p class="activity_point priority_point1">Point Value:</p>
