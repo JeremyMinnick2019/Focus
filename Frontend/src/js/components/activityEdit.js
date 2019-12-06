@@ -1,14 +1,14 @@
 import moment from "moment";
 
 export default function ActivityEdit(editActivity) {
-    var timeCreated = moment(editActivity.creation + 'Z').format('MMMM Do YYYY, h:mm a');
+    var timeCreated = moment(editActivity.creation + 'Z').format('MMM Do YYYY, h:mm a');
     return `
-        <section class="activity">
-            <h3>${editActivity.name}</h3>
-            <p class="activity_description">${editActivity.description}</p>
-            <p class="activity_importance">Importance: ${editActivity.importance}</p>
-            <p class="activity_urgency">Urgency: ${editActivity.urgency}</p>
-            <p class="activity_creation">Started: <br>${timeCreated}</p>
+        <section class="edit-activity-card-pending">
+            <h3 class="edit_name">${editActivity.name}</h3>
+            <p class="activity_description edit_description">${editActivity.description}</p>
+            <p class="activity_importance edit_importance">Importance: ${editActivity.importance}</p>
+            <p class="activity_urgency edit_urgency">Urgency: ${editActivity.urgency}</p>
+            <p class="activity_creation edit_creation">Started: <br>${timeCreated}</p>
         </section>
         
         <section class="userGrid">

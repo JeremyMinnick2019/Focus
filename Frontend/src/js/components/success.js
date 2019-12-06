@@ -6,8 +6,8 @@ export default function Success(activities) {
             <canvas id="my-canvas"></canvas>
             ${activities
                 .map(activity => {
-            var timeCreated = moment(activity.creation).format('MMMM Do YYYY, h:mm a');
-            var timeCompleted = moment(activity.completion).format('MMMM Do YYYY, h:mm a');
+            var timeCreated = moment(activity.creation).format('MMM Do YYYY, h:mm a');
+            var timeCompleted = moment(activity.completion).format('MMM Do YYYY, h:mm a');
 
                 return `
                 <section id="Success">
