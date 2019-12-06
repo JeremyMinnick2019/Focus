@@ -168,7 +168,7 @@ footer{
   grid-template-columns: repeat(1, 50rem);
 }
 
-#gridItem, #gridItemA, #grid-Item, .activity, .Success, .gameGrid
+#gridItem, #gridItemA, #grid-Item, .activity-card-pending, .Success, .gameGrid
 {
   border-radius: .25rem;
   box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.122);
@@ -185,13 +185,13 @@ footer{
 #gridItem:hover,
 #gridItemA:hover,
 #grid-Item:hover,
-.activity:hover,
+.activity-card-pending:hover,
 .Success:hover
 {
   box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.918);
 }
 
-.activity, .business, .category, .user, .activityAdd, .update-activity{
+.activity-card-pending, .business, .category, .user, .activityAdd, .update-activity{
   border: .125rem solid var(--navText2);
 }
 
@@ -231,7 +231,7 @@ footer{
   text-align: center;
 }
 
-#gridItemA h2,h3,h4,.edit-user,.delete-user, .userIcon
+/* #gridItemA */ h2,h3,h4,.edit-user,.delete-user, .userIcon
 {
   display: flex;
   justify-content: center;
@@ -244,6 +244,23 @@ footer{
  margin-top: 1rem; 
 }
 
+/*PENDING ACTIONS Cards*/
+.activity-card-pending {
+  display: grid;
+  grid-template-columns: 20% 20% 15% 10% 15% 8% 8% 5%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+            "actionName description .          .       startTime .          .            ."
+            "actionName description importance urgency startTime editButton deleteButton pendingCheckBox"
+            "actionName description .          .       startTime .          .            .";
+}
+
+
+
+
+
+
+
 .activity
 {
   display: flex;
@@ -255,7 +272,7 @@ footer{
   padding-right: 20px;
 }
 
-.activity h3, .category h3
+.activity-card-pending h3, .category h3
 {
   font-weight: bolder;
   letter-spacing: 6px;

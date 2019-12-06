@@ -8,7 +8,7 @@ export default function ActivityRank(activities) {
             var timeCreated = moment(activity.creation + 'Z').fromNow();
 
             return `
-            <section class="activity">
+            <section class="activity-card-priority">
                 <h3 class="activity_name" id="mainbutton">${activity.name}</h3>
                 <p class="activity_point">Point Value: ${activity.rank}</p>
                 <p class="activity_point">Created: ${timeCreated}</p>
