@@ -173,7 +173,7 @@ app.addEventListener("click", function(){
     }
 });
 app.addEventListener("click", function(){
-    if(event.target.classList.contains("priorityButton")) {
+    if(event.target.classList.contains("activity_name")) {
         const activityid = event.target.parentElement.querySelector(".activity_id").value;
         console.log(activityid);
         head.innerHTML = `<h1>DETAILS</h1>`;

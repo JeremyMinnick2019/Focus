@@ -38,12 +38,19 @@ export default function Activity(activities) {
                 <section class="activity-card-pending">
                     <h3 class="activity_name pending_name">${activity.name}</h3>
                     <p class="activity_description pending_description">${activity.description}</p>
-                    <p class="activity_importance pending_importance">Importance: <span class="importance-urgency"><br>${activity.importance}</span></p>
-                    <p class="activity_urgency pending_urgency">Urgency: <span class="importance-urgency"><br>${activity.urgency}</span></p>
+                    <p class="activity_importance pending_importance">Importance: 
+                        <span class="importance-urgency">
+                            <br>${activity.importance}
+                        </span>
+                    </p>
+                    <p class="activity_urgency pending_urgency">Urgency: 
+                        <span class="importance-urgency">
+                            <br>${activity.urgency}
+                        </span>
+                    </p>
                     <p class="activity_creation pending_creation">Started: <br>${timeCreated}</p>
                     <input class="activity_id" type="hidden" value="${activity.id}">
                     <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
-
                     <button class="edit-activity pending_edit" id="mainbutton">Update</button>
                     <button class="delete-activity pending_delete" id="mainbutton">Delete</button>
                     
