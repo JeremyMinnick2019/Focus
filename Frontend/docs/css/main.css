@@ -522,8 +522,7 @@ footer{
   padding-right: 20px;
 }
 
-.activity-card-pending h3, .activity-card-deparment h3, .edit-activity-card-pending h3, .category h3
-{
+.activity-card-pending h3, .activity-card-deparment h3, .edit-activity-card-pending h3 {
   font-weight: bolder;
   letter-spacing: 6px;
   color: var(--navText2);
@@ -693,20 +692,26 @@ footer{
    text-align: center;
  }
 
- #catdep{
-   margin: 1rem;
- }
 
  #white{
    color: var(--navText2);
 }
-
- #name{
+.department_name {
+  cursor: pointer;
+}
+ .department_name {
   font-weight: bolder;
   letter-spacing: 6px;
-  color: white;
+  font-size: 1.22em;
+  color: var(--navText2);
   text-shadow: 1px 1px 2px black;
-  padding-left: 2rem;
+  text-align: center;
+ }
+ .department_description {
+  padding-top: .5em;
+  font-weight: bolder;
+  color: var(--navText2);
+  text-align: center;
  }
 
  #number{
