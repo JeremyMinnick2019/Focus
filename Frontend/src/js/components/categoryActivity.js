@@ -18,7 +18,7 @@ export default function CategoryActivity(category){
             <p class="activity_urgency deparment_urgency">Urgency: <span class="importance-urgency"><br>${activity.urgency}</span></p>
             <p class="activity_creation deparment_creation">Started: <br>${timeCreated}</p>
             <p class="activity_completion deparment_completion">Completed: <br>${timeCompleted}</p>
-            <input class="complete-activity deparment_done" type="radio">
+            <input class="complete-activity deparment_done radioButton" type="radio">
             <input class="activity_id" type="hidden" value="${activity.id}">
         </section>
         `;

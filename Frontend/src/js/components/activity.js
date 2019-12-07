@@ -55,7 +55,7 @@ export default function Activity(activities) {
                     <button class="delete-activity pending_delete" id="mainbutton">Delete</button>
                     
                     <section class="complete-activity pending_complete">
-                        <input class="complete-activity" type="radio">
+                        <input class="complete-activity radioButton" type="radio">
                         <input class="complete-activity_name" type="hidden" value="${activity.name}">
                         <input class="complete-activity_importance" type="hidden" value="${activity.importance}">
                         <input class="complete-activity_urgency" type="hidden" value="${activity.urgency}">

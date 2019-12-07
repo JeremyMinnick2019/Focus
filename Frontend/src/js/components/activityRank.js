@@ -17,7 +17,7 @@ export default function ActivityRank(activities) {
                 <input class="activity_id" type="hidden" value="${activity.id}">
                 <input class="activity_categoryId" type="hidden" value="${activity.categoryID}">
                 <section class="complete-activity priority_complete">
-                    <input class="complete-activity" type="radio">
+                    <input class="complete-activity radioButton" type="radio">
                     <input class="complete-activity_name" type="hidden" value="${activity.name}">
                     <input class="complete-activity_importance" type="hidden" value="${activity.importance}">
                     <input class="complete-activity_urgency" type="hidden" value="${activity.urgency}">

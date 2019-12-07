@@ -696,9 +696,16 @@ footer{
  #white{
    color: var(--navText2);
 }
-.department_name {
+
+.department_name, 
+.priority_name:hover,
+.radioButton:hover,
+.pending_edit:hover,
+.pending_delete:hover {
   cursor: pointer;
 }
+
+
  .department_name {
   font-weight: bolder;
   letter-spacing: 6px;
