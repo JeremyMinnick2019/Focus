@@ -25,11 +25,8 @@ export default function ActivityEdit(editActivity) {
                     <div class="popup">
                         <a class="close" href="#">&times;</a>
                         <div class="content">
-                            <input class="update-activity_name" id="input1" type"text" value="${editActivity.name}">
-                            <input class="update-activity_creation" type="hidden" value="${editActivity.creation}">
-                            <input class="update-activity_completion" type="hidden" value="${editActivity.completion}">
-                            <input class="update-activity_done" type="hidden" value="${editActivity.done}">
-                            <select class="update-activity_categoryId" id="input1" name="Category">
+                            <input class="update-activity_name modalName" id="input1" type"text" value="${editActivity.name}">
+                            <select class="update-activity_categoryId modalDepartment" id="input1" name="Category">
                                 <option value="1">Marketing</option>
                                 <option value="2">Payroll</option>
                                 <option value="3">Accounting/Auditing</option>
@@ -39,11 +36,14 @@ export default function ActivityEdit(editActivity) {
                                 <option value="7">Operations</option>
                                 <option value="8">Small Tasks</option>
                             </select>
-                            <input class="update-activity_importance" id="input1" type="number" name="quantity" min="1" max="10" placeholder="Importance 1-10">
-                            <input class="update-activity_urgency" id="input1" type="number" name="quantity" min="1" max="10" placeholder="Urgency 1-10">
-                            <textarea rows="5" cols="30" class="update-activity_description" id="input1" value="${editActivity.description}"></textarea>
-                            <button class='update-activity' id="popupbutton">Update</button>
-                            <input class="update-activity_id" type="hidden" value="${editActivity.id}">
+                            <input class="update-activity_importance modalImportance" id="input1" type="number" name="quantity" min="1" max="10" placeholder="Importance 1-10">
+                            <input class="update-activity_urgency modalUrgency" id="input1" type="number" name="quantity" min="1" max="10" placeholder="Urgency 1-10">
+                            <textarea rows="5" cols="30" class="update-activity_description modalDescription" id="input1" value="${editActivity.description}"></textarea>
+                            <input class="update-activity_creation" type="hidden" value="${editActivity.creation}">
+                            <input class="update-activity_completion" type="hidden" value="${editActivity.completion}">
+                            <input class="update-activity_done" type="hidden" value="${editActivity.done}">
+                            <input class="update-activity_id " type="hidden" value="${editActivity.id}">
+                            <button class='update-activity modalButton' id="popupbutton">Update</button>
                         </div>
                     </div>
                 </div>

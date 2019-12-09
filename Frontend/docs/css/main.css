@@ -115,7 +115,6 @@ header{
 }
 
 footer{
-
   color: var(--navText2);
   position: relative;
   left: 0;
@@ -417,6 +416,68 @@ footer{
   text-shadow: #333;
 }
 
+/*************************** Modal ACTIONS Card ***************************/
+.content {
+justify-content: center;
+display: grid;
+grid-template-columns: 25rem 20rem;
+grid-template-rows: 6rem;
+row-gap: 3rem;
+grid-template-areas: 
+          "modalActionName  modalDepartment"
+          "modalImportance  modalUrgency"
+          "modalDescription modalDescription"
+          "modalButton      modalButton";
+}
+
+.modalName {
+  grid-area: modalActionName;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 1rem;
+  /* padding: 1rem; */
+}
+.modalDepartment {
+  grid-area: modalDepartment;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 1rem;
+}
+.modalImportance {
+  grid-area: modalImportance;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 1rem;
+}
+.modalUrgency {
+  grid-area: modalUrgency;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 1rem;
+}
+.modalDescription {
+  grid-area: modalDescription;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 1rem;
+}
+.modalButton {
+  grid-area: modalButton;
+  cursor: pointer;
+  /* font-size: 2rem; */
+  margin-left: 15rem;
+  margin-right: 15rem;
+  font-size: 1.5rem;
+}
+
+
+
+
 /*************************** Edit PENDING ACTIONS Cards ***************************/
 .edit-activity-card-pending {
   display: grid;
@@ -459,9 +520,9 @@ footer{
   align-items: center;
   text-align: center;
 }
-.update-activity {
+/* .update-activity {
   grid-area: editButton;
-}
+} */
 
 /*************************** COMPLETED ACTIONS Cards ***************************/
 .completed-actions-card {
@@ -549,19 +610,6 @@ footer{
   margin: 10px;
 }
 
-#popupbutton{
-  background-color: var(--colorDark); 
-  border: .125rem solid var(--moneyBlue1);
-  border-radius: .5rem;
-  color: var(--navText2);
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  display:grid;
-  align-items: end;
-  margin: 10px;
-}
 
 #input{
   border-radius: .5rem;
@@ -586,8 +634,7 @@ footer{
   
 }
 
-/*Image PopUp*/
-
+/*Card Modal*/
 .overlay {
   position: fixed;
   top: 0;
@@ -598,6 +645,7 @@ footer{
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
+  z-index: 1;
 }
 
 .overlay:target {
@@ -605,13 +653,15 @@ footer{
   opacity: 1;
 }
 
+
 .popup {
-  margin: 70px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  max-width: 350px;
-  min-width: 350px;
+  margin: 4.3rem auto;
+  padding: 1.2rem;
+  background: var(--moneyBlue1);
+  border-radius: .3rem;
+  border: .125rem solid var(--navText2);
+  max-width: 50rem;
+  min-height: 40rem;
   position: relative;
   transition: all 5s ease-in-out;
 }
@@ -628,13 +678,22 @@ footer{
   text-align: center;
 }
 
+#popupbutton{
+  background-color: var(--colorDark); 
+  border: .125rem solid var(--moneyBlue1);
+  border-radius: .5rem;
+  border: .125rem solid var(--navText2);
+  color: var(--navText2);
+  /* margin: 1rem; */
+}
 
-.popup .close {
+.close {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  margin: 0;
+  top: 0;
+  right: 1rem;
   transition: all 200ms;
-  font-size: 30px;
+  font-size: 4rem;
   font-weight: bold;
   text-decoration: none;
   color: #333;
@@ -644,10 +703,11 @@ footer{
   color: #3e6990;
 }
 
-.popup .content {
-  max-height: 30%;
-  overflow: auto;
-}
+/* .content {
+  display: grid;
+  justify-content: center;
+  grid-gap: 2em;
+} */
 
 .popupButton {
   background-color: var(--colorDark); 
@@ -666,15 +726,12 @@ footer{
   
 }
 
-#input1{
+/* #input1{
   border-radius: .5rem;
-  width: 9rem;
+  width: 25rem;
   cursor: pointer;
-}
-
-.content{
-  margin: 1px;
-}
+  font-size: 2rem;
+} */
 
 .beltIMG{
   width: 5rem;
@@ -714,13 +771,13 @@ footer{
  .department_name {
   font-weight: bolder;
   letter-spacing: 6px;
-  font-size: 1.22em;
+  font-size: 1.22rem;
   color: var(--navText2);
   text-shadow: 1px 1px 2px black;
   text-align: center;
  }
  .department_description {
-  padding-top: .5em;
+  padding-top: .5rem;
   font-weight: bolder;
   color: var(--navText2);
   text-align: center;
