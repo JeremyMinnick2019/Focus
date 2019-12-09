@@ -25,7 +25,6 @@ function pageBuild(){
     categoryAction();
     activityAction();
     barAction();
-    confetti();
 }
 
 function header(){

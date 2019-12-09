@@ -13,6 +13,9 @@ html{
   background-image: linear-gradient(rgba(83, 82, 82, 0.698),rgba(83, 82, 82, 0.698)) ,url("../images/cogs.jpg");
   width: 100%;
   height: 100vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  /* background-size: 100%; */
   background-size: cover;
   background-position: center;
 }
@@ -112,7 +115,6 @@ header{
 }
 
 footer{
-
   color: var(--navText2);
   position: relative;
   left: 0;
@@ -160,15 +162,8 @@ footer{
   grid-template-columns: repeat(1, 75rem);
 }
 
-#Success
-{
-  display: grid;
-  justify-content: center;
-  grid-gap: 5rem 20rem;
-  grid-template-columns: repeat(1, 50rem);
-}
 
-#gridItem, #gridItemA, #grid-Item, .activity, .Success, .gameGrid
+#gridItem, #gridItemA, #grid-Item, .activity-card-pending, .activity-card-deparment, .activity-card-priority, .edit-activity-card-pending, .completed-actions-card, .gameGrid
 {
   border-radius: .25rem;
   box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.122);
@@ -185,15 +180,20 @@ footer{
 #gridItem:hover,
 #gridItemA:hover,
 #grid-Item:hover,
-.activity:hover,
+.activity-card-pending:hover,
+.activity-card-deparment:hover,
+.activity-card-priority:hover,
+.edit-activity-card-pending:hover,
+.completed-actions-card:hover,
 .Success:hover
 {
   box-shadow: 0 30px 80px 10px rgba(255, 255, 255, 0.918);
 }
 
-.activity, .business, .category, .user, .activityAdd, .update-activity{
+.activity-card-pending, .activity-card-deparment, .activity-card-priority, .edit-activity-card-pending, .completed-actions-card, .business, .category, .user, .activityAdd {
   border: .125rem solid var(--navText2);
 }
+
 
 .Success
 {
@@ -231,7 +231,7 @@ footer{
   text-align: center;
 }
 
-#gridItemA h2,h3,h4,.edit-user,.delete-user, .userIcon
+/* #gridItemA */ h2,h3,h4,.edit-user,.delete-user, .userIcon
 {
   display: flex;
   justify-content: center;
@@ -243,6 +243,338 @@ footer{
  margin: auto;
  margin-top: 1rem; 
 }
+/*************************** PRIORITY ACTIONS Cards ***************************/
+.activity-card-priority {
+  padding-top: 1.5em;
+  display: grid;
+  grid-template-columns: 18rem 7rem 7.5rem 6rem;
+  grid-template-rows: 3rem 3rem;
+  grid-template-areas: 
+            "priorityActionName StartName  priorityStartTime  priorityCheckBox"
+            "priorityActionName valueName  pointsValue        priorityCheckBox";
+}
+
+.priority_name {
+  grid-area: priorityActionName;
+  padding-left: 1em;
+  align-items: center;
+  background-color: var(--colorDark); 
+  border: .125rem solid var(--navText2);
+  border-radius: .5rem;
+  color: var(--navText2);
+  text-align: center;
+  padding: 1em;
+  margin: .7em 1em .7em 1em;
+  font-weight: bolder;
+  letter-spacing: 6px;
+  text-shadow: 1px 1px 2px black;
+}
+.priority_creation1 {
+  grid-area: StartName;
+}
+.priority_creation2 {
+  grid-area: priorityStartTime;
+  text-align: center;
+}
+.priority_point1 {
+  grid-area: valueName;
+}
+.priority_point2 {
+  grid-area: pointsValue;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.priority_complete {
+  grid-area: priorityCheckBox;
+  padding: 1.5rem;
+  align-items: center;
+}
+#priorityButton {
+  background-color: var(--colorDark); 
+  border: .125rem solid var(--navText2);
+  border-radius: .5rem;
+  color: var(--navText2);
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 1rem;
+}
+
+
+/*************************** ACTIONS Cards by DEPARTMENT ***************************/
+.activity-card-deparment {
+  /* padding-left: 1em; */
+  display: grid;
+  grid-template-columns: 14.5em 12em 9em 9em 12em 13em 3.5em;
+  grid-template-rows: 2em 3em 2em;
+  grid-template-areas: 
+            "deparmentActionName description importance urgency deparmentStartTime deparmentEndTime ."
+            "deparmentActionName description importance urgency deparmentStartTime deparmentEndTime deparmentCheckBox"
+            "deparmentActionName description .          .       deparmentStartTime deparmentEndTime .";
+}
+
+.deparment_name {
+  grid-area: deparmentActionName;
+  text-align: center;
+  align-items: center;
+}
+.deparment_description {
+  grid-area: description;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.deparment_importance {
+  grid-area: importance;
+  /* padding-top: 1em; */
+  text-align: center;
+  align-items: center;
+}
+.deparment_urgency {
+  grid-area: urgency;
+  /* padding-top: 1em; */
+  text-align: center;
+  align-items: center;
+}
+.deparment_creation {
+  grid-area: deparmentStartTime;
+  padding-top: 1em;
+  /* display: flex; */
+  align-items: center;
+  text-align: center;
+}
+.deparment_completion {
+  grid-area: deparmentEndTime;
+  padding-top: 1em;
+  /* display: flex; */
+  align-items: center;
+  text-align: center;
+}
+.deparment_done {
+  grid-area: deparmentCheckBox;
+}
+
+
+
+/*************************** PENDING ACTIONS Cards ***************************/
+
+.activity-card-pending {
+  /* padding-left: 1em; */
+  display: grid;
+  grid-template-columns: 14.5em 12em 10em 9em 12em 6em 6em 3.5em;
+  grid-template-rows: 2em 3em 2em;
+  grid-template-areas: 
+            "pendingActionName description importance urgency pendingStartTime .          .            ."
+            "pendingActionName description importance urgency pendingStartTime editButton deleteButton pendingCheckBox"
+            "pendingActionName description .          .       pendingStartTime .          .            .";
+}
+
+.pending_name {
+  grid-area: pendingActionName;
+  text-align: center;
+  align-items: center;
+}
+.pending_description {
+  grid-area: description;
+  /* display: flex; */
+  text-align: center;
+  padding-top: 1rem;
+  /* align-items: center; */
+}
+.pending_importance {
+  grid-area: importance;
+  margin-top: 0;
+  text-align: center;
+  align-items: center;
+}
+.pending_urgency {
+  grid-area: urgency;
+  margin-top: 0;
+  text-align: center;
+  align-items: center;
+}
+.pending_creation {
+  grid-area: pendingStartTime;
+  padding-top: 1em;
+  /* display: flex; */
+  align-items: center;
+  text-align: center;
+}
+.pending_edit {
+  grid-area: editButton;
+}
+.pending_delete{
+  grid-area: deleteButton;
+}
+.pending_complete{
+  grid-area: pendingCheckBox;
+  /* align-items: center; */
+}
+.importance-urgency {
+  font-size: 1.7em;
+  text-shadow: #333;
+}
+
+/*************************** Modal ACTIONS Card ***************************/
+.content {
+justify-content: center;
+display: grid;
+grid-template-columns: 25rem 20rem;
+grid-template-rows: 6rem;
+row-gap: 3rem;
+grid-template-areas: 
+          "modalActionName  modalDepartment"
+          "modalImportance  modalUrgency"
+          "modalDescription modalDescription"
+          "modalButton      modalButton";
+}
+
+.modalName {
+  grid-area: modalActionName;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 1rem;
+  /* padding: 1rem; */
+}
+.modalDepartment {
+  grid-area: modalDepartment;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 1rem;
+}
+.modalImportance {
+  grid-area: modalImportance;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 1rem;
+}
+.modalUrgency {
+  grid-area: modalUrgency;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 1rem;
+}
+.modalDescription {
+  grid-area: modalDescription;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-size: 2rem;
+  margin: 1rem;
+}
+.modalButton {
+  grid-area: modalButton;
+  cursor: pointer;
+  /* font-size: 2rem; */
+  margin-left: 15rem;
+  margin-right: 15rem;
+  font-size: 1.5rem;
+}
+
+
+
+
+/*************************** Edit PENDING ACTIONS Cards ***************************/
+.edit-activity-card-pending {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 14.5em 12em 10em 9em 12em 7em;
+  grid-template-rows: 2em 3em 2em;
+  grid-template-areas: 
+            "editName editDescription importance urgency editStartTime editButton"
+            "editName editDescription importance urgency editStartTime editButton"
+            "editName editDescription .          .       editStartTime editButton";
+}
+
+.edit_name {
+  grid-area: editName;
+  text-align: center;
+}
+.edit_description {
+  grid-area: editDescription;
+  /* display: flex;
+  align-items: center; */
+  text-align: center;
+  padding-top: 1rem;
+}
+.edit_importance {
+  grid-area: importance;
+  margin-top: 1em;
+  text-align: center;
+  align-items: center;
+}
+.edit_urgency {
+  grid-area: urgency;
+  margin-top: 1em;
+  text-align: center;
+  align-items: center;
+}
+.edit_creation {
+  grid-area: editStartTime;
+  padding-top: 1em;
+  /* display: flex; */
+  align-items: center;
+  text-align: center;
+}
+/* .update-activity {
+  grid-area: editButton;
+} */
+
+/*************************** COMPLETED ACTIONS Cards ***************************/
+.completed-actions-card {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 14.5em 14em 9em 12em 12em;
+  grid-template-rows: 2em 3em 2em;
+  grid-template-areas: 
+            "completedeName completedDescription pointsEarned StartTime completedTime"
+            "completedtName completedDescription pointsEarned StartTime completedTime"
+            "completedtName completedDescription .            StartTime completedTime";
+}
+
+.completed_name {
+  grid-area: completedeName;
+  text-align: center;
+  font-weight: bolder;
+  letter-spacing: 6px;
+  color: var(--navText2);
+  text-shadow: 1px 1px 2px black;
+  font-size: 1.17em;
+  padding-top: 1em;
+}
+.completed_description {
+  grid-area: completedDescription;
+  align-items: center;
+  text-align: center;
+  padding-top: 1em;
+}
+.completed_point {
+  grid-area: pointsEarned;
+  margin-top: 1em;
+  text-align: center;
+  align-items: center;
+}
+.completed_creation {
+  grid-area: StartTime;
+  padding-top: 1em;
+  /* display: flex; */
+  align-items: center;
+  text-align: center;
+}
+.completed_time {
+  grid-area: completedTime;
+  padding-top: 1em;
+  /* display: flex; */
+  align-items: center;
+  text-align: center;
+}
+
+
+
 
 .activity
 {
@@ -255,8 +587,7 @@ footer{
   padding-right: 20px;
 }
 
-.activity h3, .category h3
-{
+.activity-card-pending h3, .activity-card-deparment h3, .edit-activity-card-pending h3 {
   font-weight: bolder;
   letter-spacing: 6px;
   color: var(--navText2);
@@ -272,34 +603,21 @@ footer{
   color: var(--navText2);
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 16px;
-  display:grid;
-  align-items: end;
+  /* display:grid; */
+  /* align-items: end; */
   margin: 10px;
 }
 
-#popupbutton{
-  background-color: var(--colorDark); 
-  border: .125rem solid var(--moneyBlue1);
-  border-radius: .5rem;
-  color: var(--navText2);
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  display:grid;
-  align-items: end;
-  margin: 10px;
-}
 
 #input{
   border-radius: .5rem;
 }
 
 .complete-activity {
-  min-width: 30px;
-  min-height: 30px;
+  min-width: 3.5em;
+  min-height: 3.5em;
 }
 
 #Logo
@@ -316,8 +634,7 @@ footer{
   
 }
 
-/*Image PopUp*/
-
+/*Card Modal*/
 .overlay {
   position: fixed;
   top: 0;
@@ -328,6 +645,7 @@ footer{
   transition: opacity 500ms;
   visibility: hidden;
   opacity: 0;
+  z-index: 1;
 }
 
 .overlay:target {
@@ -335,13 +653,15 @@ footer{
   opacity: 1;
 }
 
+
 .popup {
-  margin: 70px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  max-width: 350px;
-  min-width: 350px;
+  margin: 4.3rem auto;
+  padding: 1.2rem;
+  background: var(--moneyBlue1);
+  border-radius: .3rem;
+  border: .125rem solid var(--navText2);
+  max-width: 50rem;
+  min-height: 40rem;
   position: relative;
   transition: all 5s ease-in-out;
 }
@@ -358,13 +678,22 @@ footer{
   text-align: center;
 }
 
+#popupbutton{
+  background-color: var(--colorDark); 
+  border: .125rem solid var(--moneyBlue1);
+  border-radius: .5rem;
+  border: .125rem solid var(--navText2);
+  color: var(--navText2);
+  /* margin: 1rem; */
+}
 
-.popup .close {
+.close {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  margin: 0;
+  top: 0;
+  right: 1rem;
   transition: all 200ms;
-  font-size: 30px;
+  font-size: 4rem;
   font-weight: bold;
   text-decoration: none;
   color: #333;
@@ -374,10 +703,11 @@ footer{
   color: #3e6990;
 }
 
-.popup .content {
-  max-height: 30%;
-  overflow: auto;
-}
+/* .content {
+  display: grid;
+  justify-content: center;
+  grid-gap: 2em;
+} */
 
 .popupButton {
   background-color: var(--colorDark); 
@@ -396,15 +726,12 @@ footer{
   
 }
 
-#input1{
+/* #input1{
   border-radius: .5rem;
-  width: 9rem;
+  width: 25rem;
   cursor: pointer;
-}
-
-.content{
-  margin: 1px;
-}
+  font-size: 2rem;
+} */
 
 .beltIMG{
   width: 5rem;
@@ -426,20 +753,34 @@ footer{
    text-align: center;
  }
 
- #catdep{
-   margin: 1rem;
- }
 
  #white{
    color: var(--navText2);
 }
 
- #name{
+.department_name, 
+.priority_name:hover,
+.checkBoxButton:hover,
+.pending_edit:hover,
+.pending_delete:hover,
+#Logo {
+  cursor: pointer;
+}
+
+
+ .department_name {
   font-weight: bolder;
   letter-spacing: 6px;
-  color: white;
+  font-size: 1.22rem;
+  color: var(--navText2);
   text-shadow: 1px 1px 2px black;
-  padding-left: 2rem;
+  text-align: center;
+ }
+ .department_description {
+  padding-top: .5rem;
+  font-weight: bolder;
+  color: var(--navText2);
+  text-align: center;
  }
 
  #number{

@@ -9,7 +9,6 @@ import headerSuc from "./components/headerSuc"
 import ActivityDetails from "./components/activityDetails"
 import ConfettiGenerator from "confetti-js"
 
-
 export default () =>{
     displayActivity();
     displayHeader();
@@ -240,7 +239,7 @@ function confetti()
     app.addEventListener("click", function(){
     if(event.target.classList.contains("complete-activity")) {
     alert("Nice Job! You Completed An Activitiy");
-    var confettiSettings = {target: "my-canvas" , max: "100"};
+    var confettiSettings = {target: "my-canvas" , max: "100", size:"3"};
     var confetti = new ConfettiGenerator(confettiSettings);
     confetti.render();
     }})
