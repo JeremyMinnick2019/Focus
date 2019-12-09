@@ -1,7 +1,7 @@
 export default function Navbar() {
     return `
     <nav class='navbar'>
-    <span id="Logo">FOCUS</span>
+    <span id="Logo" title="Click to see Your Profile">FOCUS</span>
         <ul>
             <li><a id="homeButton">Priorities</a></li>
             <li><a id="profileButton">Rewards</a></li>

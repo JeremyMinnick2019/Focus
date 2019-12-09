@@ -32,7 +32,7 @@ export default function Activity(activities) {
     <section class="gridAct">
         ${activities
             .map(activity => {
-                var timeCreated = moment(activity.creation + 'Z').format('MMM Do YY, h:mm a');
+                var timeCreated = moment(activity.creation + 'Z').format('MMM Do YYYY, h:mm a');
                 
                 return `
                 <section class="activity-card-pending">
@@ -55,7 +55,7 @@ export default function Activity(activities) {
                     <button class="delete-activity pending_delete" id="mainbutton">Delete</button>
                     
                     <section class="complete-activity pending_complete">
-                        <input class="complete-activity radioButton" type="radio">
+                        <input class="complete-activity checkBoxButton" type="checkbox" title="Complete ${activity.name} Action">
                         <input class="complete-activity_name" type="hidden" value="${activity.name}">
                         <input class="complete-activity_importance" type="hidden" value="${activity.importance}">
                         <input class="complete-activity_urgency" type="hidden" value="${activity.urgency}">

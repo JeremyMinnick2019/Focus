@@ -1,7 +1,7 @@
 import moment from "moment";
 
 export default function ActivityDetails(detailActivity) {
-    var timeCreated = moment(detailActivity.creation + "Z").format('MMM Do YY, h:mm a');
+    var timeCreated = moment(detailActivity.creation + "Z").format('MMM Do YYYY, h:mm a');
     
     return `
         <section class="userGrid">

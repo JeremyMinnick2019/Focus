@@ -248,11 +248,11 @@ footer{
 .activity-card-priority {
   padding-top: 1.5em;
   display: grid;
-  grid-template-columns: 18em 7em 7em 6em;
-  grid-template-rows: 3em 3em;
+  grid-template-columns: 18rem 7rem 7.5rem 6rem;
+  grid-template-rows: 3rem 3rem;
   grid-template-areas: 
             "priorityActionName StartName  priorityStartTime  priorityCheckBox"
-            "priorityActionName valueName  pointsValue       priorityCheckBox";
+            "priorityActionName valueName  pointsValue        priorityCheckBox";
 }
 
 .priority_name {
@@ -482,7 +482,7 @@ footer{
   letter-spacing: 6px;
   color: var(--navText2);
   text-shadow: 1px 1px 2px black;
-  font-size: 1.15em;
+  font-size: 1.17em;
   padding-top: 1em;
 }
 .completed_description {
@@ -703,9 +703,10 @@ footer{
 
 .department_name, 
 .priority_name:hover,
-.radioButton:hover,
+.checkBoxButton:hover,
 .pending_edit:hover,
-.pending_delete:hover {
+.pending_delete:hover,
+#Logo {
   cursor: pointer;
 }
 
