@@ -282,13 +282,13 @@ footer{
 }
 .priority_point2 {
   grid-area: pointsValue;
-  margin: 0.5em;
-  font-size: 1.5em;
+  margin: 0.5rem;
+  font-size: 1.5rem;
   text-align: center;
 }
 .priority_complete {
   grid-area: priorityCheckBox;
-  padding: 2em;
+  padding: 1.5rem;
   align-items: center;
 }
 #priorityButton {
@@ -299,7 +299,7 @@ footer{
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  padding: 1em;
+  padding: 1rem;
 }
 
 
@@ -378,8 +378,10 @@ footer{
 }
 .pending_description {
   grid-area: description;
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  text-align: center;
+  padding-top: 1rem;
+  /* align-items: center; */
 }
 .pending_importance {
   grid-area: importance;
@@ -433,8 +435,10 @@ footer{
 }
 .edit_description {
   grid-area: editDescription;
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
+  text-align: center;
+  padding-top: 1rem;
 }
 .edit_importance {
   grid-area: importance;
